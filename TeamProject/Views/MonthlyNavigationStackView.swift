@@ -9,6 +9,7 @@ import UIKit
 
 class MonthlyNavigationStackView: UIStackView {
     
+    //
     var baseDate: Date = Date() {
         didSet {
             changeMonthLabel()
