@@ -18,6 +18,7 @@ class AppPasswordViewController: UIViewController {
          return label
      }()
     
+    // 뒤로가기 버튼
     private let backBtn: UIButton = {
          let button = UIButton()
          button.setImage(UIImage(systemName: "chevron.left"), for: .normal)
@@ -123,7 +124,7 @@ class AppPasswordViewController: UIViewController {
             backBtn.heightAnchor.constraint(equalToConstant: 24),
             backBtn.widthAnchor.constraint(equalToConstant: 24),
             
-            passwordGuideLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 72),
+            passwordGuideLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor),
             passwordGuideLabel.topAnchor.constraint(equalTo: view.topAnchor, constant: 225),
             
 //            firstPasswordCircleView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 87),

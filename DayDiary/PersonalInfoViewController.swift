@@ -9,6 +9,7 @@ import UIKit
 
 class PersonalInfoViewController: UIViewController {
 
+    // MARK: - 상단
     private let personalInfoLabel: UILabel = {
         let label = UILabel()
         label.text = "개인정보처리방침"
@@ -16,6 +17,15 @@ class PersonalInfoViewController: UIViewController {
         label.textColor = UIColor.black
         return label
     }()
+    
+    // 뒤로가기 버튼
+    private let backBtn: UIButton = {
+         let button = UIButton()
+         button.setImage(UIImage(systemName: "chevron.left"), for: .normal)
+         button.tintColor = UIColor.black
+         button.addTarget(self, action: #selector(backButtonTapped), for: .touchUpInside)
+         return button
+     }()
     
     private let informationString: UILabel = {
         var label = UILabel()
@@ -36,21 +46,31 @@ class PersonalInfoViewController: UIViewController {
         view.backgroundColor = UIColor.white
         view.addSubview(personalInfoLabel)
         view.addSubview(informationString)
+        view.addSubview(backBtn)
         
         personalInfoLabel.translatesAutoresizingMaskIntoConstraints = false
         informationString.translatesAutoresizingMaskIntoConstraints = false
+        backBtn.translatesAutoresizingMaskIntoConstraints = false
         
         NSLayoutConstraint.activate([
             personalInfoLabel.topAnchor.constraint(equalTo: view.topAnchor, constant: 64),
             personalInfoLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 148),
             informationString.topAnchor.constraint(equalTo: view.topAnchor, constant: 108),
             informationString.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 16),
-            informationString.widthAnchor.constraint(equalToConstant: 361)
+            informationString.widthAnchor.constraint(equalToConstant: 361),
+            
+            backBtn.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 16),
+            backBtn.topAnchor.constraint(equalTo: view.topAnchor, constant: 61),
+            backBtn.heightAnchor.constraint(equalToConstant: 24),
+            backBtn.widthAnchor.constraint(equalToConstant: 24)
         ])
         
     }
 
    
-    
+    // 이전 화면으로 넘어가는 함수
+    @objc func backButtonTapped() {
+        dismiss(animated: true, completion: nil)
+    }
 
 }
