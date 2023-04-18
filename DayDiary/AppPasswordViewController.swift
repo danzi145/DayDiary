@@ -8,7 +8,13 @@
 import UIKit
 
 class AppPasswordViewController: UIViewController {
-
+    
+    // 옳은 비밀번호
+    let passwordNum: String = "1004"
+    
+    // 간단하게 다루기 위한 배열 추가
+    lazy var circleViews = [firstPasswordCircleView, secondPasswordCircleView, thirdPasswordCircleView, fourthPasswordCircleView]
+    
     // MARK: - 상단
     private let appPasswordLabel: UILabel = {
          let label = UILabel()
@@ -79,6 +85,7 @@ class AppPasswordViewController: UIViewController {
         textField.keyboardType = UIKeyboardType.numberPad
         textField.becomeFirstResponder()
         textField.isHidden = true
+        textField.addTarget(self, action: #selector(textFieldDidChange), for: .editingChanged)
         return textField
     }()
     
@@ -152,6 +159,33 @@ class AppPasswordViewController: UIViewController {
         
     }
 
+    // 비밀번호 함수
+    @objc func textFieldDidChange(_ sender: UITextField) {
+        
+        guard let inputText = sender.text,
+              inputText.count <= 4 else { return }
+        
+        // 메서드 호출로 간단하게 처리
+        handleCircleViewUI(withInput: inputText.count)
+        
+        
+        if inputText.count == 4 {
+            DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) { [unowned self] in
+                handleCircleViewUI(withInput: 0)
+                
+                passwordGuideLabel.text = (inputText != passwordNum) ? "다시 한 번 입력해 주세요." : "비밀번호 일치"
+                sender.text = ""
+            }
+        }
+    }
+    
+    // 뷰 백그라운드 바꾸는 메서드
+    func handleCircleViewUI(withInput num: Int) {
+        self.circleViews.enumerated().forEach { index, circleView in
+            circleView.backgroundColor = (num > index) ? UIColor.black : #colorLiteral(red: 0.8797428012, green: 0.8797428012, blue: 0.8797428012, alpha: 1)
+        }
+    }
+    
     // 이전 화면으로 넘어가는 함수
     @objc func backButtonTapped() {
         dismiss(animated: true, completion: nil)
