@@ -48,7 +48,11 @@ extension ContainerViewController: MonthlyViewControllerDelegate {
         switch menuState {
         case .closed:
             UIView.animate(withDuration: 0.5, delay: 0, usingSpringWithDamping: 0.8, initialSpringVelocity: 0, options: .curveEaseInOut) {
-                self.navVC?.view.frame.origin.x = self.monthlyVC.view.anchorPoint.x - 290
+                if #available(iOS 16.0, *) {
+                    self.navVC?.view.frame.origin.x = self.monthlyVC.view.anchorPoint.x - 290
+                } else {
+                    // Fallback on earlier versions
+                }
                 self.monthlyVC.topStackView.menuButton.setImage(UIImage(systemName: "chevron.backward"), for: .normal)
             } completion: { [weak self] done in
                 if done {
