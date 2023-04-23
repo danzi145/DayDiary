@@ -14,6 +14,8 @@ protocol MonthlyViewControllerDelegate: AnyObject {
 
 final class MonthlyViewController: UIViewController, UINavigationControllerDelegate {
     
+    // MARK: - Properties
+    
     let topStackView = MonthlyNavigationStackView()
     private let calendarView = CalendarView()
     
@@ -31,11 +33,12 @@ final class MonthlyViewController: UIViewController, UINavigationControllerDeleg
     }
     
     
-    // MARK: - Helper
+    // MARK: - Helpers
     private func configureUI() {
         view.backgroundColor = .white
         navigationController?.navigationBar.isHidden = true
         
+        // 커스텀 네비게이션바 + 캘린더뷰 합치기
         let mainStack = UIStackView(arrangedSubviews: [topStackView, calendarView])
         mainStack.axis = .vertical
         
@@ -93,6 +96,8 @@ final class MonthlyViewController: UIViewController, UINavigationControllerDeleg
         }
     
 }
+
+// MARK: - FSCalendarDelegate & FSCalendarDataSource & FSCalendarDelegateAppearance
 
 extension MonthlyViewController: FSCalendarDelegate, FSCalendarDataSource,  FSCalendarDelegateAppearance {
     

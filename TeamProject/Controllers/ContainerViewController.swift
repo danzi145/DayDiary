@@ -9,17 +9,21 @@ import UIKit
 
 final class ContainerViewController: UIViewController {
     
+    // 사이드 메뉴가 열리거나 닫힌 경우를 분기처리
     private enum MenuState {
         case opened
         case closed
     }
     
+    // default 상태: closed
     private var menuState: MenuState = .closed
     
     private let monthlyVC = MonthlyViewController()
     private let menuVC = MenuViewController()
     private var navVC: UINavigationController?
     
+    
+    // MARK: - Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .white
@@ -27,6 +31,7 @@ final class ContainerViewController: UIViewController {
     }
     
     
+    // MARK: - Helpers
     private func addChildVC() {
         addChild(menuVC)
         view.addSubview(menuVC.view)
@@ -43,10 +48,12 @@ final class ContainerViewController: UIViewController {
     
 }
 
+// MARK: - MonthlyViewControllerDelegate
+
 extension ContainerViewController: MonthlyViewControllerDelegate {
     func didTapMenuButton() {
         switch menuState {
-        case .closed:
+        case .closed: // menuState가 닫힌 상태에서 버튼 누르면 실행되는 함수들 (메뉴가 열리도록 구현)
             UIView.animate(withDuration: 0.5, delay: 0, usingSpringWithDamping: 0.8, initialSpringVelocity: 0, options: .curveEaseInOut) {
                 if #available(iOS 16.0, *) {
                     self.navVC?.view.frame.origin.x = self.monthlyVC.view.anchorPoint.x - 290
@@ -60,7 +67,7 @@ extension ContainerViewController: MonthlyViewControllerDelegate {
                 }
             }
             
-        case .opened:
+        case .opened: // menuState가 닫힌 상태에서 버튼 누르면 실행되는 함수들 (메뉴가 닫히도록 구현)
             UIView.animate(withDuration: 0.5, delay: 0, usingSpringWithDamping: 0.8, initialSpringVelocity: 0, options: .curveEaseInOut) {
                 self.navVC?.view.frame.origin.x = 0
                 self.monthlyVC.topStackView.menuButton.setImage(UIImage(systemName: "text.justify"), for: .normal)
