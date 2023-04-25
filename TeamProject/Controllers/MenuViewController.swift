@@ -22,6 +22,7 @@ final class MenuViewController: UIViewController {
         return tv
     }()
     
+    // MARK: - Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -30,6 +31,7 @@ final class MenuViewController: UIViewController {
         tableView.dataSource = self
     }
     
+    // viewDidLayoutSubviews 시점에서 테이블뷰 프레임 잡기
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
         tableView.frame = CGRect(x: 95, y: view.safeAreaInsets.top, width: view.bounds.size.width * 0.75, height: view.bounds.size.height)
@@ -37,7 +39,7 @@ final class MenuViewController: UIViewController {
     
     
 }
-    // MARK: - set TableView
+    // MARK: - UITableViewDelegate & UITableViewDataSource
 
 extension MenuViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

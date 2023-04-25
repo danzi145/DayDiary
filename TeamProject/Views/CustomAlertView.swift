@@ -13,8 +13,10 @@ protocol CustomAlertViewDelegate: AnyObject {
 
 final class CustomAlertView: UIView {
     
+    // MARK: - Properties
     weak var delegate: CustomAlertViewDelegate?
     
+    // 기준 날짜를 잡기 위한 속성
     private var date: Date
     
     private var alertView: UIView = {
@@ -46,11 +48,12 @@ final class CustomAlertView: UIView {
         label.font = UIFont.systemFont(ofSize: 12)
         return label
     }()
-    private var diaryTitle: UILabel = {
-        let label = UILabel()
-        label.text = "약과가 먹고싶은 날"
-        label.font = UIFont.systemFont(ofSize: 16)
-        return label
+    
+    private var diaryTitleButton: UIButton = {
+        let button = AlertTitleButton(type: .system)
+        button.setTitle("약과가 먹고싶은 날", for: .normal)
+        button.addTarget(self, action: #selector(diaryTitleButtonTapped), for: .touchUpInside)
+        return button
     }()
     private var diaryCircle: UILabel = {
         let label = UILabel()
@@ -67,11 +70,11 @@ final class CustomAlertView: UIView {
         label.font = UIFont.systemFont(ofSize: 12)
         return label
     }()
-    private var noteTitle: UILabel = {
-        let label = UILabel()
-        label.text = "치과 4:30"
-        label.font = UIFont.systemFont(ofSize: 16)
-        return label
+    private var noteTitleButton: UIButton = {
+        let button = AlertTitleButton(type: .system)
+        button.setTitle("치과 4:30", for: .normal)
+        button.addTarget(self, action: #selector(noteTitleButtonTapped), for: .touchUpInside)
+        return button
     }()
     private var noteCircle: UILabel = {
         let label = UILabel()
@@ -88,11 +91,11 @@ final class CustomAlertView: UIView {
         label.font = UIFont.systemFont(ofSize: 12)
         return label
     }()
-    private var lockedDiaryTitle: UILabel = {
-        let label = UILabel()
-        label.text = "수박이 먹고싶은 날"
-        label.font = UIFont.systemFont(ofSize: 16)
-        return label
+    private var lockedDiaryTitleButton: UIButton = {
+        let button = AlertTitleButton(type: .system)
+        button.setTitle("수박이 먹고싶은 날", for: .normal)
+        button.addTarget(self, action: #selector(lockedDiaryTitleButtonTapped), for: .touchUpInside)
+        return button
     }()
     private var lockedDiaryCircle: UILabel = {
         let label = UILabel()
@@ -112,27 +115,24 @@ final class CustomAlertView: UIView {
     
     // + 버튼
     private lazy var plusButton: UIButton = {
-        let button = UIButton(type: .custom)
+        let imageView = UIImageView()
+         imageView.image = UIImage(systemName: "plus")
+         imageView.frame = CGRect(x: 0, y: 0, width: 20, height: 20)
+        
+        let button = UIButton(type: .system)
         button.frame = CGRect(x: 0, y: 0, width: 50, height: 50)
         button.layer.cornerRadius = 0.5 * button.bounds.size.width
         button.clipsToBounds = true
-        button.addSubview(buttonPlusImage)
+        button.setImage(imageView.image?.withRenderingMode(.alwaysTemplate), for: .normal)
+        button.tintColor = .black
         button.addTarget(self, action: #selector(plusButtonTapped), for: .touchUpInside)
         return button
-    }()
-    
-    private var buttonPlusImage: UIImageView = {
-       let imageView = UIImageView()
-        imageView.image = UIImage(systemName: "plus")
-        imageView.tintColor = UIColor.black
-        imageView.frame = CGRect(x: 0, y: 0, width: 20, height: 20)
-        return imageView
     }()
     
     
     // MARK: - StackView
     private lazy var diaryStack: UIStackView = {
-        let sv = UIStackView(arrangedSubviews: [alertDiary, diaryTitle])
+        let sv = UIStackView(arrangedSubviews: [alertDiary, diaryTitleButton])
         sv.distribution = .fill
         sv.alignment = .leading
         sv.spacing = 4
@@ -141,7 +141,7 @@ final class CustomAlertView: UIView {
     }()
     
     private lazy var noteStack: UIStackView = {
-        let sv = UIStackView(arrangedSubviews: [alertNote, noteTitle])
+        let sv = UIStackView(arrangedSubviews: [alertNote, noteTitleButton])
         sv.distribution = .fill
         sv.alignment = .leading
         sv.spacing = 4
@@ -150,7 +150,7 @@ final class CustomAlertView: UIView {
     }()
     
     private lazy var lockedDiaryStack: UIStackView = {
-        let sv = UIStackView(arrangedSubviews: [alertLockedDiary, lockedDiaryTitle])
+        let sv = UIStackView(arrangedSubviews: [alertLockedDiary, lockedDiaryTitleButton])
         sv.distribution = .fill
         sv.alignment = .leading
         sv.spacing = 4
@@ -181,6 +181,17 @@ final class CustomAlertView: UIView {
         delegate?.handleAddButton()
     }
     
+    @objc func diaryTitleButtonTapped() {
+        print(#function)
+    }
+    
+    @objc func noteTitleButtonTapped() {
+        print(#function)
+    }
+    
+    @objc func lockedDiaryTitleButtonTapped() {
+        print(#function)
+    }
     
     // MARK: - Helpers
     private func setAlertView() {
@@ -205,7 +216,7 @@ final class CustomAlertView: UIView {
         alertDate.text = dateFormatter.string(from: date)
     }
     
-    // MARK: - set Autolayout()
+    // MARK: - 오토레이아웃
     
     private func setAutolayout() {
         alertView.translatesAutoresizingMaskIntoConstraints = false
@@ -240,29 +251,12 @@ final class CustomAlertView: UIView {
             lockedDiaryCircle.rightAnchor.constraint(equalTo: alertLockedDiary.leftAnchor, constant: 6), lockedDiaryCircle.centerYAnchor.constraint(equalTo: alertLockedDiary.centerYAnchor)])
         
         lockedImage.translatesAutoresizingMaskIntoConstraints = false
-        NSLayoutConstraint.activate([lockedImage.leftAnchor.constraint(equalTo: lockedDiaryTitle.rightAnchor, constant: 2), lockedImage.centerYAnchor.constraint(equalTo: lockedDiaryTitle.centerYAnchor)])
+        NSLayoutConstraint.activate([lockedImage.leftAnchor.constraint(equalTo: lockedDiaryTitleButton.rightAnchor, constant: 2), lockedImage.centerYAnchor.constraint(equalTo: lockedDiaryTitleButton.centerYAnchor)])
         
         // 추가 버튼
         plusButton.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([plusButton.centerXAnchor.constraint(equalTo: alertView.centerXAnchor), plusButton.widthAnchor.constraint(equalToConstant: 50), plusButton.heightAnchor.constraint(equalTo: plusButton.widthAnchor, multiplier: 1), plusButton.bottomAnchor.constraint(equalTo: alertView.bottomAnchor, constant: -24)])
-        
-        buttonPlusImage.translatesAutoresizingMaskIntoConstraints = false
-        NSLayoutConstraint.activate([buttonPlusImage.centerYAnchor.constraint(equalTo: plusButton.centerYAnchor), buttonPlusImage.centerXAnchor.constraint(equalTo: plusButton.centerXAnchor)])
     }
     
     
-}
-// MARK: - Extension
-// 동그란 레이어를 만들기 위한 UIView 확장
-extension UIView {
-    func addDashedCircle() {
-        let circleLayer = CAShapeLayer()
-        circleLayer.path = UIBezierPath(ovalIn: bounds).cgPath
-        circleLayer.lineWidth = 2.0
-        circleLayer.strokeColor =  UIColor.black.cgColor //border of circle
-        circleLayer.fillColor = UIColor.clear.cgColor
-        circleLayer.lineJoin = .round
-        circleLayer.lineDashPattern = [4,2]
-        layer.addSublayer(circleLayer)
-    }
 }

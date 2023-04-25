@@ -7,16 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		B0E3EE0329F681AA00E6737C /* HamburgerSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0E3EE0229F681AA00E6737C /* HamburgerSettings.swift */; };
-		B0E3EE0529F681D200E6737C /* HamburgerSettingsDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0E3EE0429F681D200E6737C /* HamburgerSettingsDataManager.swift */; };
-		B0E3EE0729F681FF00E6737C /* HamburgerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0E3EE0629F681FF00E6737C /* HamburgerViewController.swift */; };
-		B0E3EE0929F6827500E6737C /* HamburgerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0E3EE0829F6827500E6737C /* HamburgerView.swift */; };
-		B0E3EE0B29F682D600E6737C /* HamburgerTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0E3EE0A29F682D600E6737C /* HamburgerTableViewCell.swift */; };
-		B0E3EE0D29F6832600E6737C /* AccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0E3EE0C29F6832600E6737C /* AccountViewController.swift */; };
-		B0E3EE0F29F6833D00E6737C /* AccountView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0E3EE0E29F6833D00E6737C /* AccountView.swift */; };
-		B0E3EE1229F69A3A00E6737C /* MemoCheckListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0E3EE1129F69A3A00E6737C /* MemoCheckListTableViewCell.swift */; };
-		B0E3EE1429F69AA400E6737C /* MemoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0E3EE1329F69AA400E6737C /* MemoView.swift */; };
-		B0E3EE1629F69AC400E6737C /* MemoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0E3EE1529F69AC400E6737C /* MemoViewController.swift */; };
 		C92797C77B52716E7BB699DD /* Pods_TeamProject.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3D89FE3648EDD3FB1AFC9369 /* Pods_TeamProject.framework */; };
 		F117F5D829E2777300A44FCC /* MonthlyNavigationStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F117F5D729E2777300A44FCC /* MonthlyNavigationStackView.swift */; };
 		F1D0FD0529DBE6A500AB1295 /* CustomAlertViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1D0FD0429DBE6A500AB1295 /* CustomAlertViewController.swift */; };
@@ -30,22 +20,14 @@
 		F1DECA7F29D40C05001C758F /* MenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1DECA7E29D40C05001C758F /* MenuView.swift */; };
 		F1DECA8129D40C17001C758F /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1DECA8029D40C17001C758F /* MenuViewController.swift */; };
 		F1DECA8329D42629001C758F /* ContainerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1DECA8229D42629001C758F /* ContainerViewController.swift */; };
+		F1F4F87929F4C7F80096F77F /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1F4F87829F4C7F80096F77F /* Extensions.swift */; };
+		F1F4F87D29F4CF980096F77F /* AlertTitleButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1F4F87C29F4CF980096F77F /* AlertTitleButton.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		3D89FE3648EDD3FB1AFC9369 /* Pods_TeamProject.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TeamProject.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		50FEC4B61C2395ABF26807A6 /* Pods-TeamProject.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TeamProject.release.xcconfig"; path = "Target Support Files/Pods-TeamProject/Pods-TeamProject.release.xcconfig"; sourceTree = "<group>"; };
 		6B2D016BBEDCFC94DBC0DD40 /* Pods-TeamProject.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TeamProject.debug.xcconfig"; path = "Target Support Files/Pods-TeamProject/Pods-TeamProject.debug.xcconfig"; sourceTree = "<group>"; };
-		B0E3EE0229F681AA00E6737C /* HamburgerSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HamburgerSettings.swift; sourceTree = "<group>"; };
-		B0E3EE0429F681D200E6737C /* HamburgerSettingsDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HamburgerSettingsDataManager.swift; sourceTree = "<group>"; };
-		B0E3EE0629F681FF00E6737C /* HamburgerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HamburgerViewController.swift; sourceTree = "<group>"; };
-		B0E3EE0829F6827500E6737C /* HamburgerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HamburgerView.swift; sourceTree = "<group>"; };
-		B0E3EE0A29F682D600E6737C /* HamburgerTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HamburgerTableViewCell.swift; sourceTree = "<group>"; };
-		B0E3EE0C29F6832600E6737C /* AccountViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountViewController.swift; sourceTree = "<group>"; };
-		B0E3EE0E29F6833D00E6737C /* AccountView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountView.swift; sourceTree = "<group>"; };
-		B0E3EE1129F69A3A00E6737C /* MemoCheckListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoCheckListTableViewCell.swift; sourceTree = "<group>"; };
-		B0E3EE1329F69AA400E6737C /* MemoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoView.swift; sourceTree = "<group>"; };
-		B0E3EE1529F69AC400E6737C /* MemoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoViewController.swift; sourceTree = "<group>"; };
 		F117F5D729E2777300A44FCC /* MonthlyNavigationStackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MonthlyNavigationStackView.swift; sourceTree = "<group>"; };
 		F1D0FD0429DBE6A500AB1295 /* CustomAlertViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomAlertViewController.swift; sourceTree = "<group>"; };
 		F1D0FD0629DBE9B000AB1295 /* CustomAlertView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomAlertView.swift; sourceTree = "<group>"; };
@@ -60,6 +42,8 @@
 		F1DECA7E29D40C05001C758F /* MenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuView.swift; sourceTree = "<group>"; };
 		F1DECA8029D40C17001C758F /* MenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
 		F1DECA8229D42629001C758F /* ContainerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContainerViewController.swift; sourceTree = "<group>"; };
+		F1F4F87829F4C7F80096F77F /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		F1F4F87C29F4CF980096F77F /* AlertTitleButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertTitleButton.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -91,24 +75,6 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
-		B0E3EE0129F6805800E6737C /* Models */ = {
-			isa = PBXGroup;
-			children = (
-				B0E3EE0229F681AA00E6737C /* HamburgerSettings.swift */,
-				B0E3EE0429F681D200E6737C /* HamburgerSettingsDataManager.swift */,
-			);
-			path = Models;
-			sourceTree = "<group>";
-		};
-		B0E3EE1029F6853100E6737C /* Cells */ = {
-			isa = PBXGroup;
-			children = (
-				B0E3EE0A29F682D600E6737C /* HamburgerTableViewCell.swift */,
-				B0E3EE1129F69A3A00E6737C /* MemoCheckListTableViewCell.swift */,
-			);
-			path = Cells;
-			sourceTree = "<group>";
-		};
 		F1DECA5A29D3CC8B001C758F = {
 			isa = PBXGroup;
 			children = (
@@ -132,9 +98,9 @@
 			children = (
 				F1DECA6629D3CC8B001C758F /* AppDelegate.swift */,
 				F1DECA6829D3CC8B001C758F /* SceneDelegate.swift */,
-				B0E3EE0129F6805800E6737C /* Models */,
 				F1DECA7C29D40B87001C758F /* Views */,
 				F1DECA7D29D40B94001C758F /* Controllers */,
+				F1F4F87729F4C7D80096F77F /* Utilities */,
 				F1DECA6F29D3CC8C001C758F /* Assets.xcassets */,
 				F1DECA7129D3CC8C001C758F /* LaunchScreen.storyboard */,
 				F1DECA7429D3CC8C001C758F /* Info.plist */,
@@ -149,10 +115,6 @@
 				F1DECA7A29D3E259001C758F /* CalendarView.swift */,
 				F1DECA7E29D40C05001C758F /* MenuView.swift */,
 				F1D0FD0629DBE9B000AB1295 /* CustomAlertView.swift */,
-				B0E3EE1329F69AA400E6737C /* MemoView.swift */,
-				B0E3EE0829F6827500E6737C /* HamburgerView.swift */,
-				B0E3EE0E29F6833D00E6737C /* AccountView.swift */,
-				B0E3EE1029F6853100E6737C /* Cells */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -164,11 +126,17 @@
 				F1DECA6A29D3CC8B001C758F /* MonthlyViewController.swift */,
 				F1DECA8029D40C17001C758F /* MenuViewController.swift */,
 				F1D0FD0429DBE6A500AB1295 /* CustomAlertViewController.swift */,
-				B0E3EE1529F69AC400E6737C /* MemoViewController.swift */,
-				B0E3EE0629F681FF00E6737C /* HamburgerViewController.swift */,
-				B0E3EE0C29F6832600E6737C /* AccountViewController.swift */,
 			);
 			path = Controllers;
+			sourceTree = "<group>";
+		};
+		F1F4F87729F4C7D80096F77F /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				F1F4F87829F4C7F80096F77F /* Extensions.swift */,
+				F1F4F87C29F4CF980096F77F /* AlertTitleButton.swift */,
+			);
+			path = Utilities;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -285,25 +253,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B0E3EE0329F681AA00E6737C /* HamburgerSettings.swift in Sources */,
 				F1DECA7F29D40C05001C758F /* MenuView.swift in Sources */,
-				B0E3EE0D29F6832600E6737C /* AccountViewController.swift in Sources */,
-				B0E3EE0F29F6833D00E6737C /* AccountView.swift in Sources */,
-				B0E3EE1229F69A3A00E6737C /* MemoCheckListTableViewCell.swift in Sources */,
-				B0E3EE0729F681FF00E6737C /* HamburgerViewController.swift in Sources */,
-				B0E3EE1429F69AA400E6737C /* MemoView.swift in Sources */,
 				F1DECA8129D40C17001C758F /* MenuViewController.swift in Sources */,
-				B0E3EE0929F6827500E6737C /* HamburgerView.swift in Sources */,
 				F1DECA8329D42629001C758F /* ContainerViewController.swift in Sources */,
 				F1D0FD0729DBE9B000AB1295 /* CustomAlertView.swift in Sources */,
-				B0E3EE0B29F682D600E6737C /* HamburgerTableViewCell.swift in Sources */,
-				B0E3EE1629F69AC400E6737C /* MemoViewController.swift in Sources */,
 				F1DECA6B29D3CC8B001C758F /* MonthlyViewController.swift in Sources */,
 				F117F5D829E2777300A44FCC /* MonthlyNavigationStackView.swift in Sources */,
 				F1DECA6729D3CC8B001C758F /* AppDelegate.swift in Sources */,
+				F1F4F87D29F4CF980096F77F /* AlertTitleButton.swift in Sources */,
 				F1D0FD0529DBE6A500AB1295 /* CustomAlertViewController.swift in Sources */,
 				F1DECA7B29D3E259001C758F /* CalendarView.swift in Sources */,
-				B0E3EE0529F681D200E6737C /* HamburgerSettingsDataManager.swift in Sources */,
+				F1F4F87929F4C7F80096F77F /* Extensions.swift in Sources */,
 				F1DECA6929D3CC8B001C758F /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

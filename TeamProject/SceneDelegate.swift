@@ -16,18 +16,9 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         guard let windowScene = (scene as? UIWindowScene) else { return }
         
         let window = UIWindow(windowScene: windowScene)
-        
-        // 👀 시작 ViewController
-        let rootViewController = MemoViewController()
-        
-        let naviVC = UINavigationController(rootViewController: rootViewController)
-        
-        window.rootViewController = naviVC
+        window.rootViewController = ContainerViewController()
         window.makeKeyAndVisible()
         self.window = window
-    
-        
-        
     }
 
 
