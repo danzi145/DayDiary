@@ -7,10 +7,10 @@
 
 import UIKit
 
-class AccountViewController: UIViewController {
+class AcViewController: UIViewController {
     
     // MARK: - AccountView의 인스턴스
-    private let accountView = AccountView()
+    private let accountView = AcView()
     
     override func loadView() {
         view = accountView
