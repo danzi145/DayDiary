@@ -100,7 +100,7 @@
 				F1DECA6829D3CC8B001C758F /* SceneDelegate.swift */,
 				F1DECA7C29D40B87001C758F /* Views */,
 				F1DECA7D29D40B94001C758F /* Controllers */,
-				F1F4F87729F4C7D80096F77F /* Utilis */,
+				F1F4F87729F4C7D80096F77F /* Utilities */,
 				F1DECA6F29D3CC8C001C758F /* Assets.xcassets */,
 				F1DECA7129D3CC8C001C758F /* LaunchScreen.storyboard */,
 				F1DECA7429D3CC8C001C758F /* Info.plist */,
@@ -130,13 +130,13 @@
 			path = Controllers;
 			sourceTree = "<group>";
 		};
-		F1F4F87729F4C7D80096F77F /* Utilis */ = {
+		F1F4F87729F4C7D80096F77F /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
 				F1F4F87829F4C7F80096F77F /* Extensions.swift */,
 				F1F4F87C29F4CF980096F77F /* AlertTitleButton.swift */,
 			);
-			path = Utilis;
+			path = Utilities;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -404,6 +404,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = JY9QH7G8BB;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = TeamProject/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -435,6 +436,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = JY9QH7G8BB;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = TeamProject/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
