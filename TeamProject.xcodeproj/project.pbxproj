@@ -7,6 +7,16 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		BF237BE929FBFC9B006DB129 /* AcView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF237BE829FBFC9B006DB129 /* AcView.swift */; };
+		BF237BEB29FBFCE1006DB129 /* PersonalInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF237BEA29FBFCE1006DB129 /* PersonalInfoView.swift */; };
+		BF237BED29FBFD00006DB129 /* OpenSourceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF237BEC29FBFD00006DB129 /* OpenSourceView.swift */; };
+		BF237BEF29FBFD2C006DB129 /* SetPasswordView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF237BEE29FBFD2C006DB129 /* SetPasswordView.swift */; };
+		BF237BF129FBFD50006DB129 /* AppPasswordView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF237BF029FBFD50006DB129 /* AppPasswordView.swift */; };
+		BF237BF329FBFD7F006DB129 /* AcViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF237BF229FBFD7F006DB129 /* AcViewController.swift */; };
+		BF237BF529FBFDC9006DB129 /* PersonalInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF237BF429FBFDC9006DB129 /* PersonalInfoViewController.swift */; };
+		BF237BF729FBFDE9006DB129 /* OpenSourceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF237BF629FBFDE9006DB129 /* OpenSourceViewController.swift */; };
+		BF237BF929FBFE10006DB129 /* SetPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF237BF829FBFE10006DB129 /* SetPasswordViewController.swift */; };
+		BF237BFB29FBFE38006DB129 /* AppPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF237BFA29FBFE38006DB129 /* AppPasswordViewController.swift */; };
 		C92797C77B52716E7BB699DD /* Pods_TeamProject.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3D89FE3648EDD3FB1AFC9369 /* Pods_TeamProject.framework */; };
 		F117F5D829E2777300A44FCC /* MonthlyNavigationStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F117F5D729E2777300A44FCC /* MonthlyNavigationStackView.swift */; };
 		F1D0FD0529DBE6A500AB1295 /* CustomAlertViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1D0FD0429DBE6A500AB1295 /* CustomAlertViewController.swift */; };
@@ -26,6 +36,16 @@
 		3D89FE3648EDD3FB1AFC9369 /* Pods_TeamProject.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TeamProject.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		50FEC4B61C2395ABF26807A6 /* Pods-TeamProject.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TeamProject.release.xcconfig"; path = "Target Support Files/Pods-TeamProject/Pods-TeamProject.release.xcconfig"; sourceTree = "<group>"; };
 		6B2D016BBEDCFC94DBC0DD40 /* Pods-TeamProject.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TeamProject.debug.xcconfig"; path = "Target Support Files/Pods-TeamProject/Pods-TeamProject.debug.xcconfig"; sourceTree = "<group>"; };
+		BF237BE829FBFC9B006DB129 /* AcView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AcView.swift; sourceTree = "<group>"; };
+		BF237BEA29FBFCE1006DB129 /* PersonalInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonalInfoView.swift; sourceTree = "<group>"; };
+		BF237BEC29FBFD00006DB129 /* OpenSourceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenSourceView.swift; sourceTree = "<group>"; };
+		BF237BEE29FBFD2C006DB129 /* SetPasswordView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetPasswordView.swift; sourceTree = "<group>"; };
+		BF237BF029FBFD50006DB129 /* AppPasswordView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppPasswordView.swift; sourceTree = "<group>"; };
+		BF237BF229FBFD7F006DB129 /* AcViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AcViewController.swift; sourceTree = "<group>"; };
+		BF237BF429FBFDC9006DB129 /* PersonalInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonalInfoViewController.swift; sourceTree = "<group>"; };
+		BF237BF629FBFDE9006DB129 /* OpenSourceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenSourceViewController.swift; sourceTree = "<group>"; };
+		BF237BF829FBFE10006DB129 /* SetPasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetPasswordViewController.swift; sourceTree = "<group>"; };
+		BF237BFA29FBFE38006DB129 /* AppPasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppPasswordViewController.swift; sourceTree = "<group>"; };
 		F117F5D729E2777300A44FCC /* MonthlyNavigationStackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MonthlyNavigationStackView.swift; sourceTree = "<group>"; };
 		F1D0FD0429DBE6A500AB1295 /* CustomAlertViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomAlertViewController.swift; sourceTree = "<group>"; };
 		F1D0FD0629DBE9B000AB1295 /* CustomAlertView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomAlertView.swift; sourceTree = "<group>"; };
@@ -110,6 +130,11 @@
 				F1DECA7A29D3E259001C758F /* CalendarView.swift */,
 				F1DECA7E29D40C05001C758F /* MenuView.swift */,
 				F1D0FD0629DBE9B000AB1295 /* CustomAlertView.swift */,
+				BF237BE829FBFC9B006DB129 /* AcView.swift */,
+				BF237BEA29FBFCE1006DB129 /* PersonalInfoView.swift */,
+				BF237BEC29FBFD00006DB129 /* OpenSourceView.swift */,
+				BF237BEE29FBFD2C006DB129 /* SetPasswordView.swift */,
+				BF237BF029FBFD50006DB129 /* AppPasswordView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -121,6 +146,11 @@
 				F1DECA6A29D3CC8B001C758F /* MonthlyViewController.swift */,
 				F1DECA8029D40C17001C758F /* MenuViewController.swift */,
 				F1D0FD0429DBE6A500AB1295 /* CustomAlertViewController.swift */,
+				BF237BF229FBFD7F006DB129 /* AcViewController.swift */,
+				BF237BF429FBFDC9006DB129 /* PersonalInfoViewController.swift */,
+				BF237BF629FBFDE9006DB129 /* OpenSourceViewController.swift */,
+				BF237BF829FBFE10006DB129 /* SetPasswordViewController.swift */,
+				BF237BFA29FBFE38006DB129 /* AppPasswordViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -239,14 +269,24 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BF237BEF29FBFD2C006DB129 /* SetPasswordView.swift in Sources */,
+				BF237BEB29FBFCE1006DB129 /* PersonalInfoView.swift in Sources */,
+				BF237BED29FBFD00006DB129 /* OpenSourceView.swift in Sources */,
+				BF237BF129FBFD50006DB129 /* AppPasswordView.swift in Sources */,
+				BF237BF529FBFDC9006DB129 /* PersonalInfoViewController.swift in Sources */,
+				BF237BFB29FBFE38006DB129 /* AppPasswordViewController.swift in Sources */,
+				BF237BF329FBFD7F006DB129 /* AcViewController.swift in Sources */,
 				F1DECA7F29D40C05001C758F /* MenuView.swift in Sources */,
 				F1DECA8129D40C17001C758F /* MenuViewController.swift in Sources */,
 				F1DECA8329D42629001C758F /* ContainerViewController.swift in Sources */,
 				F1D0FD0729DBE9B000AB1295 /* CustomAlertView.swift in Sources */,
 				F1DECA6B29D3CC8B001C758F /* MonthlyViewController.swift in Sources */,
+				BF237BF729FBFDE9006DB129 /* OpenSourceViewController.swift in Sources */,
 				F117F5D829E2777300A44FCC /* MonthlyNavigationStackView.swift in Sources */,
+				BF237BF929FBFE10006DB129 /* SetPasswordViewController.swift in Sources */,
 				F1DECA6729D3CC8B001C758F /* AppDelegate.swift in Sources */,
 				F1D0FD0529DBE6A500AB1295 /* CustomAlertViewController.swift in Sources */,
+				BF237BE929FBFC9B006DB129 /* AcView.swift in Sources */,
 				F1DECA7B29D3E259001C758F /* CalendarView.swift in Sources */,
 				F1DECA6929D3CC8B001C758F /* SceneDelegate.swift in Sources */,
 			);

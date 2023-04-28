@@ -1,14 +1,14 @@
 //
-//  OpenSourceViewController.swift
-//  DayDiary
+//  OpenSourceView.swift
+//  TeamProject
 //
-//  Created by 남현준 on 2023/03/29.
+//  Created by 남현준 on 2023/04/28.
 //
 
 import UIKit
 
-class OpenSourceViewController: UIViewController {
-
+class OpenSourceView: UIView {
+    
     // MARK: - 상단
     private let openSourceLabel: UILabel = {
         let label = UILabel()
@@ -19,15 +19,14 @@ class OpenSourceViewController: UIViewController {
     }()
     
     // 뒤로가기 버튼
-    private let backBtn: UIButton = {
+    let backBtn: UIButton = {
          let button = UIButton()
          button.setImage(UIImage(systemName: "chevron.left"), for: .normal)
          button.tintColor = UIColor.black
-         button.addTarget(self, action: #selector(backButtonTapped), for: .touchUpInside)
          return button
      }()
     
-    
+    // MARK: - 오픈소스 라이브러리 버튼
     private let openSourceButton: UIButton = {
         let button = UIButton()
         button.setTitle("FSCalendar", for: .normal)
@@ -35,6 +34,7 @@ class OpenSourceViewController: UIViewController {
         return button
     }()
     
+    // MARK: - 오픈소스 라이브러리 이름 옆 Circle이미지
     private let titleDotImg: UIImageView = {
         let image = UIImageView()
         image.image = UIImage(systemName: "circle.fill")
@@ -42,6 +42,7 @@ class OpenSourceViewController: UIViewController {
         return image
     }()
     
+    // MARK: - Circle이미지와 오픈소스 라이브러리 버튼을 묶은 스택뷰
     lazy var stackView: UIStackView = {
         let st = UIStackView(arrangedSubviews: [titleDotImg, openSourceButton])
 //        st.spacing = 1
@@ -51,20 +52,22 @@ class OpenSourceViewController: UIViewController {
         return st
     }()
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
-        setAutoLayout()
+    override init(frame: CGRect) {
+        super.init(frame: frame)
         
+        setAutoLayout()
     }
     
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
     
     func setAutoLayout() {
         
-        view.backgroundColor = .white
-        view.addSubview(stackView)
-        view.addSubview(openSourceLabel)
-        view.addSubview(backBtn)
+        backgroundColor = .white
+        addSubview(stackView)
+        addSubview(openSourceLabel)
+        addSubview(backBtn)
         
         stackView.translatesAutoresizingMaskIntoConstraints = false
         openSourceLabel.translatesAutoresizingMaskIntoConstraints = false
@@ -73,16 +76,16 @@ class OpenSourceViewController: UIViewController {
         
         
         NSLayoutConstraint.activate([
-            openSourceLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 139),
-            openSourceLabel.topAnchor.constraint(equalTo: view.topAnchor, constant: 64),
+            openSourceLabel.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 139),
+            openSourceLabel.topAnchor.constraint(equalTo: self.topAnchor, constant: 64),
             
-            backBtn.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 16),
-            backBtn.topAnchor.constraint(equalTo: view.topAnchor, constant: 61),
+            backBtn.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 16),
+            backBtn.topAnchor.constraint(equalTo: self.topAnchor, constant: 61),
             backBtn.heightAnchor.constraint(equalToConstant: 24),
             backBtn.widthAnchor.constraint(equalToConstant: 24),
             
-            stackView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 22),
-            stackView.topAnchor.constraint(equalTo: view.topAnchor, constant: 122),
+            stackView.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 22),
+            stackView.topAnchor.constraint(equalTo: self.topAnchor, constant: 122),
             stackView.widthAnchor.constraint(equalToConstant: 120),
             stackView.heightAnchor.constraint(equalToConstant: 20),
             
@@ -93,10 +96,4 @@ class OpenSourceViewController: UIViewController {
         ])
         
     }
-
-    // 이전 화면으로 넘어가는 함수
-    @objc func backButtonTapped() {
-        dismiss(animated: true, completion: nil)
-    }
-    
 }

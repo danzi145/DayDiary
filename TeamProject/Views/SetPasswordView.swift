@@ -1,16 +1,13 @@
 //
-//  SetPasswordViewController.swift
-//  DayDiary
+//  SetPasswordView.swift
+//  TeamProject
 //
-//  Created by 남현준 on 2023/04/01.
+//  Created by 남현준 on 2023/04/28.
 //
 
 import UIKit
 
-
-class SetPasswordViewController: UIViewController {
-    
-    
+class SetPasswordView: UIView {
     
     // MARK: - 상단
     private let accountLabel: UILabel = {
@@ -21,11 +18,11 @@ class SetPasswordViewController: UIViewController {
          return label
      }()
     
-    private let backBtn: UIButton = {
+    // 상단의 뒤로가기 버튼
+    let backBtn: UIButton = {
          let button = UIButton()
          button.setImage(UIImage(systemName: "chevron.left"), for: .normal)
          button.tintColor = UIColor.black
-        button.addTarget(self, action: #selector(backButtonTapped), for: .touchUpInside)
          return button
      }()
     
@@ -142,7 +139,7 @@ class SetPasswordViewController: UIViewController {
     
     //MARK: - 버튼
     // 변경 버튼
-    private let changeButton: UIButton = {
+    let changeButton: UIButton = {
         let button = UIButton()
         button.setTitle("변경", for: .normal)
         button.backgroundColor = #colorLiteral(red: 0.8797428012, green: 0.8797428012, blue: 0.8797428012, alpha: 1)
@@ -150,7 +147,6 @@ class SetPasswordViewController: UIViewController {
         button.titleLabel?.font = UIFont.systemFont(ofSize: 12)
         button.isEnabled = false
         button.layer.cornerRadius = 8
-        button.addTarget(SetPasswordViewController.self, action: #selector(changeButtonTapped), for: .touchUpInside)
         return button
     }()
     
@@ -164,34 +160,35 @@ class SetPasswordViewController: UIViewController {
         return button
     }()
 
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        
-        currentPasswordTextField.delegate = self
-        firstChangePasswordTextField.delegate = self
-        secondChangePasswordTextField.delegate = self
-        
-        
+    override init(frame: CGRect) {
+        super.init(frame: frame)
         
         setAutoLayout()
-        
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
     }
     
     
     func setAutoLayout() {
-        view.backgroundColor = UIColor.white
-        view.addSubview(backBtn)
-        view.addSubview(accountLabel)
-        view.addSubview(currentPasswordLabel)
-        view.addSubview(currentPasswordTextFieldView)
-        view.addSubview(changePasswordLabel)
-        view.addSubview(firstChangePasswordTextFieldView)
-        view.addSubview(secondChangePasswordTextFieldView)
-        view.addSubview(changeButton)
-        view.addSubview(currentPasswordTextField)
-        view.addSubview(firstChangePasswordTextField)
-        view.addSubview(secondChangePasswordTextField)
-        view.addSubview(passwordSecureButton)
+        backgroundColor = UIColor.white
+        currentPasswordTextField.delegate = self
+        firstChangePasswordTextField.delegate = self
+        secondChangePasswordTextField.delegate = self
+        
+        addSubview(backBtn)
+        addSubview(accountLabel)
+        addSubview(currentPasswordLabel)
+        addSubview(currentPasswordTextFieldView)
+        addSubview(changePasswordLabel)
+        addSubview(firstChangePasswordTextFieldView)
+        addSubview(secondChangePasswordTextFieldView)
+        addSubview(changeButton)
+        currentPasswordTextFieldView.addSubview(currentPasswordTextField)
+        firstChangePasswordTextFieldView.addSubview(firstChangePasswordTextField)
+        secondChangePasswordTextFieldView.addSubview(secondChangePasswordTextField)
+        firstChangePasswordTextField.addSubview(passwordSecureButton)
         
         accountLabel.translatesAutoresizingMaskIntoConstraints = false
         backBtn.translatesAutoresizingMaskIntoConstraints = false
@@ -209,21 +206,21 @@ class SetPasswordViewController: UIViewController {
         
         NSLayoutConstraint.activate([
         
-            accountLabel.topAnchor.constraint(equalTo: view.topAnchor, constant: 64),
-            accountLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            accountLabel.topAnchor.constraint(equalTo: self.topAnchor, constant: 64),
+            accountLabel.centerXAnchor.constraint(equalTo: self.centerXAnchor),
             
-            backBtn.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 16),
-            backBtn.topAnchor.constraint(equalTo: view.topAnchor, constant: 61),
+            backBtn.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 16),
+            backBtn.topAnchor.constraint(equalTo: self.topAnchor, constant: 61),
             backBtn.heightAnchor.constraint(equalToConstant: 24),
             backBtn.widthAnchor.constraint(equalToConstant: 24),
             
 
             
-            currentPasswordLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 16),
-            currentPasswordLabel.topAnchor.constraint(equalTo: view.topAnchor, constant: 186),
+            currentPasswordLabel.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 16),
+            currentPasswordLabel.topAnchor.constraint(equalTo: self.topAnchor, constant: 186),
             
-            currentPasswordTextFieldView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 16),
-            currentPasswordTextFieldView.topAnchor.constraint(equalTo: view.topAnchor, constant: 211),
+            currentPasswordTextFieldView.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 16),
+            currentPasswordTextFieldView.topAnchor.constraint(equalTo: self.topAnchor, constant: 211),
             currentPasswordTextFieldView.widthAnchor.constraint(equalToConstant: 361),
             currentPasswordTextFieldView.heightAnchor.constraint(equalToConstant: 42),
             
@@ -231,13 +228,13 @@ class SetPasswordViewController: UIViewController {
             currentPasswordTextField.centerYAnchor.constraint(equalTo: currentPasswordTextFieldView.centerYAnchor),
             currentPasswordTextField.widthAnchor.constraint(equalToConstant: 361),
             currentPasswordTextField.heightAnchor.constraint(equalToConstant: 42),
-            currentPasswordTextField.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 30),
+            currentPasswordTextField.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 30),
             
-            changePasswordLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 16),
-            changePasswordLabel.topAnchor.constraint(equalTo: view.topAnchor, constant: 281),
+            changePasswordLabel.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 16),
+            changePasswordLabel.topAnchor.constraint(equalTo: self.topAnchor, constant: 281),
             
-            firstChangePasswordTextFieldView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 16),
-            firstChangePasswordTextFieldView.topAnchor.constraint(equalTo: view.topAnchor, constant: 306),
+            firstChangePasswordTextFieldView.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 16),
+            firstChangePasswordTextFieldView.topAnchor.constraint(equalTo: self.topAnchor, constant: 306),
             firstChangePasswordTextFieldView.widthAnchor.constraint(equalToConstant: 361),
             firstChangePasswordTextFieldView.heightAnchor.constraint(equalToConstant: 42),
             
@@ -245,11 +242,11 @@ class SetPasswordViewController: UIViewController {
             firstChangePasswordTextField.centerYAnchor.constraint(equalTo: firstChangePasswordTextFieldView.centerYAnchor),
             firstChangePasswordTextField.widthAnchor.constraint(equalToConstant: 361),
             firstChangePasswordTextField.heightAnchor.constraint(equalToConstant: 42),
-            firstChangePasswordTextField.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 30),
+            firstChangePasswordTextField.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 30),
             
             
-            secondChangePasswordTextFieldView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 16),
-            secondChangePasswordTextFieldView.topAnchor.constraint(equalTo: view.topAnchor, constant: 360),
+            secondChangePasswordTextFieldView.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 16),
+            secondChangePasswordTextFieldView.topAnchor.constraint(equalTo: self.topAnchor, constant: 360),
             secondChangePasswordTextFieldView.widthAnchor.constraint(equalToConstant: 361),
             secondChangePasswordTextFieldView.heightAnchor.constraint(equalToConstant: 42),
             
@@ -257,48 +254,37 @@ class SetPasswordViewController: UIViewController {
             secondChangePasswordTextField.centerYAnchor.constraint(equalTo: secondChangePasswordTextFieldView.centerYAnchor),
             secondChangePasswordTextField.widthAnchor.constraint(equalToConstant: 361),
             secondChangePasswordTextField.heightAnchor.constraint(equalToConstant: 42),
-            secondChangePasswordTextField.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 30),
+            secondChangePasswordTextField.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 30),
             
-            changeButton.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 16),
-            changeButton.topAnchor.constraint(equalTo: view.topAnchor, constant: 453),
+            changeButton.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 16),
+            changeButton.topAnchor.constraint(equalTo: self.topAnchor, constant: 453),
             changeButton.widthAnchor.constraint(equalToConstant: 361),
             changeButton.heightAnchor.constraint(equalToConstant: 42),
             
-            passwordSecureButton.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 341),
-            passwordSecureButton.topAnchor.constraint(equalTo: view.topAnchor, constant: 318),
+            passwordSecureButton.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 341),
+            passwordSecureButton.topAnchor.constraint(equalTo: self.topAnchor, constant: 318),
             passwordSecureButton.widthAnchor.constraint(equalToConstant: 28),
             passwordSecureButton.heightAnchor.constraint(equalToConstant: 21)
         ])
         
     }
-    
+
     @objc func passwordSecureModeSetting() {
         secondChangePasswordTextField.isSecureTextEntry.toggle()
         firstChangePasswordTextField.isSecureTextEntry.toggle()
         passwordSecureButton.isSelected.toggle()
     }
     
-    // 이전 화면으로 넘어가는 함수
-    @objc func backButtonTapped() {
-        dismiss(animated: true, completion: nil)
-    }
-    
-    // 변경 버튼 누르면 동작하는 함수
-    @objc func changeButtonTapped() {
-        // 서버랑 통신해서, 다음 화면으로 넘어가는 내용 구현
-        print("다음 화면으로 넘어가기")
-    }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-        self.view.endEditing(true)
+        self.endEditing(true)
     }
+
+    
 }
 
+extension SetPasswordView: UITextFieldDelegate {
 
-
-extension SetPasswordViewController: UITextFieldDelegate {
-    
-    
     // 포커스시 placeholder 텍스트 지우기
     func textFieldDidBeginEditing(_ textField: UITextField) {
         textField.placeholder = nil
