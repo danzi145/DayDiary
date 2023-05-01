@@ -12,53 +12,37 @@ class MemoCheckListTableViewCell: UITableViewCell {
     static let id = "MemoCheckListTableViewCell"
     
     
-    
-    var isCheck: Bool = false {
-        didSet {
-            let imageName = isCheck ? "square" : "checkmark.square"
-            let imageConfig = UIImage.SymbolConfiguration(pointSize: 20, weight: .light)
-            checkButton.setImage(UIImage(systemName: imageName, withConfiguration: imageConfig ), for: .normal)
-        }
-    }
-    
-    
-    
-    let checkButton: UIButton = {
-        var button = UIButton()
+    lazy var checkButton: UIButton = {
+        let button = UIButton()
         button.tintColor = .black
-        button.backgroundColor = .white
-        button.isUserInteractionEnabled = false
+        button.setImage(UIImage(systemName: "checkmark.square", withConfiguration: UIImage.SymbolConfiguration(pointSize: 20)), for: .normal)
+        button.addTarget(self, action: #selector(checkButtonTapped), for: .touchUpInside)
         return button
     }()
     
     
     let listTextField: UITextField = {
-        var textField = UITextField()
-        textField.font = UIFont.systemFont(ofSize: 19)
+        let textField = UITextField()
+        textField.font = UIFont.systemFont(ofSize: 18)
         textField.backgroundColor = .white
         textField.textColor = .black
-//        textField.layer.borderColor = UIColor.blue.cgColor
-//        textField.layer.borderWidth = 1
+        textField.placeholder = "내용"
         return textField
     }()
     
-    lazy var checkListStackView: UIStackView = {
-        var stackView = UIStackView(arrangedSubviews: [checkButton, listTextField])
-        stackView.axis = .horizontal
-        stackView.spacing = 2
-        stackView.alignment = .fill
-        stackView.distribution = .fill
-        return stackView
+ 
+    lazy var deleteButton: UIButton = {
+        let button = UIButton()
+        button.tintColor = #colorLiteral(red: 0.5921568627, green: 0.5921568627, blue: 0.5921568627, alpha: 1)
+        button.setImage(UIImage(systemName: "multiply.circle", withConfiguration: UIImage.SymbolConfiguration(pointSize: 16)), for: .normal)
+        return button
     }()
     
     
     
     override func setSelected(_ selected: Bool, animated: Bool) {
             super.setSelected(selected, animated: animated)
-            isCheck.toggle()
         }
-    
-    
     
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
@@ -73,25 +57,43 @@ class MemoCheckListTableViewCell: UITableViewCell {
         fatalError("init(coder:) has not been implemented")
     }
     
+    // 체크버튼 클릭시 체크버튼 이미지 변경
+    @objc func checkButtonTapped() {
+        if checkButton.currentImage == UIImage(systemName: "checkmark.square", withConfiguration: UIImage.SymbolConfiguration(pointSize: 20)) {
+            checkButton.setImage(UIImage(systemName: "checkmark.square.fill", withConfiguration: UIImage.SymbolConfiguration(pointSize: 20)), for: .normal)
+        } else { checkButton.setImage(UIImage(systemName: "checkmark.square", withConfiguration: UIImage.SymbolConfiguration(pointSize: 20)), for: .normal)
+        }
+    }
 
+    
     // MARK: - 오토레이아웃
 
     func setAutoLayout() {
 
-        self.contentView.addSubview(checkListStackView)
+        self.contentView.addSubview(checkButton)
+        self.addSubview(listTextField)
+        self.addSubview(deleteButton)
         
         checkButton.translatesAutoresizingMaskIntoConstraints = false
         listTextField.translatesAutoresizingMaskIntoConstraints = false
-        checkListStackView.translatesAutoresizingMaskIntoConstraints = false
+        deleteButton.translatesAutoresizingMaskIntoConstraints = false
         
         NSLayoutConstraint.activate([
             
-            checkButton.widthAnchor.constraint(equalToConstant: 30),
+            checkButton.topAnchor.constraint(equalTo: self.contentView.topAnchor),
+            checkButton.bottomAnchor.constraint(equalTo: self.contentView.bottomAnchor),
+            checkButton.leadingAnchor.constraint(equalTo: self.contentView.leadingAnchor, constant: 2),
+            checkButton.widthAnchor.constraint(equalToConstant: 25),
             
-            checkListStackView.topAnchor.constraint(equalTo: self.contentView.topAnchor),
-            checkListStackView.leadingAnchor.constraint(equalTo: self.contentView.leadingAnchor, constant: 5),
-            checkListStackView.trailingAnchor.constraint(equalTo: self.contentView.trailingAnchor, constant: 0),
-            checkListStackView.bottomAnchor.constraint(equalTo: self.contentView.bottomAnchor),
+            listTextField.topAnchor.constraint(equalTo: self.topAnchor),
+            listTextField.bottomAnchor.constraint(equalTo: self.bottomAnchor),
+            listTextField.leadingAnchor.constraint(equalTo: checkButton.trailingAnchor, constant: 2),
+            listTextField.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -20),
+            
+            deleteButton.topAnchor.constraint(equalTo: self.topAnchor),
+            deleteButton.bottomAnchor.constraint(equalTo: self.bottomAnchor),
+            deleteButton.leadingAnchor.constraint(equalTo: listTextField.trailingAnchor),
+            deleteButton.trailingAnchor.constraint(equalTo: self.trailingAnchor)
         ])
     }
 }

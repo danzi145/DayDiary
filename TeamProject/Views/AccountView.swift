@@ -16,13 +16,13 @@ class AccountView: UIView {
     // MARK: - 이메일 화면 뷰
 
     private let emailView: UIView = {
-        var view = UIView()
+        let view = UIView()
         view.backgroundColor = #colorLiteral(red: 0.8797428608, green: 0.8797428012, blue: 0.8797428608, alpha: 1)
         return view
     }()
     
     private let emailNambeLabel: UILabel = {
-        var label = UILabel()
+        let label = UILabel()
         label.font = UIFont.systemFont(ofSize: 15)
         label.textColor = .black
         label.text = "연동된 이메일"
@@ -30,7 +30,7 @@ class AccountView: UIView {
     }()
     
     private let emailLabel: UILabel = {
-        var label = UILabel()
+        let label = UILabel()
         label.font = UIFont.systemFont(ofSize: 18)
         label.numberOfLines = 2
         label.textColor = .black

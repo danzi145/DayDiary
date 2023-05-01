@@ -9,14 +9,12 @@
 /* Begin PBXBuildFile section */
 		B09C7C5129E91C0E0035561F /* HamburgerSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = B09C7C5029E91C0E0035561F /* HamburgerSettings.swift */; };
 		B09C7C5329E91DA60035561F /* HamburgerSettingsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B09C7C5229E91DA60035561F /* HamburgerSettingsManager.swift */; };
-		B09C7C5529E91DEB0035561F /* MemoCellType.swift in Sources */ = {isa = PBXBuildFile; fileRef = B09C7C5429E91DEB0035561F /* MemoCellType.swift */; };
 		B09C7C5729E91FD10035561F /* HambergurSettingsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B09C7C5629E91FD10035561F /* HambergurSettingsCell.swift */; };
 		B09C7C5929E91FFF0035561F /* AccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B09C7C5829E91FFF0035561F /* AccountViewController.swift */; };
 		B09C7C5B29E920150035561F /* AccountView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B09C7C5A29E920150035561F /* AccountView.swift */; };
 		B09C7C5E29E920E40035561F /* HamburgerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B09C7C5D29E920E40035561F /* HamburgerView.swift */; };
 		B09C7C6029E921460035561F /* HamburgerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B09C7C5F29E921460035561F /* HamburgerViewController.swift */; };
 		B09C7C6229E922060035561F /* MemoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B09C7C6129E922060035561F /* MemoViewController.swift */; };
-		B09C7C6429E922350035561F /* MemoTextTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B09C7C6329E922350035561F /* MemoTextTableCell.swift */; };
 		B09C7C6629E9233B0035561F /* MemoCheckListTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B09C7C6529E9233B0035561F /* MemoCheckListTableCell.swift */; };
 		B09C7C6829E9236D0035561F /* MemoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B09C7C6729E9236D0035561F /* MemoView.swift */; };
 		C92797C77B52716E7BB699DD /* Pods_TeamProject.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3D89FE3648EDD3FB1AFC9369 /* Pods_TeamProject.framework */; };
@@ -40,14 +38,12 @@
 		6B2D016BBEDCFC94DBC0DD40 /* Pods-TeamProject.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TeamProject.debug.xcconfig"; path = "Target Support Files/Pods-TeamProject/Pods-TeamProject.debug.xcconfig"; sourceTree = "<group>"; };
 		B09C7C5029E91C0E0035561F /* HamburgerSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HamburgerSettings.swift; sourceTree = "<group>"; };
 		B09C7C5229E91DA60035561F /* HamburgerSettingsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HamburgerSettingsManager.swift; sourceTree = "<group>"; };
-		B09C7C5429E91DEB0035561F /* MemoCellType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoCellType.swift; sourceTree = "<group>"; };
 		B09C7C5629E91FD10035561F /* HambergurSettingsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HambergurSettingsCell.swift; sourceTree = "<group>"; };
 		B09C7C5829E91FFF0035561F /* AccountViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountViewController.swift; sourceTree = "<group>"; };
 		B09C7C5A29E920150035561F /* AccountView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountView.swift; sourceTree = "<group>"; };
 		B09C7C5D29E920E40035561F /* HamburgerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HamburgerView.swift; sourceTree = "<group>"; };
 		B09C7C5F29E921460035561F /* HamburgerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HamburgerViewController.swift; sourceTree = "<group>"; };
 		B09C7C6129E922060035561F /* MemoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoViewController.swift; sourceTree = "<group>"; };
-		B09C7C6329E922350035561F /* MemoTextTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoTextTableCell.swift; sourceTree = "<group>"; };
 		B09C7C6529E9233B0035561F /* MemoCheckListTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoCheckListTableCell.swift; sourceTree = "<group>"; };
 		B09C7C6729E9236D0035561F /* MemoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoView.swift; sourceTree = "<group>"; };
 		F117F5D729E2777300A44FCC /* MonthlyNavigationStackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MonthlyNavigationStackView.swift; sourceTree = "<group>"; };
@@ -100,7 +96,6 @@
 			children = (
 				B09C7C5029E91C0E0035561F /* HamburgerSettings.swift */,
 				B09C7C5229E91DA60035561F /* HamburgerSettingsManager.swift */,
-				B09C7C5429E91DEB0035561F /* MemoCellType.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -109,7 +104,6 @@
 			isa = PBXGroup;
 			children = (
 				B09C7C5629E91FD10035561F /* HambergurSettingsCell.swift */,
-				B09C7C6329E922350035561F /* MemoTextTableCell.swift */,
 				B09C7C6529E9233B0035561F /* MemoCheckListTableCell.swift */,
 			);
 			path = Cells;
@@ -154,8 +148,8 @@
 				F117F5D729E2777300A44FCC /* MonthlyNavigationStackView.swift */,
 				F1DECA7A29D3E259001C758F /* CalendarView.swift */,
 				F1DECA7E29D40C05001C758F /* MenuView.swift */,
-				B09C7C6729E9236D0035561F /* MemoView.swift */,
 				F1D0FD0629DBE9B000AB1295 /* CustomAlertView.swift */,
+				B09C7C6729E9236D0035561F /* MemoView.swift */,
 				B09C7C5D29E920E40035561F /* HamburgerView.swift */,
 				B09C7C5A29E920150035561F /* AccountView.swift */,
 				B09C7C5C29E920C10035561F /* Cells */,
@@ -300,11 +294,9 @@
 				B09C7C5729E91FD10035561F /* HambergurSettingsCell.swift in Sources */,
 				B09C7C6629E9233B0035561F /* MemoCheckListTableCell.swift in Sources */,
 				F1D0FD0729DBE9B000AB1295 /* CustomAlertView.swift in Sources */,
-				B09C7C6429E922350035561F /* MemoTextTableCell.swift in Sources */,
 				B09C7C6829E9236D0035561F /* MemoView.swift in Sources */,
 				B09C7C6229E922060035561F /* MemoViewController.swift in Sources */,
 				F1DECA6B29D3CC8B001C758F /* MonthlyViewController.swift in Sources */,
-				B09C7C5529E91DEB0035561F /* MemoCellType.swift in Sources */,
 				F117F5D829E2777300A44FCC /* MonthlyNavigationStackView.swift in Sources */,
 				F1DECA6729D3CC8B001C758F /* AppDelegate.swift in Sources */,
 				F1D0FD0529DBE6A500AB1295 /* CustomAlertViewController.swift in Sources */,

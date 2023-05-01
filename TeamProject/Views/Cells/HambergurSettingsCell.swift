@@ -25,7 +25,6 @@ final class HamburgerSettingsTableCell: UITableViewCell {
     }()
     
     
-    
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: .default, reuseIdentifier: reuseIdentifier)
         setAutoLayout()
@@ -57,9 +56,7 @@ final class HamburgerSettingsTableCell: UITableViewCell {
             settingsNameLabel.trailingAnchor.constraint(equalTo: self.contentView.trailingAnchor),
             settingsNameLabel.topAnchor.constraint(equalTo: self.logoimageView.topAnchor),
             settingsNameLabel.bottomAnchor.constraint(equalTo: self.logoimageView.bottomAnchor)
-            
         ])
-        
     }
 }
 

@@ -10,7 +10,7 @@ import UIKit
 class HamburgerView: UIView {
     
     let menuTableView: UITableView = {
-        var tabelview = UITableView()
+        let tabelview = UITableView()
         tabelview.backgroundColor = .white
         tabelview.rowHeight = 50
         tabelview.isScrollEnabled = false
@@ -18,8 +18,8 @@ class HamburgerView: UIView {
     }()
     
     
-    let versionLabel: UILabel = {
-        var label = UILabel()
+    private let versionLabel: UILabel = {
+        let label = UILabel()
         label.font = UIFont.systemFont(ofSize: 15)
         label.backgroundColor = .white
         label.textColor = .black
@@ -62,7 +62,6 @@ class HamburgerView: UIView {
             versionLabel.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 15),
             versionLabel.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -15),
             versionLabel.heightAnchor.constraint(equalToConstant: 20)
-
         ])
     }
 }
