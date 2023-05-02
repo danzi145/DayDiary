@@ -44,7 +44,7 @@ class AppPasswordView: UIView {
     lazy var firstPasswordCircleView: UIView = {
         let view = UIView()
         view.backgroundColor = #colorLiteral(red: 0.8797428012, green: 0.8797428012, blue: 0.8797428012, alpha: 1)
-        view.layer.cornerRadius = 20
+        view.layer.cornerRadius = 19.2
         return view
     }()
     
@@ -52,7 +52,7 @@ class AppPasswordView: UIView {
     lazy var secondPasswordCircleView: UIView = {
         let view = UIView()
         view.backgroundColor = #colorLiteral(red: 0.8797428012, green: 0.8797428012, blue: 0.8797428012, alpha: 1)
-        view.layer.cornerRadius = 20
+        view.layer.cornerRadius = 19.2
         return view
     }()
     
@@ -60,7 +60,7 @@ class AppPasswordView: UIView {
     lazy var thirdPasswordCircleView: UIView = {
         let view = UIView()
         view.backgroundColor = #colorLiteral(red: 0.8797428012, green: 0.8797428012, blue: 0.8797428012, alpha: 1)
-        view.layer.cornerRadius = 20
+        view.layer.cornerRadius = 19.2
         return view
     }()
     
@@ -68,14 +68,15 @@ class AppPasswordView: UIView {
     lazy var fourthPasswordCircleView: UIView = {
         let view = UIView()
         view.backgroundColor = #colorLiteral(red: 0.8797428012, green: 0.8797428012, blue: 0.8797428012, alpha: 1)
-        view.layer.cornerRadius = 20
+        view.layer.cornerRadius = 19.2
         return view
     }()
     
     // 4개의 암호 UIView를 묶은 스택뷰
     lazy var stackView: UIStackView = {
         let st = UIStackView(arrangedSubviews: [firstPasswordCircleView,secondPasswordCircleView,thirdPasswordCircleView,fourthPasswordCircleView])
-        st.spacing = 20
+        st.spacing = 25
+        st.distribution = .fillEqually
         return st
     }()
     

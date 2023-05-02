@@ -259,7 +259,7 @@ class SetPasswordView: UIView {
             changeButton.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 16),
             changeButton.topAnchor.constraint(equalTo: self.topAnchor, constant: 453),
             changeButton.widthAnchor.constraint(equalToConstant: 361),
-            changeButton.heightAnchor.constraint(equalToConstant: 42),
+            changeButton.heightAnchor.constraint(equalToConstant: 44),
             
             passwordSecureButton.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 341),
             passwordSecureButton.topAnchor.constraint(equalTo: self.topAnchor, constant: 318),

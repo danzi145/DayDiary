@@ -55,7 +55,7 @@ class AcView: UIView {
          let button = UIButton()
          button.setTitle("앱 비밀번호 설정하기", for: .normal)
          button.setTitleColor(UIColor.black, for: .normal)
-         button.titleLabel?.font = UIFont.systemFont(ofSize: 14, weight: .light)
+         button.titleLabel?.font = UIFont.systemFont(ofSize: 16, weight: .light)
          return button
      }()
      
@@ -64,7 +64,7 @@ class AcView: UIView {
          let button = UIButton()
          button.setTitle("비밀번호 변경", for: .normal)
          button.setTitleColor(UIColor.black, for: .normal)
-         button.titleLabel?.font = UIFont.systemFont(ofSize: 14, weight: .light)
+         button.titleLabel?.font = UIFont.systemFont(ofSize: 16, weight: .light)
          return button
      }()
      
@@ -73,7 +73,7 @@ class AcView: UIView {
           let button = UIButton()
           button.setTitle("로그아웃", for: .normal)
           button.setTitleColor(UIColor.black, for: .normal)
-          button.titleLabel?.font = UIFont.systemFont(ofSize: 14, weight: .light)
+          button.titleLabel?.font = UIFont.systemFont(ofSize: 16, weight: .light)
           return button
       }()
      
@@ -82,7 +82,7 @@ class AcView: UIView {
          let button = UIButton()
          button.setTitle("앱 탈퇴", for: .normal)
          button.setTitleColor(#colorLiteral(red: 0.9137254902, green: 0.3019607843, blue: 0.3019607843, alpha: 1), for: .normal)
-         button.titleLabel?.font = UIFont.systemFont(ofSize: 14, weight: .light)
+         button.titleLabel?.font = UIFont.systemFont(ofSize: 16, weight: .light)
          return button
      }()
      
@@ -134,17 +134,17 @@ class AcView: UIView {
             emailLabel.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 40),
             emailLabel.topAnchor.constraint(equalTo: self.topAnchor, constant: 163),
             
-            appPasswordSettingButton.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 40),
+            appPasswordSettingButton.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 41),
             appPasswordSettingButton.topAnchor.constraint(equalTo: self.topAnchor, constant: 238),
             
-            passwordChangeButton.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 40),
-            passwordChangeButton.topAnchor.constraint(equalTo: self.topAnchor, constant: 274),
+            passwordChangeButton.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 41),
+            passwordChangeButton.topAnchor.constraint(equalTo: self.topAnchor, constant: 292),
             
-            logOutButton.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 40),
-            logOutButton.topAnchor.constraint(equalTo: self.topAnchor, constant: 310),
+            logOutButton.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 41),
+            logOutButton.topAnchor.constraint(equalTo: self.topAnchor, constant: 346),
             
-            leaveAppButton.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 40),
-            leaveAppButton.topAnchor.constraint(equalTo: self.topAnchor, constant: 346),
+            leaveAppButton.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 41),
+            leaveAppButton.topAnchor.constraint(equalTo: self.topAnchor, constant: 400),
             
             backBtn.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 16),
             backBtn.topAnchor.constraint(equalTo: self.topAnchor, constant: 61),
