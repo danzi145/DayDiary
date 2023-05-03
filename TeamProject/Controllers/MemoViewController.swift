@@ -39,9 +39,9 @@ final class MemoViewController: UIViewController {
     // MARK: - Initial Method
     
     func setupDelegate() {
-        memoView.memoTableView.dataSource = self
-        memoView.titleTextField.delegate = self
-        memoView.memoTextView.delegate = self
+        memoView.getMemoTableView().dataSource = self
+        memoView.getTitleTextField().delegate = self
+        memoView.getMemoTextView().delegate = self
     }
     
     func setupNaviBar() {
@@ -55,7 +55,6 @@ final class MemoViewController: UIViewController {
         
         navigationController?.navigationBar.tintColor = .black
         navigationController?.navigationBar.standardAppearance = appearance
-//        navigationController?.navigationBar.compactAppearance = appearance
         navigationController?.navigationBar.scrollEdgeAppearance = appearance
         
         navigationItem.rightBarButtonItem = UIBarButtonItem(title: "저장", style: .plain, target: self, action: #selector(saveButtonTapped))
@@ -66,7 +65,17 @@ final class MemoViewController: UIViewController {
     // MARK: - Custom Method
     
     @objc func saveButtonTapped() {
-        print("저장 클릭")
+        
+        if memoView.getTitleTextField().text == "" {
+            let alert = UIAlertController(title: "제목 작성", message: "제목을 작성해야 저장이 가능합니다.", preferredStyle: .alert)
+            //메세지창 컨트롤러 버튼액션 인스턴스 생성
+            let close = UIAlertAction(title: "닫기", style: .cancel)
+            //메세지창 컨트롤러 버튼액션 추가
+            alert.addAction(close)
+            //메세지창 컨트롤러에 표시
+            present(alert, animated: false)
+        } else { print("제목을 입력했습니다.") }
+
     }
     
     
@@ -77,10 +86,10 @@ final class MemoViewController: UIViewController {
 
         //메세지창 컨트롤러 버튼액션 인스턴스 생성
         let delete = UIAlertAction(title: "삭제", style: .default) { _ in
-            let point = sender.convert(CGPoint.zero, to: self.memoView.memoTableView) // 버튼의 테이블뷰 위치 확인
-            guard let indexPath = self.memoView.memoTableView.indexPathForRow(at: point) else { return }
+            let point = sender.convert(CGPoint.zero, to: self.memoView.getMemoTableView()) // 버튼의 테이블뷰 위치 확인
+            guard let indexPath = self.memoView.getMemoTableView().indexPathForRow(at: point) else { return }
             self.checkTextArray.remove(at: indexPath.row)
-            self.memoView.memoTableView.deleteRows(at: [indexPath], with: .automatic)
+            self.memoView.getMemoTableView().deleteRows(at: [indexPath], with: .automatic)
         }
         let cancle = UIAlertAction(title: "취소", style: .default)
 
@@ -92,6 +101,7 @@ final class MemoViewController: UIViewController {
         present(alert, animated: false)
     }
 }
+
 
 // MARK: - UITableViewDataSource
 
@@ -107,7 +117,7 @@ extension MemoViewController: UITableViewDataSource {
  
         let checkCell = tableView.dequeueReusableCell(withIdentifier: MemoCheckListTableViewCell.id, for: indexPath) as! MemoCheckListTableViewCell
         
-        checkCell.listTextField.delegate = self
+        checkCell.getListTextField().delegate = self
         
         checkCell.deleteButton.addTarget(self, action: #selector(deleteButtonTapped), for: .touchUpInside)
         
@@ -133,7 +143,7 @@ extension MemoViewController: UITextFieldDelegate {
         
         print(checkTextArray)
         
-         memoView.memoTableView.reloadData()
+        memoView.getMemoTableView().reloadData()
         return true
     }
 }
@@ -142,17 +152,18 @@ extension MemoViewController: UITextFieldDelegate {
 
 extension MemoViewController: UITextViewDelegate {
     
+    // 텍스트 편집이 시작
     func textViewDidBeginEditing(_ textView: UITextView) {
-        if memoView.memoTextView.textColor == UIColor.systemGray3 {
-            memoView.memoTextView.text = nil
-            memoView.memoTextView.textColor = UIColor.black
+        if memoView.getMemoTextView().textColor == UIColor.systemGray3 {
+            memoView.getMemoTextView().text = nil
+            memoView.getMemoTextView().textColor = UIColor.black
         }
     }
-    
+    // 텍스트 편집 종료
     func textViewDidEndEditing(_ textView: UITextView) {
-        if memoView.memoTextView.text.isEmpty {
-            memoView.memoTextView.text = "내용"
-            memoView.memoTextView.textColor = .systemGray3
+        if memoView.getMemoTextView().text.isEmpty {
+            memoView.getMemoTextView().text = "내용"
+            memoView.getMemoTextView().textColor = .systemGray3
         }
     }
 }

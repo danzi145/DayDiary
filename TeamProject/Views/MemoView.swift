@@ -9,16 +9,16 @@ import UIKit
 
 class MemoView : UIView {
     
-    // MARK: - 메모화면 제목입력 뷰
+    // MARK: - Properties
     
+    // Memo Title
     private let titleView: UIView = {
         let view = UIView()
         view.backgroundColor = #colorLiteral(red: 1, green: 0.9058823529, blue: 0.4039215686, alpha: 1)
         return view
     }()
     
-    // 메모화면 제목 - 텍스트필드 구현
-    let titleTextField: UITextField = {
+    private let titleTextField: UITextField = {
         let textField = UITextField()
         textField.placeholder = "제목"
         textField.backgroundColor = .white
@@ -39,9 +39,7 @@ class MemoView : UIView {
     
     
     
-    // MARK: - 메모화면 텍스트 입력
-
-//    // 메모화면 내용 - 테이블뷰, 버튼뷰의 프레임 뷰
+     // Memo contents - Text
     private let textView: UIView = {
         let view = UIView()
         return view
@@ -53,7 +51,7 @@ class MemoView : UIView {
         return view
     }()
     
-    let memoTextView: UITextView = {
+    private let memoTextView: UITextView = {
         let textView = UITextView()
         textView.font = UIFont.systemFont(ofSize: 18)
         textView.text = "내용"
@@ -61,8 +59,10 @@ class MemoView : UIView {
         return textView
     }()
     
-    // MARK: - 메모화면 체크리스트 입력
+    
+    
 
+    // Memo contents - CheckList
     private let checkView: UIView = {
         let view = UIView()
         return view
@@ -74,8 +74,7 @@ class MemoView : UIView {
         return view
     }()
     
-    // 메모화면 내용 - 테이블뷰 구현
-    let memoTableView: UITableView = {
+    private let memoTableView: UITableView = {
         let tableview = UITableView()
         tableview.backgroundColor = .white
         tableview.separatorColor = .clear
@@ -86,10 +85,11 @@ class MemoView : UIView {
     
     
 
+    // MARK: - Initializer
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
         backgroundColor = .white
-//        memoTableView.allowsMultipleSelection = true // 체크 버튼
         setAutoLayout()
     }
     
@@ -97,7 +97,24 @@ class MemoView : UIView {
         fatalError("init(coder:) has not been implemented")
     }
     
-    // MARK: - 오토레이아웃
+    // MARK: - Custom Method
+    
+    /// 메모 제목 - 텍스트필드 반환
+    func getTitleTextField() -> UITextField {
+        return titleTextField
+    }
+    
+    /// 메모 내용 (CheckList) - 테이블뷰 반환
+    func getMemoTableView() -> UITableView {
+        return memoTableView
+    }
+    
+    /// 메모 내용 (Text) - 텍스트뷰 반환
+    func getMemoTextView() -> UITextView {
+        return memoTextView
+    }
+    
+    // MARK: - Autolayout()
 
     func setAutoLayout() {
         self.addSubview(titleStackView)

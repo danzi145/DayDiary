@@ -9,10 +9,11 @@ import UIKit
 
 class HamburgerView: UIView {
     
-    let menuTableView: UITableView = {
+    
+    private let menuTableView: UITableView = {
         let tabelview = UITableView()
         tabelview.backgroundColor = .white
-        tabelview.rowHeight = 50
+        tabelview.rowHeight = 49
         tabelview.isScrollEnabled = false
         return tabelview
     }()
@@ -28,6 +29,7 @@ class HamburgerView: UIView {
     }()
     
     
+    // MARK: - Initializer
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -41,8 +43,15 @@ class HamburgerView: UIView {
     }
     
     
+    // MARK: - Custom Method
     
-    // MARK: - 오토레이아웃
+    /// 메뉴 - 테이블뷰 반환
+    func getMenuTableView() -> UITableView {
+        return menuTableView
+    }
+    
+    
+    // MARK: - AutoLayout
     
     func setAutoLayout(){
         addSubview(menuTableView)

@@ -33,7 +33,7 @@ class HamburgerViewController: UIViewController {
         super.viewDidLoad()
         settingsManager.makeData()
         dataArray = settingsManager.getDataArray()
-        hamburgerView.menuTableView.register(HamburgerSettingsTableCell.self, forCellReuseIdentifier: "DataCell")
+        hamburgerView.getMenuTableView().register(HamburgerSettingsTableCell.self, forCellReuseIdentifier: "DataCell")
         setupNaviBar()
         setupDelegate()
     }
@@ -41,8 +41,8 @@ class HamburgerViewController: UIViewController {
     // MARK: - Initial Method
     
     func setupDelegate() {
-        hamburgerView.menuTableView.delegate = self
-        hamburgerView.menuTableView.dataSource = self
+        hamburgerView.getMenuTableView().delegate = self
+        hamburgerView.getMenuTableView().dataSource = self
     }
     
     func setupNaviBar() {
@@ -72,8 +72,8 @@ extension HamburgerViewController: UITableViewDataSource {
     // 셀 생성
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "DataCell", for: indexPath) as! HamburgerSettingsTableCell
-        cell.logoimageView.image = dataArray[indexPath.row].logoImage
-        cell.settingsNameLabel.text = dataArray[indexPath.row].settingsLabel
+        cell.getLogoimageView().image = dataArray[indexPath.row].logoImage
+        cell.getSettingsNameLabel().text = dataArray[indexPath.row].settingsLabel
         cell.selectionStyle = .none
         return cell
     }

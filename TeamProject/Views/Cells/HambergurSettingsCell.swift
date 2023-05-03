@@ -10,13 +10,13 @@ import UIKit
 final class HamburgerSettingsTableCell: UITableViewCell {
     
     
-    let logoimageView: UIImageView = {
+    private let logoimageView: UIImageView = {
         let imageView = UIImageView()
         imageView.tintColor = .black
         return imageView
     }()
     
-    let settingsNameLabel: UILabel = {
+    private let settingsNameLabel: UILabel = {
         let label = UILabel()
         label.font = UIFont.systemFont(ofSize: 17)
         label.textColor = .black
@@ -35,6 +35,18 @@ final class HamburgerSettingsTableCell: UITableViewCell {
         fatalError("init(coder:) has not been implemented")
     }
     
+    
+    // MARK: - Custom Method
+    
+   /// 메뉴 테이블셀 - 이미지뷰 반환
+    func getLogoimageView() -> UIImageView {
+        return logoimageView
+    }
+    
+    /// 메뉴 테이블셀 - 레이블 변환
+    func getSettingsNameLabel() -> UILabel {
+        return settingsNameLabel
+    }
     
     
     // MARK: - 오토레이아웃

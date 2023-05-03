@@ -9,6 +9,8 @@ import UIKit
 
 class AccountView: UIView {
 
+    // MARK: - Variable
+    
     //버튼 높이
     let buttonHeight: CGFloat = 32
     

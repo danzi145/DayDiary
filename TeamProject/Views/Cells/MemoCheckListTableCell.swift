@@ -21,7 +21,7 @@ class MemoCheckListTableViewCell: UITableViewCell {
     }()
     
     
-    let listTextField: UITextField = {
+    private let listTextField: UITextField = {
         let textField = UITextField()
         textField.font = UIFont.systemFont(ofSize: 18)
         textField.backgroundColor = .white
@@ -57,6 +57,13 @@ class MemoCheckListTableViewCell: UITableViewCell {
         fatalError("init(coder:) has not been implemented")
     }
     
+    // MARK: - Custom Method
+    
+    /// 메모 테이블셀 - 체크리스트 텍스트필드
+    func getListTextField() -> UITextField{
+        return listTextField
+    }
+    
     // 체크버튼 클릭시 체크버튼 이미지 변경
     @objc func checkButtonTapped() {
         if checkButton.currentImage == UIImage(systemName: "checkmark.square", withConfiguration: UIImage.SymbolConfiguration(pointSize: 20)) {
@@ -66,7 +73,7 @@ class MemoCheckListTableViewCell: UITableViewCell {
     }
 
     
-    // MARK: - 오토레이아웃
+    // MARK: - AutoLayout
 
     func setAutoLayout() {
 
