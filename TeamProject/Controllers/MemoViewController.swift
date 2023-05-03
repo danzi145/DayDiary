@@ -58,6 +58,7 @@ final class MemoViewController: UIViewController {
         navigationController?.navigationBar.scrollEdgeAppearance = appearance
         
         navigationItem.rightBarButtonItem = UIBarButtonItem(title: "저장", style: .plain, target: self, action: #selector(saveButtonTapped))
+        navigationItem.rightBarButtonItem?.tintColor = .systemGray2
     }
     
     
@@ -77,6 +78,7 @@ final class MemoViewController: UIViewController {
         } else { print("제목을 입력했습니다.") }
 
     }
+    
     
     
     @objc func deleteButtonTapped(_ sender: UIButton ) {
@@ -140,11 +142,18 @@ extension MemoViewController: UITextFieldDelegate {
         
         checkTextArray.append(text)
         
-        
         print(checkTextArray)
         
         memoView.getMemoTableView().reloadData()
         return true
+    }
+    
+    func textFieldDidChangeSelection(_ textField: UITextField) {
+        if memoView.getTitleTextField().text != "" {
+            navigationItem.rightBarButtonItem?.tintColor = .black
+        } else {
+            navigationItem.rightBarButtonItem?.tintColor = .systemGray2
+        }
     }
 }
 
