@@ -42,6 +42,7 @@ class MemoView : UIView {
      // Memo contents - Text
     private let textView: UIView = {
         let view = UIView()
+        view.backgroundColor = .purple
         return view
     }()
     
@@ -55,6 +56,8 @@ class MemoView : UIView {
         let textView = UITextView()
         textView.font = UIFont.systemFont(ofSize: 18)
         textView.text = "내용"
+        textView.backgroundColor = .blue
+//        textView.isScrollEnabled = false
         textView.textColor = .systemGray3
         return textView
     }()
@@ -156,7 +159,7 @@ class MemoView : UIView {
             textView.topAnchor.constraint(equalTo: titleStackView.bottomAnchor, constant: 10),
             textView.leadingAnchor.constraint(equalTo: titleStackView.leadingAnchor),
             textView.trailingAnchor.constraint(equalTo: titleStackView.trailingAnchor),
-            textView.heightAnchor.constraint(equalToConstant: 300),
+            textView.bottomAnchor.constraint(equalTo:  memoTextView.bottomAnchor),
             
             contentsView.topAnchor.constraint(equalTo: textView.topAnchor),
             contentsView.leadingAnchor.constraint(equalTo: textView.leadingAnchor),
@@ -166,7 +169,7 @@ class MemoView : UIView {
             memoTextView.topAnchor.constraint(equalTo: textView.topAnchor),
             memoTextView.leadingAnchor.constraint(equalTo: contentsView.trailingAnchor, constant: 2),
             memoTextView.trailingAnchor.constraint(equalTo: textView.trailingAnchor),
-            memoTextView.bottomAnchor.constraint(equalTo: textView.bottomAnchor),
+            memoTextView.heightAnchor.constraint(equalToConstant: 300),
             
             
             

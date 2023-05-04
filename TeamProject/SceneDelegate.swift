@@ -18,7 +18,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         let window = UIWindow(windowScene: windowScene)
         
         // 👀 시작 ViewController
-        let rootViewController = MemoViewController()
+        let rootViewController = ContainerViewController()
         
         let naviVC = UINavigationController(rootViewController: rootViewController)
         

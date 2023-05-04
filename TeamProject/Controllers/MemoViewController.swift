@@ -7,6 +7,7 @@
 
 import UIKit
 
+
 final class MemoViewController: UIViewController {
     
     // MARK: - Object
@@ -65,6 +66,8 @@ final class MemoViewController: UIViewController {
     
     // MARK: - Custom Method
     
+    
+
     @objc func saveButtonTapped() {
         
         if memoView.getTitleTextField().text == "" {
@@ -76,10 +79,11 @@ final class MemoViewController: UIViewController {
             //메세지창 컨트롤러에 표시
             present(alert, animated: false)
         } else { print("제목을 입력했습니다.") }
-
+        
+        resizingTextView()
     }
     
-    
+  
     
     @objc func deleteButtonTapped(_ sender: UIButton ) {
         print("삭제 클릭")
@@ -102,6 +106,30 @@ final class MemoViewController: UIViewController {
         //메세지창 컨트롤러에 표시
         present(alert, animated: false)
     }
+    
+    
+    func resizingTextView() {
+        
+        print(memoView.getMemoTextView().text!)
+        
+        let size = CGSize(width: view.frame.width, height: .infinity)
+        
+        //인자 size를 TextView에 적합한 크기(폰트 사이즈)로 계산
+        let estimatedSize = memoView.getMemoTextView().sizeThatFits(size)
+        
+        memoView.getMemoTextView().constraints.forEach { (constraint) in
+            // 높이가 300 이상일 때 300 이상으로 넘어가지 않도록 하기
+            if estimatedSize.height >= 300 {
+                constraint.constant = 300
+            } else {
+                if constraint.firstAttribute == .height {
+                    constraint.constant = estimatedSize.height
+                }
+                
+            }
+    }
+}
+    
 }
 
 
@@ -114,7 +142,7 @@ extension MemoViewController: UITableViewDataSource {
         return checkTextArray.count
     }
     
-    // 🧑‍🦳🧑‍🦳🧑‍🦳🧑‍🦳🧑‍🦳🧑‍🦳🧑‍🦳🧑‍🦳🧑‍🦳🧑‍🦳🧑‍🦳🧑‍🦳🧑‍🦳🧑‍🦳🧑‍🦳🧑‍🦳🧑‍🦳🧑‍🦳🧑‍🦳
+
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
  
         let checkCell = tableView.dequeueReusableCell(withIdentifier: MemoCheckListTableViewCell.id, for: indexPath) as! MemoCheckListTableViewCell
@@ -175,8 +203,12 @@ extension MemoViewController: UITextViewDelegate {
             memoView.getMemoTextView().textColor = .systemGray3
         }
     }
+    
+    func textViewDidChange(_ textView: UITextView) {
+        print(#function)
+//        resizingTextView()
+    }
 }
-
 
 
 
