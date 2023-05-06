@@ -59,12 +59,12 @@ final class MemoViewController: UIViewController {
         
         
         let appearance = UINavigationBarAppearance()
-        appearance.backgroundColor = .blue
-        appearance.shadowColor = .black
-//
+        appearance.backgroundColor = .white
+        appearance.shadowColor = .clear
+
         navigationController?.navigationBar.tintColor = .black
-//        navigationController?.navigationBar.standardAppearance = appearance
-//        navigationController?.navigationBar.scrollEdgeAppearance = appearance
+        navigationController?.navigationBar.standardAppearance = appearance
+        navigationController?.navigationBar.scrollEdgeAppearance = appearance
 
         navigationController?.navigationBar.isHidden = false
         navigationItem.rightBarButtonItem = UIBarButtonItem(title: "저장", style: .plain, target: self, action: #selector(saveButtonTapped))
