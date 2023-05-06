@@ -13,7 +13,6 @@ class CalendarView: UIView {
     let calendarView: FSCalendar = {
         let cal = FSCalendar()
         cal.locale = Locale(identifier: "ko_KR")
-        cal.backgroundColor = .white
         cal.scrollEnabled = true
         cal.scrollDirection = .horizontal
         cal.placeholderType = .none

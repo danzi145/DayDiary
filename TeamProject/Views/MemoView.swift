@@ -14,7 +14,7 @@ class MemoView : UIView {
     // Memo Title
     private let titleView: UIView = {
         let view = UIView()
-        view.backgroundColor = #colorLiteral(red: 1, green: 0.9058823529, blue: 0.4039215686, alpha: 1)
+        view.backgroundColor = UIColor(named: "mainColor")
         return view
     }()
     
@@ -42,13 +42,12 @@ class MemoView : UIView {
      // Memo contents - Text
     private let textView: UIView = {
         let view = UIView()
-        view.backgroundColor = .purple
         return view
     }()
     
     private let contentsView: UIView = {
         let view = UIView()
-        view.backgroundColor = #colorLiteral(red: 1, green: 0.9058823529, blue: 0.4039215686, alpha: 1)
+        view.backgroundColor = UIColor(named: "mainColor")
         return view
     }()
     
@@ -56,8 +55,6 @@ class MemoView : UIView {
         let textView = UITextView()
         textView.font = UIFont.systemFont(ofSize: 18)
         textView.text = "내용"
-        textView.backgroundColor = .blue
-//        textView.isScrollEnabled = false
         textView.textColor = .systemGray3
         return textView
     }()
@@ -73,7 +70,7 @@ class MemoView : UIView {
     
     private let checkContentsView: UIView = {
         let view = UIView()
-        view.backgroundColor = #colorLiteral(red: 1, green: 0.9058823529, blue: 0.4039215686, alpha: 1)
+        view.backgroundColor = UIColor(named: "mainColor")
         return view
     }()
     

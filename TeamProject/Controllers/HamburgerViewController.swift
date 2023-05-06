@@ -7,6 +7,7 @@
 
 import UIKit
 
+
 class HamburgerViewController: UIViewController {
     
     // MARK: - Object
@@ -19,7 +20,7 @@ class HamburgerViewController: UIViewController {
     // MARK: - Variable
 
     var dataArray: [HamburgerSettings] = []
-    
+   
     
     
     // MARK: - ViewController LifeCycle
@@ -38,6 +39,8 @@ class HamburgerViewController: UIViewController {
         setupDelegate()
     }
     
+
+    
     // MARK: - Initial Method
     
     func setupDelegate() {
@@ -52,11 +55,13 @@ class HamburgerViewController: UIViewController {
         appearance.shadowColor = .clear
         navigationController?.navigationBar.standardAppearance = appearance
         navigationController?.navigationBar.scrollEdgeAppearance = appearance
+        navigationController?.navigationBar.isHidden = false
         
         // 네비게이션 백 버튼
         let backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: self, action: nil)
         backBarButtonItem.tintColor = .black
         self.navigationItem.backBarButtonItem = backBarButtonItem
+       
     }
 }
 

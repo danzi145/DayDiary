@@ -10,6 +10,11 @@ import UIKit
 
 final class MemoViewController: UIViewController {
     
+    enum Save {
+        case after
+        case before
+    }
+    
     // MARK: - Object
     
     private let memoView = MemoView()
@@ -21,6 +26,9 @@ final class MemoViewController: UIViewController {
     
     private var checkTextArray: [String] = [""]
     
+    var saveenum: Save = .before
+    var date: String?
+//    var memoManager = MemoManager.shared
     
     // MARK: - ViewController LifeCycle
     
@@ -46,18 +54,19 @@ final class MemoViewController: UIViewController {
     }
     
     func setupNaviBar() {
-        title = "2023.04.11"
+        title = date
         
         
         
         let appearance = UINavigationBarAppearance()
-        appearance.backgroundColor = .white
-        appearance.shadowColor = .clear
-        
+        appearance.backgroundColor = .blue
+        appearance.shadowColor = .black
+//
         navigationController?.navigationBar.tintColor = .black
-        navigationController?.navigationBar.standardAppearance = appearance
-        navigationController?.navigationBar.scrollEdgeAppearance = appearance
-        
+//        navigationController?.navigationBar.standardAppearance = appearance
+//        navigationController?.navigationBar.scrollEdgeAppearance = appearance
+
+        navigationController?.navigationBar.isHidden = false
         navigationItem.rightBarButtonItem = UIBarButtonItem(title: "저장", style: .plain, target: self, action: #selector(saveButtonTapped))
         navigationItem.rightBarButtonItem?.tintColor = .systemGray2
     }
@@ -81,6 +90,8 @@ final class MemoViewController: UIViewController {
         } else { print("제목을 입력했습니다.") }
         
         resizingTextView()
+        saveenum = .after
+        print(saveenum)
     }
     
   
@@ -182,6 +193,7 @@ extension MemoViewController: UITextFieldDelegate {
         } else {
             navigationItem.rightBarButtonItem?.tintColor = .systemGray2
         }
+    
     }
 }
 
@@ -207,6 +219,12 @@ extension MemoViewController: UITextViewDelegate {
     func textViewDidChange(_ textView: UITextView) {
         print(#function)
 //        resizingTextView()
+        switch saveenum {
+        case .after:
+            resizingTextView()
+        case .before:
+            break
+        }
     }
 }
 

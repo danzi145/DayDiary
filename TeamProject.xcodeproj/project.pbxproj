@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B0743F982A067BD700E3E8FF /* Memo.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0743F972A067BD700E3E8FF /* Memo.swift */; };
+		B0743F9A2A067F9500E3E8FF /* MemoManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0743F992A067F9500E3E8FF /* MemoManager.swift */; };
 		B09C7C5129E91C0E0035561F /* HamburgerSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = B09C7C5029E91C0E0035561F /* HamburgerSettings.swift */; };
 		B09C7C5329E91DA60035561F /* HamburgerSettingsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B09C7C5229E91DA60035561F /* HamburgerSettingsManager.swift */; };
 		B09C7C5729E91FD10035561F /* HambergurSettingsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B09C7C5629E91FD10035561F /* HambergurSettingsCell.swift */; };
@@ -36,6 +38,8 @@
 		3D89FE3648EDD3FB1AFC9369 /* Pods_TeamProject.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TeamProject.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		50FEC4B61C2395ABF26807A6 /* Pods-TeamProject.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TeamProject.release.xcconfig"; path = "Target Support Files/Pods-TeamProject/Pods-TeamProject.release.xcconfig"; sourceTree = "<group>"; };
 		6B2D016BBEDCFC94DBC0DD40 /* Pods-TeamProject.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TeamProject.debug.xcconfig"; path = "Target Support Files/Pods-TeamProject/Pods-TeamProject.debug.xcconfig"; sourceTree = "<group>"; };
+		B0743F972A067BD700E3E8FF /* Memo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Memo.swift; sourceTree = "<group>"; };
+		B0743F992A067F9500E3E8FF /* MemoManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoManager.swift; sourceTree = "<group>"; };
 		B09C7C5029E91C0E0035561F /* HamburgerSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HamburgerSettings.swift; sourceTree = "<group>"; };
 		B09C7C5229E91DA60035561F /* HamburgerSettingsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HamburgerSettingsManager.swift; sourceTree = "<group>"; };
 		B09C7C5629E91FD10035561F /* HambergurSettingsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HambergurSettingsCell.swift; sourceTree = "<group>"; };
@@ -96,6 +100,8 @@
 			children = (
 				B09C7C5029E91C0E0035561F /* HamburgerSettings.swift */,
 				B09C7C5229E91DA60035561F /* HamburgerSettingsManager.swift */,
+				B0743F972A067BD700E3E8FF /* Memo.swift */,
+				B0743F992A067F9500E3E8FF /* MemoManager.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -285,6 +291,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B0743F982A067BD700E3E8FF /* Memo.swift in Sources */,
 				B09C7C6029E921460035561F /* HamburgerViewController.swift in Sources */,
 				F1DECA7F29D40C05001C758F /* MenuView.swift in Sources */,
 				F1DECA8129D40C17001C758F /* MenuViewController.swift in Sources */,
@@ -297,6 +304,7 @@
 				B09C7C6829E9236D0035561F /* MemoView.swift in Sources */,
 				B09C7C6229E922060035561F /* MemoViewController.swift in Sources */,
 				F1DECA6B29D3CC8B001C758F /* MonthlyViewController.swift in Sources */,
+				B0743F9A2A067F9500E3E8FF /* MemoManager.swift in Sources */,
 				F117F5D829E2777300A44FCC /* MonthlyNavigationStackView.swift in Sources */,
 				F1DECA6729D3CC8B001C758F /* AppDelegate.swift in Sources */,
 				F1D0FD0529DBE6A500AB1295 /* CustomAlertViewController.swift in Sources */,

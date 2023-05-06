@@ -11,11 +11,12 @@ class HamburgerView: UIView {
     
     
     private let menuTableView: UITableView = {
-        let tabelview = UITableView()
-        tabelview.backgroundColor = .white
-        tabelview.rowHeight = 49
-        tabelview.isScrollEnabled = false
-        return tabelview
+        let tableview = UITableView()
+        tableview.backgroundColor = .white
+        tableview.rowHeight = 49
+        tableview.isScrollEnabled = false
+//        tableview.tableHeaderView = UIView(frame: CGRect(x: 0, y: 0, width: tableview.frame.width, height: 80))
+        return tableview
     }()
     
     
