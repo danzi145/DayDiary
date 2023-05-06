@@ -7,6 +7,7 @@
 
 import UIKit
 
+// MenuView를 컨트롤하는 VC
 final class MenuViewController: UIViewController {
     
     private enum MenuOptions: String, CaseIterable {

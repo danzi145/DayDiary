@@ -8,6 +8,7 @@
 import UIKit
 import FSCalendar
 
+// 메인 뷰를 컨트롤하는 VC
 protocol MonthlyViewControllerDelegate: AnyObject {
     func didTapMenuButton()
 }

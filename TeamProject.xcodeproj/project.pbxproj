@@ -20,7 +20,7 @@
 		F1DECA7F29D40C05001C758F /* MenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1DECA7E29D40C05001C758F /* MenuView.swift */; };
 		F1DECA8129D40C17001C758F /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1DECA8029D40C17001C758F /* MenuViewController.swift */; };
 		F1DECA8329D42629001C758F /* ContainerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1DECA8229D42629001C758F /* ContainerViewController.swift */; };
-		F1F4F87929F4C7F80096F77F /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1F4F87829F4C7F80096F77F /* Extensions.swift */; };
+		F1F4F87929F4C7F80096F77F /* UIVIew+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1F4F87829F4C7F80096F77F /* UIVIew+Extensions.swift */; };
 		F1F4F87D29F4CF980096F77F /* AlertTitleButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1F4F87C29F4CF980096F77F /* AlertTitleButton.swift */; };
 /* End PBXBuildFile section */
 
@@ -42,7 +42,7 @@
 		F1DECA7E29D40C05001C758F /* MenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuView.swift; sourceTree = "<group>"; };
 		F1DECA8029D40C17001C758F /* MenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
 		F1DECA8229D42629001C758F /* ContainerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContainerViewController.swift; sourceTree = "<group>"; };
-		F1F4F87829F4C7F80096F77F /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		F1F4F87829F4C7F80096F77F /* UIVIew+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIVIew+Extensions.swift"; sourceTree = "<group>"; };
 		F1F4F87C29F4CF980096F77F /* AlertTitleButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertTitleButton.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -133,7 +133,7 @@
 		F1F4F87729F4C7D80096F77F /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
-				F1F4F87829F4C7F80096F77F /* Extensions.swift */,
+				F1F4F87829F4C7F80096F77F /* UIVIew+Extensions.swift */,
 				F1F4F87C29F4CF980096F77F /* AlertTitleButton.swift */,
 			);
 			path = Utilities;
@@ -263,7 +263,7 @@
 				F1F4F87D29F4CF980096F77F /* AlertTitleButton.swift in Sources */,
 				F1D0FD0529DBE6A500AB1295 /* CustomAlertViewController.swift in Sources */,
 				F1DECA7B29D3E259001C758F /* CalendarView.swift in Sources */,
-				F1F4F87929F4C7F80096F77F /* Extensions.swift in Sources */,
+				F1F4F87929F4C7F80096F77F /* UIVIew+Extensions.swift in Sources */,
 				F1DECA6929D3CC8B001C758F /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

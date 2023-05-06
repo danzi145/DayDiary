@@ -7,6 +7,7 @@
 
 import UIKit
 
+// 메뉴의 View가 들어가야하는 부분
 class MenuView: UIView {
     
     override init(frame: CGRect) {

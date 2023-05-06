@@ -11,6 +11,7 @@ protocol CustomAlertViewDelegate: AnyObject {
     func handleAddButton()
 }
 
+// 커스텀 얼럿의 View
 final class CustomAlertView: UIView {
     
     // MARK: - Properties

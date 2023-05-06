@@ -7,6 +7,7 @@
 
 import UIKit
 
+// Custom Alert을 컨트롤하는 VC
 final class CustomAlertViewController: UIViewController {
     
     // MARK: - Properties

@@ -8,6 +8,7 @@
 import UIKit
 import FSCalendar
 
+// 달력 부분의 View
 class CalendarView: UIView {
     
     let calendarView: FSCalendar = {
