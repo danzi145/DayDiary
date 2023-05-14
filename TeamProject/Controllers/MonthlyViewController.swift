@@ -8,16 +8,16 @@
 import UIKit
 import FSCalendar
 
+// MARK: - Object
 protocol MonthlyViewControllerDelegate: AnyObject {
     func didTapMenuButton()
 }
 
 final class MonthlyViewController: UIViewController, UINavigationControllerDelegate {
     
-    // MARK: - Properties
-    
     let topStackView = MonthlyNavigationStackView()
     private let calendarView = CalendarView()
+//    let memoManager = MemoManager.shared
     
     weak var delegate: MonthlyViewControllerDelegate?
     
@@ -33,12 +33,22 @@ final class MonthlyViewController: UIViewController, UINavigationControllerDeleg
     }
     
     
-    // MARK: - Helpers
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        navigationController?.navigationBar.isHidden = true
+    }
+    
+    // MARK: - Helper
     private func configureUI() {
         view.backgroundColor = .white
         navigationController?.navigationBar.isHidden = true
         
-        // 커스텀 네비게이션바 + 캘린더뷰 합치기
+        // 네비게이션 백 버튼
+        let backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: self, action: nil)
+        backBarButtonItem.tintColor = .black
+        self.navigationItem.backBarButtonItem = backBarButtonItem
+        
+        
         let mainStack = UIStackView(arrangedSubviews: [topStackView, calendarView])
         mainStack.axis = .vertical
         
@@ -65,7 +75,10 @@ final class MonthlyViewController: UIViewController, UINavigationControllerDeleg
     // MARK: - Actions
     @objc private func menuTapped() {
         print("메뉴 버튼 눌림")
-        delegate?.didTapMenuButton()
+//        delegate?.didTapMenuButton()
+        let hamburgerVC = HamburgerViewController()
+        navigationController?.pushViewController(hamburgerVC, animated: true)
+        
     }
     
     private func setAlert() {
@@ -73,10 +86,26 @@ final class MonthlyViewController: UIViewController, UINavigationControllerDeleg
         
         let diary = UIAlertAction(title: "일기", style: .default) { action in
             print("확인버튼 눌림.")
+            
+    
         }
         let memo = UIAlertAction(title: "메모", style: .default) { action in
             print("확인버튼 눌림.")
+            
+            let memoVC = MemoViewController()
+            
+            guard let selectDate = self.calendarView.calendarView.selectedDate else { return }
+            
+            let dateFormatter = DateFormatter()
+            dateFormatter.dateFormat = "yyyy.MM.dd"
+            
+            let date = dateFormatter.string(from: selectDate)
+            memoVC.date = date
+//            let memo = Memo(saveButton: false, date: date, title: nil, contents: nil, checkList: [Memo.Check(isCheck: false, textField: "")])
+//            self.memoManager.memoArray.append(memo)
+            self.navigationController?.pushViewController(memoVC, animated: true)
         }
+        
         let cancel = UIAlertAction(title: "취소하기", style: .cancel) { [weak self] action in
             print("취소버튼 눌림.")
             self?.calendarView.calendarView.setCurrentPage(Date(), animated: true)
@@ -96,8 +125,6 @@ final class MonthlyViewController: UIViewController, UINavigationControllerDeleg
         }
     
 }
-
-// MARK: - FSCalendarDelegate & FSCalendarDataSource & FSCalendarDelegateAppearance
 
 extension MonthlyViewController: FSCalendarDelegate, FSCalendarDataSource,  FSCalendarDelegateAppearance {
     
@@ -140,6 +167,8 @@ extension MonthlyViewController: FSCalendarDelegate, FSCalendarDataSource,  FSCa
 //        print("date : \(dateString)")
 //        return scheduleDateArray.contains(dateString) ? eventImage : nil
 //        }
-//    
+//
 }
 
+
+    
