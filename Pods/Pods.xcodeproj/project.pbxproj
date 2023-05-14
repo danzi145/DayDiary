@@ -87,7 +87,7 @@
 		7A0B5660CDD675DF359F487965B0DF55 /* FSCalendar.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FSCalendar.h; path = FSCalendar/FSCalendar.h; sourceTree = "<group>"; };
 		8018CC77EDB77914B8C0BA02E6E40747 /* Pods-TeamProject-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-TeamProject-umbrella.h"; sourceTree = "<group>"; };
 		818A577641B772BBB83B56C2FB6E7B8E /* Pods-TeamProject.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-TeamProject.debug.xcconfig"; sourceTree = "<group>"; };
-		82B3EA85ED6A66262E544FC30DC8E620 /* Pods-TeamProject */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = "Pods-TeamProject"; path = Pods_TeamProject.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		82B3EA85ED6A66262E544FC30DC8E620 /* Pods_TeamProject.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TeamProject.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		83ED9ACE9B1431F1D10073D1C8CCE651 /* FSCalendarExtensions.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FSCalendarExtensions.h; path = FSCalendar/FSCalendarExtensions.h; sourceTree = "<group>"; };
 		89F04B760FDB579BD71D57A64C44E64A /* Pods-TeamProject-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-TeamProject-acknowledgements.plist"; sourceTree = "<group>"; };
 		8AA04D0EB5F1BC27E7FC74EB14A00277 /* FSCalendarStickyHeader.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = FSCalendarStickyHeader.m; path = FSCalendar/FSCalendarStickyHeader.m; sourceTree = "<group>"; };
@@ -256,7 +256,7 @@
 			isa = PBXGroup;
 			children = (
 				95209B8BB966524BC76543F99C75F5FE /* FSCalendar.framework */,
-				82B3EA85ED6A66262E544FC30DC8E620 /* Pods-TeamProject */,
+				82B3EA85ED6A66262E544FC30DC8E620 /* Pods_TeamProject.framework */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -333,7 +333,7 @@
 			);
 			name = "Pods-TeamProject";
 			productName = Pods_TeamProject;
-			productReference = 82B3EA85ED6A66262E544FC30DC8E620 /* Pods-TeamProject */;
+			productReference = 82B3EA85ED6A66262E544FC30DC8E620 /* Pods_TeamProject.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 /* End PBXNativeTarget section */
@@ -441,7 +441,7 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				INFOPLIST_FILE = "Target Support Files/Pods-TeamProject/Pods-TeamProject-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -608,7 +608,7 @@
 				GCC_PREFIX_HEADER = "Target Support Files/FSCalendar/FSCalendar-prefix.pch";
 				INFOPLIST_FILE = "Target Support Files/FSCalendar/FSCalendar-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -642,7 +642,7 @@
 				GCC_PREFIX_HEADER = "Target Support Files/FSCalendar/FSCalendar-prefix.pch";
 				INFOPLIST_FILE = "Target Support Files/FSCalendar/FSCalendar-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -678,7 +678,7 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				INFOPLIST_FILE = "Target Support Files/Pods-TeamProject/Pods-TeamProject-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
