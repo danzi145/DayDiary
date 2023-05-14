@@ -61,8 +61,11 @@ final class MemoViewController: UIViewController {
         let appearance = UINavigationBarAppearance()
         appearance.backgroundColor = .white
         appearance.shadowColor = .clear
+        appearance.titleTextAttributes = [.foregroundColor: #colorLiteral(red: 0.6571641564, green: 0.6571640372, blue: 0.6571640372, alpha: 1)]
 
-        navigationController?.navigationBar.tintColor = .black
+//        navigationController?.navigationBar.titleTextAttributes = [.foregroundColor: UIColor.gray]
+//        navigationController?.navigationBar.tintColor = .black
+        
         navigationController?.navigationBar.standardAppearance = appearance
         navigationController?.navigationBar.scrollEdgeAppearance = appearance
 
