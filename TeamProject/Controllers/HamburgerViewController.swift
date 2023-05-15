@@ -11,60 +11,89 @@ import UIKit
 class HamburgerViewController: UIViewController {
     
     // MARK: - Object
-    
     let hamburgerView = HamburgerView()
-    var settingsManager = HamburgerSettingsManager()
+    let headerView = MenuHeaderStackView(title: "")
+//    var settingsManager = HamburgerSettingsManager()
     
     
     
     // MARK: - Variable
 
-    var dataArray: [HamburgerSettings] = []
-   
-    
+    let dataArray = [
+        HamburgerSettings(logoImage: UIImage(systemName: "person.circle"), settingsLabel: "계정"),
+        HamburgerSettings(logoImage: UIImage(systemName: "doc.plaintext"), settingsLabel: "개인정보처리방침"),
+        HamburgerSettings(logoImage: UIImage(systemName: "books.vertical"), settingsLabel: "오픈소스 라이브러리")
+    ]
     
     // MARK: - ViewController LifeCycle
     
     override func loadView() {
         super.loadView()
-        view = hamburgerView
+//        view = hamburgerView
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        settingsManager.makeData()
-        dataArray = settingsManager.getDataArray()
-        // 테이블 헤더뷰 세팅하면서 햄버거뷰 오토레이아웃 잡기
-        hamburgerView.setTableHeaderView()
+//        settingsManager.makeData()
+//        dataArray = settingsManager.getDataArray()
+        view.backgroundColor = .white
+        view.addSubview(headerView)
+        view.addSubview(hamburgerView)
+        setAutolayout()
+        
         hamburgerView.getMenuTableView().register(HamburgerSettingsTableCell.self, forCellReuseIdentifier: "DataCell")
-        setupNaviBar()
+//        setupNaviBar()
         setupDelegate()
+        
+        // 커스텀뷰의 백버튼에 대한 액션 (dismiss)
+        headerView.backButton.addTarget(self,
+                                        action: #selector(backButtonTapped),
+                                        for: .touchUpInside)
     }
     
 
+    // MARK: - Actions
+    
+    @objc private func backButtonTapped() {
+        navigationController?.popViewController(animated: true)
+    }
     
     // MARK: - Initial Method
     
-    func setupDelegate() {
+    private func setAutolayout() {
+        headerView.translatesAutoresizingMaskIntoConstraints = false
+        hamburgerView.translatesAutoresizingMaskIntoConstraints = false
+        
+        NSLayoutConstraint.activate([
+            headerView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 20),
+            headerView.widthAnchor.constraint(equalToConstant: view.frame.width),
+            
+            hamburgerView.topAnchor.constraint(equalTo: headerView.bottomAnchor),
+            hamburgerView.widthAnchor.constraint(equalToConstant: view.frame.width),
+            hamburgerView.heightAnchor.constraint(equalToConstant: view.frame.height - headerView.frame.height)
+        ])
+    }
+    
+    private func setupDelegate() {
         hamburgerView.getMenuTableView().delegate = self
         hamburgerView.getMenuTableView().dataSource = self
     }
     
-    func setupNaviBar() {
-        // 네이게션바
-        let appearance = UINavigationBarAppearance()
-        appearance.backgroundColor = .white
-        appearance.shadowColor = .clear
-        navigationController?.navigationBar.standardAppearance = appearance
-        navigationController?.navigationBar.scrollEdgeAppearance = appearance
-        navigationController?.navigationBar.isHidden = false
-        
-        // 네비게이션 백 버튼
-        let backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: self, action: nil)
-        backBarButtonItem.tintColor = .black
-        self.navigationItem.backBarButtonItem = backBarButtonItem
-       
-    }
+//    private func setupNaviBar() {
+//        // 네이게션바
+//        let appearance = UINavigationBarAppearance()
+//        appearance.backgroundColor = .white
+//        appearance.shadowColor = .clear
+//        navigationController?.navigationBar.standardAppearance = appearance
+//        navigationController?.navigationBar.scrollEdgeAppearance = appearance
+//        navigationController?.navigationBar.isHidden = false
+//        
+//        // 네비게이션 백 버튼
+//        let backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: self, action: nil)
+//        backBarButtonItem.tintColor = .black
+//        self.navigationItem.backBarButtonItem = backBarButtonItem
+//       
+//    }
 }
 
 // MARK: - UITableViewDataSource
@@ -73,7 +102,7 @@ extension HamburgerViewController: UITableViewDataSource {
     
     // 셀 갯수
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 3
+        return dataArray.count
     }
     
     // 셀 생성
@@ -106,5 +135,8 @@ extension HamburgerViewController: UITableViewDelegate {
         }
     
     }
+    
+    
+    
 }
 
