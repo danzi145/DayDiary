@@ -9,13 +9,11 @@ import UIKit
 
 class HamburgerView: UIView {
     
-    
     private let menuTableView: UITableView = {
         let tableview = UITableView()
         tableview.backgroundColor = .white
         tableview.rowHeight = 49
         tableview.isScrollEnabled = false
-//        tableview.tableHeaderView = UIView(frame: CGRect(x: 0, y: 0, width: tableview.frame.width, height: 80))
         return tableview
     }()
     
@@ -35,7 +33,7 @@ class HamburgerView: UIView {
     override init(frame: CGRect) {
         super.init(frame: frame)
         backgroundColor = .white
-        setAutoLayout()
+//        setAutoLayout()
         
     }
     
@@ -51,6 +49,11 @@ class HamburgerView: UIView {
         return menuTableView
     }
     
+    /// 테이블 헤더뷰 세팅하는 함수 ( 세팅 다 되면 오토레이아웃도 같이 세팅되도록 구현)
+    func setTableHeaderView() {
+        menuTableView.tableHeaderView = UIView(frame: CGRect(x: 0, y: 0, width: frame.width, height: 60))
+        setAutoLayout()
+    }
     
     // MARK: - AutoLayout
     
@@ -66,7 +69,7 @@ class HamburgerView: UIView {
             menuTableView.topAnchor.constraint(equalTo: self.safeAreaLayoutGuide.topAnchor, constant: 0),
             menuTableView.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 0),
             menuTableView.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: 0),
-            menuTableView.heightAnchor.constraint(equalToConstant: 50 * 3),
+            menuTableView.heightAnchor.constraint(equalToConstant: 313),
             
             versionLabel.topAnchor.constraint(equalTo: menuTableView.bottomAnchor , constant: 40),
             versionLabel.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 15),

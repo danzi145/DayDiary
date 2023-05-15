@@ -34,6 +34,8 @@ class HamburgerViewController: UIViewController {
         super.viewDidLoad()
         settingsManager.makeData()
         dataArray = settingsManager.getDataArray()
+        // 테이블 헤더뷰 세팅하면서 햄버거뷰 오토레이아웃 잡기
+        hamburgerView.setTableHeaderView()
         hamburgerView.getMenuTableView().register(HamburgerSettingsTableCell.self, forCellReuseIdentifier: "DataCell")
         setupNaviBar()
         setupDelegate()
