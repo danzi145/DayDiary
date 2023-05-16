@@ -42,33 +42,45 @@ class AppPasswordView: UIView {
     
     // 첫번째 암호 표시 UI
     lazy var firstPasswordCircleView: UIView = {
-        let view = UIView()
+        let view = UIView(frame: CGRect(x: 0,
+                                        y: 0,
+                                        width: 40,
+                                        height: 40))
         view.backgroundColor = #colorLiteral(red: 0.8797428012, green: 0.8797428012, blue: 0.8797428012, alpha: 1)
-        view.layer.cornerRadius = 19.2
+        view.layer.cornerRadius = view.frame.width / 2
         return view
     }()
     
     // 두번째 암호 표시 UI
     lazy var secondPasswordCircleView: UIView = {
-        let view = UIView()
+        let view = UIView(frame: CGRect(x: 0,
+                                        y: 0,
+                                        width: 40,
+                                        height: 40))
         view.backgroundColor = #colorLiteral(red: 0.8797428012, green: 0.8797428012, blue: 0.8797428012, alpha: 1)
-        view.layer.cornerRadius = 19.2
+        view.layer.cornerRadius = view.frame.width / 2
         return view
     }()
     
     // 세번째 암호 표시 UI
     lazy var thirdPasswordCircleView: UIView = {
-        let view = UIView()
+        let view = UIView(frame: CGRect(x: 0,
+                                        y: 0,
+                                        width: 40,
+                                        height: 40))
         view.backgroundColor = #colorLiteral(red: 0.8797428012, green: 0.8797428012, blue: 0.8797428012, alpha: 1)
-        view.layer.cornerRadius = 19.2
+        view.layer.cornerRadius = view.frame.width / 2
         return view
     }()
     
     // 네번째 암호 표시 UI
     lazy var fourthPasswordCircleView: UIView = {
-        let view = UIView()
+        let view = UIView(frame: CGRect(x: 0,
+                                        y: 0,
+                                        width: 40,
+                                        height: 40))
         view.backgroundColor = #colorLiteral(red: 0.8797428012, green: 0.8797428012, blue: 0.8797428012, alpha: 1)
-        view.layer.cornerRadius = 19.2
+        view.layer.cornerRadius = view.frame.width / 2
         return view
     }()
     
@@ -93,6 +105,7 @@ class AppPasswordView: UIView {
         super.init(frame: frame)
         
         setAutoLayout()
+        print(stackView.frame.height)
     }
     
     required init?(coder: NSCoder) {
@@ -138,22 +151,24 @@ class AppPasswordView: UIView {
             passwordGuideLabel.topAnchor.constraint(equalTo: self.topAnchor, constant: 100),
             
 
-            firstPasswordCircleView.widthAnchor.constraint(equalToConstant: 40),
-            firstPasswordCircleView.heightAnchor.constraint(equalToConstant: 40),
+//            firstPasswordCircleView.widthAnchor.constraint(equalToConstant: 40),
+//            firstPasswordCircleView.heightAnchor.constraint(equalToConstant: 40),
+//
+//            secondPasswordCircleView.widthAnchor.constraint(equalToConstant: 40),
+//            secondPasswordCircleView.heightAnchor.constraint(equalToConstant: 40),
+//
+//            thirdPasswordCircleView.widthAnchor.constraint(equalToConstant: 40),
+//            thirdPasswordCircleView.heightAnchor.constraint(equalToConstant: 40),
             
-            secondPasswordCircleView.widthAnchor.constraint(equalToConstant: 40),
-            secondPasswordCircleView.heightAnchor.constraint(equalToConstant: 40),
+//            fourthPasswordCircleView.widthAnchor.constraint(equalToConstant: 40),
+//            fourthPasswordCircleView.heightAnchor.constraint(equalToConstant: 40),
             
-            thirdPasswordCircleView.widthAnchor.constraint(equalToConstant: 40),
-            thirdPasswordCircleView.heightAnchor.constraint(equalToConstant: 40),
-            
-            fourthPasswordCircleView.widthAnchor.constraint(equalToConstant: 40),
-            fourthPasswordCircleView.heightAnchor.constraint(equalToConstant: 40),
-            
-            stackView.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 87),
+//            stackView.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 87),
+
             stackView.topAnchor.constraint(equalTo: passwordGuideLabel.bottomAnchor, constant: 40),
+            stackView.widthAnchor.constraint(equalToConstant: 235),
+            stackView.heightAnchor.constraint(equalToConstant: 40),
             stackView.centerXAnchor.constraint(equalTo: self.centerXAnchor),
-            stackView.widthAnchor.constraint(equalToConstant: 235)
         ])
         
     }

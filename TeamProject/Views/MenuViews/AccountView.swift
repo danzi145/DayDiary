@@ -1,91 +1,95 @@
 //
-//  AccountView.swift
+//  AcView.swift
 //  TeamProject
 //
-//  Created by 최민경 on 2023/04/14.
+//  Created by 남현준 on 2023/04/28.
 //
 
 import UIKit
 
 class AccountView: UIView {
-
-    // MARK: - Variable
+    // MARK: - 상단
+//    private let accountLabel: UILabel = {
+//         let label = UILabel()
+//         label.text = "계정"
+//         label.font = UIFont.systemFont(ofSize: 15)
+//         label.textColor = .black
+//         return label
+//     }()
+//
+//    // 상단의 뒤로가기 버튼
+//    let backBtn: UIButton = {
+//         let button = UIButton()
+//         button.setImage(UIImage(systemName: "chevron.left"), for: .normal)
+//         button.tintColor = UIColor.black
+//         return button
+//     }()
+     
+    // MARK: - 이메일 관련 레이블
+     private let joinedEmail: UILabel = {
+         let label = UILabel()
+         label.text = "가입된 이메일"
+         label.textColor = UIColor.black
+         label.font = UIFont.systemFont(ofSize: 12)
+         return label
+     }()
+     
+    private let emailLabel: UILabel = {
+         let label = UILabel()
+         label.text = "abcdef@gmail.com"
+         label.font = UIFont.systemFont(ofSize: 16)
+         return label
+     }()
     
-    //버튼 높이
-    let buttonHeight: CGFloat = 32
-    
-    
-    // MARK: - 이메일 화면 뷰
-
-    private let emailView: UIView = {
+    // MARK: - 가입된 이메일 주소가 들어가있는 뷰컨테이너
+    private lazy var emailContainer: UIView = {
         let view = UIView()
-        view.backgroundColor = #colorLiteral(red: 0.8797428608, green: 0.8797428012, blue: 0.8797428608, alpha: 1)
+        view.layer.backgroundColor = ( #colorLiteral(red: 0.8797428012, green: 0.8797428012, blue: 0.8797428012, alpha: 0.2))
+        view.addSubview(joinedEmail)
+        view.addSubview(emailLabel)
         return view
     }()
-    
-    private let emailNambeLabel: UILabel = {
-        let label = UILabel()
-        label.font = UIFont.systemFont(ofSize: 15)
-        label.textColor = .black
-        label.text = "연동된 이메일"
-        return label
-    }()
-    
-    private let emailLabel: UILabel = {
-        let label = UILabel()
-        label.font = UIFont.systemFont(ofSize: 18)
-        label.numberOfLines = 2
-        label.textColor = .black
-        label.text = "best2team.Good@gmail.comadfasfasfasdfasdfasdfasfsadfasdfasfasfasfasdfasf"
-        return label
-    }()
-    
-    
-    
-    // MARK: - 비밀번호 설정, 로그아웃, 앱 탈퇴 버튼
-
-    private let passwordSettingsButton: UIButton = {
-        var button = UIButton()
-        button.setTitle("앱 비밀번호 설정하기", for: .normal)
-        button.contentHorizontalAlignment = .left
-        button.setTitleColor(.black, for: .normal)
-        button.titleLabel?.font = UIFont.systemFont(ofSize: 17)
-        return button
-    }()
-    
-    private let logOutButton: UIButton = {
-        var button = UIButton()
-        button.setTitle("로그아웃", for: .normal)
-        button.contentHorizontalAlignment = .left
-        button.setTitleColor(.black, for: .normal)
-        button.titleLabel?.font = UIFont.systemFont(ofSize: 17)
-        return button
-    }()
-    
-    private let leaveButton: UIButton = {
-        var button = UIButton()
-        button.setTitle("앱 탈퇴", for: .normal)
-        button.contentHorizontalAlignment = .left
-        button.setTitleColor(.red, for: .normal)
-        button.titleLabel?.font = UIFont.systemFont(ofSize: 17)
-        return button
-    }()
-    
-    private lazy var buttonStackView: UIStackView = {
-        var stackView = UIStackView(arrangedSubviews: [passwordSettingsButton, logOutButton, leaveButton])
-        stackView.axis = .vertical
-        stackView.spacing = 10
-        stackView.alignment = .fill
-        stackView.distribution = .fill
-        
-        return stackView
-    }()
-    
-    
+     
+    // MARK: - 앱 비밀번호 설정하기 버튼
+     let appPasswordSettingButton: UIButton = {
+         let button = UIButton()
+         button.setTitle("앱 비밀번호 설정하기", for: .normal)
+         button.setTitleColor(UIColor.black, for: .normal)
+         button.titleLabel?.font = UIFont.systemFont(ofSize: 16, weight: .light)
+         return button
+     }()
+     
+    // MARK: - 비밀번호 변경 버튼
+     let passwordChangeButton: UIButton = {
+         let button = UIButton()
+         button.setTitle("비밀번호 변경", for: .normal)
+         button.setTitleColor(UIColor.black, for: .normal)
+         button.titleLabel?.font = UIFont.systemFont(ofSize: 16, weight: .light)
+         return button
+     }()
+     
+    // MARK: - 로그아웃 버튼
+     private let logOutButton: UIButton = {
+          let button = UIButton()
+          button.setTitle("로그아웃", for: .normal)
+          button.setTitleColor(UIColor.black, for: .normal)
+          button.titleLabel?.font = UIFont.systemFont(ofSize: 16, weight: .light)
+          return button
+      }()
+     
+    // MARK: - 앱 탈퇴 버튼
+     let leaveAppButton: UIButton = {
+         let button = UIButton()
+         button.setTitle("앱 탈퇴", for: .normal)
+         button.setTitleColor(#colorLiteral(red: 0.9137254902, green: 0.3019607843, blue: 0.3019607843, alpha: 1), for: .normal)
+         button.titleLabel?.font = UIFont.systemFont(ofSize: 16, weight: .light)
+         return button
+     }()
+     
     
     override init(frame: CGRect) {
         super.init(frame: frame)
-        backgroundColor = .white
+        
         setAutoLayout()
     }
     
@@ -93,46 +97,56 @@ class AccountView: UIView {
         fatalError("init(coder:) has not been implemented")
     }
     
-   
-    // MARK: - 오토레이아웃
-
     func setAutoLayout() {
-        addSubview(emailView)
-        emailView.addSubview(emailNambeLabel)
-        emailView.addSubview(emailLabel)
-        addSubview(buttonStackView)
         
-        emailView.translatesAutoresizingMaskIntoConstraints = false
-        emailNambeLabel.translatesAutoresizingMaskIntoConstraints = false
+        addSubview(emailContainer)
+//        addSubview(accountLabel)
+//        addSubview(backBtn)
+        addSubview(appPasswordSettingButton)
+        addSubview(passwordChangeButton)
+        addSubview(leaveAppButton)
+        addSubview(logOutButton)
+        
+        
+        emailContainer.translatesAutoresizingMaskIntoConstraints = false
+//        accountLabel.translatesAutoresizingMaskIntoConstraints = false
+        joinedEmail.translatesAutoresizingMaskIntoConstraints = false
         emailLabel.translatesAutoresizingMaskIntoConstraints = false
-        passwordSettingsButton.translatesAutoresizingMaskIntoConstraints = false
+        appPasswordSettingButton.translatesAutoresizingMaskIntoConstraints = false
+        passwordChangeButton.translatesAutoresizingMaskIntoConstraints = false
+        leaveAppButton.translatesAutoresizingMaskIntoConstraints = false
+//        backBtn.translatesAutoresizingMaskIntoConstraints = false
         logOutButton.translatesAutoresizingMaskIntoConstraints = false
-        leaveButton.translatesAutoresizingMaskIntoConstraints = false
-        buttonStackView.translatesAutoresizingMaskIntoConstraints = false
+        
         
         NSLayoutConstraint.activate([
+            emailContainer.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 16),
+            emailContainer.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -16),
+            emailContainer.topAnchor.constraint(equalTo: self.topAnchor),
+            emailContainer.heightAnchor.constraint(equalToConstant: 110),
+
             
-            emailView.topAnchor.constraint(equalTo: self.safeAreaLayoutGuide.topAnchor, constant: 10),
-            emailView.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 10),
-            emailView.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -10),
-            emailView.heightAnchor.constraint(equalToConstant: 120),
-        
-            emailNambeLabel.topAnchor.constraint(equalTo: emailView.topAnchor, constant: 15),
-            emailNambeLabel.leadingAnchor.constraint(equalTo: emailView.leadingAnchor, constant: 20),
-            emailNambeLabel.trailingAnchor.constraint(equalTo: emailView.trailingAnchor, constant: -20),
+            joinedEmail.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 40),
+            joinedEmail.topAnchor.constraint(equalTo: emailContainer.topAnchor, constant: 17),
             
-            emailLabel.topAnchor.constraint(equalTo: emailNambeLabel.bottomAnchor, constant: 12),
-            emailLabel.leadingAnchor.constraint(equalTo: emailNambeLabel.leadingAnchor),
-            emailLabel.trailingAnchor.constraint(equalTo: emailNambeLabel.trailingAnchor),
+            emailLabel.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 40),
+            emailLabel.topAnchor.constraint(equalTo: joinedEmail.topAnchor, constant: 163-127),
             
-            passwordSettingsButton.heightAnchor.constraint(equalToConstant: buttonHeight),
-            logOutButton.heightAnchor.constraint(equalToConstant: buttonHeight),
-            leaveButton.heightAnchor.constraint(equalToConstant: buttonHeight),
+            appPasswordSettingButton.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 41),
+            appPasswordSettingButton.topAnchor.constraint(equalTo: emailContainer.bottomAnchor, constant: 20),
             
+            passwordChangeButton.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 41),
+            passwordChangeButton.topAnchor.constraint(equalTo: appPasswordSettingButton.bottomAnchor, constant: 20),
             
-            buttonStackView.topAnchor.constraint(equalTo: emailView.bottomAnchor, constant: 10),
-            buttonStackView.leadingAnchor.constraint(equalTo: emailNambeLabel.leadingAnchor),
-            buttonStackView.trailingAnchor.constraint(equalTo: emailNambeLabel.trailingAnchor),
+            logOutButton.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 41),
+            logOutButton.topAnchor.constraint(equalTo: passwordChangeButton.bottomAnchor, constant: 20),
+            
+            leaveAppButton.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 41),
+            leaveAppButton.topAnchor.constraint(equalTo: logOutButton.bottomAnchor, constant: 20),
+            
         ])
+        
     }
+
 }
+

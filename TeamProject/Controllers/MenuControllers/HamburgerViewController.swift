@@ -103,7 +103,7 @@ extension HamburgerViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         print(#function)
         tableView.deselectRow(at: indexPath, animated: true)
-        let accountVC = AcViewController()
+        let accountVC = AccountViewController()
         let personalVC = PersonalInfoViewController()
         let opensourceVC = OpenSourceViewController()
         
