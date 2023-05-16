@@ -146,7 +146,7 @@ class MemoView : UIView {
         NSLayoutConstraint.activate([
             titleView.widthAnchor.constraint(equalToConstant: 7),
             
-            titleStackView.topAnchor.constraint(equalTo: self.topAnchor, constant: 10),
+            titleStackView.topAnchor.constraint(equalTo: self.safeAreaLayoutGuide.topAnchor, constant: 10),
             titleStackView.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 10),
             titleStackView.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -10),
             titleStackView.heightAnchor.constraint(equalToConstant: 41),

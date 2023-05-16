@@ -62,7 +62,8 @@ class AcViewController: UIViewController {
     @objc func passwordChangeBtnTapped() {
         let setPasswordSettingVC = SetPasswordViewController()
         setPasswordSettingVC.modalPresentationStyle = .fullScreen
-        present(setPasswordSettingVC, animated: true, completion: nil)
+        navigationController?.pushViewController(setPasswordSettingVC, animated: true)
+//        present(setPasswordSettingVC, animated: true, completion: nil)
     }
     
     // MARK: - 앱 탈퇴 버튼 클릭 함수 (탈퇴 확인 알림 함수)

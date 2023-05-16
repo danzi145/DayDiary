@@ -11,19 +11,43 @@ class OpenSourceViewController: UIViewController {
 
     // MARK: - OpenSourceView의 인스턴스
     private let openSourceView = OpenSourceView()
+    private let headerView = MenuHeaderStackView(title: "오픈소스 라이브러리")
     
-    override func loadView() {
-        view = openSourceView
-    }
+    private lazy var stackView: UIStackView = {
+        let stack = UIStackView(arrangedSubviews: [headerView, openSourceView])
+        stack.axis = .vertical
+        stack.alignment = .fill
+        stack.distribution = .fill
+        return stack
+    }()
+    
+//    override func loadView() {
+//        view = openSourceView
+//    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        view.backgroundColor = .white
+        view.addSubview(stackView)
+        setAutolayout()
         setupAddTarget()
     }
     
+    // MARK: - Helpers
+    
+    private func setAutolayout() {
+        stackView.translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint.activate([
+            stackView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 20),
+            stackView.widthAnchor.constraint(equalToConstant: view.frame.width),
+            stackView.bottomAnchor.constraint(equalTo: view.bottomAnchor)
+        ])
+    }
+    
+    
     // MARK: - 인스턴스의 속성과 연결된 addTarget함수를 모은 함수
     func setupAddTarget() {
-        openSourceView.backBtn.addTarget(self, action: #selector(backButtonTapped), for: .touchUpInside)
+        headerView.backButton.addTarget(self, action: #selector(backButtonTapped), for: .touchUpInside)
     }
     
 

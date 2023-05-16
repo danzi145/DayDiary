@@ -9,22 +9,22 @@ import UIKit
 
 class PersonalInfoView: UIView {
     
-    // MARK: - 상단
-    private let personalInfoLabel: UILabel = {
-        let label = UILabel()
-        label.text = "개인정보처리방침"
-        label.font = UIFont.systemFont(ofSize: 15)
-        label.textColor = UIColor.black
-        return label
-    }()
-    
-    // 상단의 뒤로가기 버튼
-    let backBtn: UIButton = {
-         let button = UIButton()
-         button.setImage(UIImage(systemName: "chevron.left"), for: .normal)
-         button.tintColor = UIColor.black
-         return button
-     }()
+//    // MARK: - 상단
+//    private let personalInfoLabel: UILabel = {
+//        let label = UILabel()
+//        label.text = "개인정보처리방침"
+//        label.font = UIFont.systemFont(ofSize: 15)
+//        label.textColor = UIColor.black
+//        return label
+//    }()
+//
+//    // 상단의 뒤로가기 버튼
+//    let backBtn: UIButton = {
+//         let button = UIButton()
+//         button.setImage(UIImage(systemName: "chevron.left"), for: .normal)
+//         button.tintColor = UIColor.black
+//         return button
+//     }()
     
     // MARK: - 개인정보처리방침 텍스트 레이블
     private let informationString: UILabel = {
@@ -48,25 +48,25 @@ class PersonalInfoView: UIView {
     
     func setAutoLayout() {
         backgroundColor = UIColor.white
-        addSubview(personalInfoLabel)
+//        addSubview(personalInfoLabel)
         addSubview(informationString)
-        addSubview(backBtn)
+//        addSubview(backBtn)
         
-        personalInfoLabel.translatesAutoresizingMaskIntoConstraints = false
+//        personalInfoLabel.translatesAutoresizingMaskIntoConstraints = false
         informationString.translatesAutoresizingMaskIntoConstraints = false
-        backBtn.translatesAutoresizingMaskIntoConstraints = false
+//        backBtn.translatesAutoresizingMaskIntoConstraints = false
         
         NSLayoutConstraint.activate([
-            personalInfoLabel.topAnchor.constraint(equalTo: self.topAnchor, constant: 64),
-            personalInfoLabel.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 148),
-            informationString.topAnchor.constraint(equalTo: self.topAnchor, constant: 108),
+//            personalInfoLabel.topAnchor.constraint(equalTo: self.topAnchor, constant: 64),
+//            personalInfoLabel.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 148),
+            informationString.topAnchor.constraint(equalTo: self.safeAreaLayoutGuide.topAnchor),//, constant: 108),
             informationString.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 16),
             informationString.widthAnchor.constraint(equalToConstant: 361),
             
-            backBtn.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 16),
-            backBtn.topAnchor.constraint(equalTo: self.topAnchor, constant: 61),
-            backBtn.heightAnchor.constraint(equalToConstant: 24),
-            backBtn.widthAnchor.constraint(equalToConstant: 24)
+//            backBtn.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 16),
+//            backBtn.topAnchor.constraint(equalTo: self.topAnchor, constant: 61),
+//            backBtn.heightAnchor.constraint(equalToConstant: 24),
+//            backBtn.widthAnchor.constraint(equalToConstant: 24)
         ])
         
     }
