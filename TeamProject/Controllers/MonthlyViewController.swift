@@ -86,7 +86,17 @@ final class MonthlyViewController: UIViewController, UINavigationControllerDeleg
         
         let diary = UIAlertAction(title: "일기", style: .default) { action in
             print("확인버튼 눌림.")
+            let diaryVC = DiaryViewController()
             
+            guard let selectDate = self.calendarView.calendarView.selectedDate else { return }
+            
+            let dateFormatter = DateFormatter()
+            dateFormatter.dateFormat = "yyyy.MM.dd"
+            
+            let date = dateFormatter.string(from: selectDate)
+            diaryVC.date = date
+            self.navigationController?.pushViewController(diaryVC, animated: true)
+        
     
         }
         let memo = UIAlertAction(title: "메모", style: .default) { action in
