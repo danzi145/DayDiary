@@ -38,7 +38,11 @@ class MemoCheckListTableViewCell: UITableViewCell {
         return button
     }()
     
-    
+//    override func prepareForReuse() {
+//        super.prepareForReuse()
+//        
+//        // if 문 활용.. 고민 중
+//    }
     
     override func setSelected(_ selected: Bool, animated: Bool) {
             super.setSelected(selected, animated: animated)

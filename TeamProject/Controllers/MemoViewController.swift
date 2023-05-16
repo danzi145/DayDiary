@@ -181,15 +181,21 @@ extension MemoViewController: UITextFieldDelegate {
         guard let text = textField.text else {
             return false }
         
-        print(text)
-        
-        checkTextArray.append(text)
-        
-        print(checkTextArray)
-        
+//        let point = textField.convert(CGPoint.zero, to: memoView.getMemoTableView())
+//        guard let indexPath = self.memoView.getMemoTableView().indexPathForRow(at: point) else { return false }
+//
+//        print(" ==== indexPath : \(indexPath) ==== ")
+//
+//        checkTextArray[indexPath.row] = text
+//
+        checkTextArray.append("")
+
+        print("=== 체크리스트 빈배열 추가 확인용 \(checkTextArray) === ")
+
         memoView.getMemoTableView().reloadData()
         return true
     }
+    
     
     func textFieldDidChangeSelection(_ textField: UITextField) {
         if memoView.getTitleTextField().text != "" {
@@ -197,6 +203,17 @@ extension MemoViewController: UITextFieldDelegate {
         } else {
             navigationItem.rightBarButtonItem?.tintColor = .systemGray2
         }
+        
+        guard let text = textField.text else { return }
+        
+        let point = textField.convert(CGPoint.zero, to: memoView.getMemoTableView())
+        guard let indexPath = self.memoView.getMemoTableView().indexPathForRow(at: point) else { return }
+        
+        print(" ==== indexPath : \(indexPath) ==== ")
+        
+        checkTextArray[indexPath.row] = text
+        
+        print("=== 체크리스트 배열 변경 확인용 \(checkTextArray) === ")
     
     }
 }
