@@ -122,34 +122,28 @@ class AcView: UIView {
         NSLayoutConstraint.activate([
             emailContainer.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 16),
             emailContainer.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -16),
-            emailContainer.topAnchor.constraint(equalTo: self.topAnchor, constant: 110),
+            emailContainer.topAnchor.constraint(equalTo: self.topAnchor),
             emailContainer.heightAnchor.constraint(equalToConstant: 110),
-            
-//            accountLabel.topAnchor.constraint(equalTo: self.topAnchor, constant: 64),
-//            accountLabel.centerXAnchor.constraint(equalTo: self.centerXAnchor),
+
             
             joinedEmail.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 40),
-            joinedEmail.topAnchor.constraint(equalTo: self.topAnchor, constant: 127),
+            joinedEmail.topAnchor.constraint(equalTo: emailContainer.topAnchor, constant: 17),
             
             emailLabel.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 40),
-            emailLabel.topAnchor.constraint(equalTo: self.topAnchor, constant: 163),
+            emailLabel.topAnchor.constraint(equalTo: joinedEmail.topAnchor, constant: 163-127),
             
             appPasswordSettingButton.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 41),
-            appPasswordSettingButton.topAnchor.constraint(equalTo: self.topAnchor, constant: 238),
+            appPasswordSettingButton.topAnchor.constraint(equalTo: emailContainer.bottomAnchor, constant: 20),
             
             passwordChangeButton.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 41),
-            passwordChangeButton.topAnchor.constraint(equalTo: self.topAnchor, constant: 292),
+            passwordChangeButton.topAnchor.constraint(equalTo: appPasswordSettingButton.bottomAnchor, constant: 20),
             
             logOutButton.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 41),
-            logOutButton.topAnchor.constraint(equalTo: self.topAnchor, constant: 346),
+            logOutButton.topAnchor.constraint(equalTo: passwordChangeButton.bottomAnchor, constant: 20),
             
             leaveAppButton.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 41),
-            leaveAppButton.topAnchor.constraint(equalTo: self.topAnchor, constant: 400),
+            leaveAppButton.topAnchor.constraint(equalTo: logOutButton.bottomAnchor, constant: 20),
             
-//            backBtn.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 16),
-//            backBtn.topAnchor.constraint(equalTo: self.topAnchor, constant: 61),
-//            backBtn.heightAnchor.constraint(equalToConstant: 24),
-//            backBtn.widthAnchor.constraint(equalToConstant: 24)
         ])
         
     }
