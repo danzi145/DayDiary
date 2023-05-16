@@ -7,10 +7,10 @@
 
 import UIKit
 
-class AccountViewController: UIViewController {
+class EmailLoginAccountViewController: UIViewController {
     
     // MARK: - AccountView의 인스턴스
-    private let accountView = AccountView()
+    private let accountView = EmailLoginAccountView()
     private let headerView = MenuHeaderStackView(title: "계정")
     
     private lazy var stackView: UIStackView = {

@@ -103,12 +103,16 @@ extension HamburgerViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         print(#function)
         tableView.deselectRow(at: indexPath, animated: true)
-        let accountVC = AccountViewController()
+        
+        // social login시, SocialLoginAccountVC present하기
+        let socialAccountVC = SocialLoginAccountViewController()
+        // email login시, EmailLoginAccountVC present하기
+        let emailAccountVC = EmailLoginAccountViewController()
         let personalVC = PersonalInfoViewController()
         let opensourceVC = OpenSourceViewController()
         
         switch indexPath.row {
-        case 0: navigationController?.pushViewController(accountVC, animated: true)
+        case 0: navigationController?.pushViewController(socialAccountVC, animated: true)
         case 1: navigationController?.pushViewController(personalVC, animated: true)
         case 2: navigationController?.pushViewController(opensourceVC, animated: true)
         default: return

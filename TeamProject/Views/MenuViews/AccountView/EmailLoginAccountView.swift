@@ -7,7 +7,7 @@
 
 import UIKit
 
-class AccountView: UIView {
+class EmailLoginAccountView: UIView {
     // MARK: - 상단
 //    private let accountLabel: UILabel = {
 //         let label = UILabel()

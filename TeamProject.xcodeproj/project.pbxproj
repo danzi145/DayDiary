@@ -7,18 +7,20 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		BF237BE929FBFC9B006DB129 /* AccountView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF237BE829FBFC9B006DB129 /* AccountView.swift */; };
+		BF237BE929FBFC9B006DB129 /* EmailLoginAccountView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF237BE829FBFC9B006DB129 /* EmailLoginAccountView.swift */; };
 		BF237BEB29FBFCE1006DB129 /* PersonalInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF237BEA29FBFCE1006DB129 /* PersonalInfoView.swift */; };
 		BF237BED29FBFD00006DB129 /* OpenSourceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF237BEC29FBFD00006DB129 /* OpenSourceView.swift */; };
 		BF237BEF29FBFD2C006DB129 /* SetPasswordView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF237BEE29FBFD2C006DB129 /* SetPasswordView.swift */; };
 		BF237BF129FBFD50006DB129 /* AppPasswordView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF237BF029FBFD50006DB129 /* AppPasswordView.swift */; };
-		BF237BF329FBFD7F006DB129 /* AccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF237BF229FBFD7F006DB129 /* AccountViewController.swift */; };
+		BF237BF329FBFD7F006DB129 /* EmailLoginAccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF237BF229FBFD7F006DB129 /* EmailLoginAccountViewController.swift */; };
 		BF237BF529FBFDC9006DB129 /* PersonalInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF237BF429FBFDC9006DB129 /* PersonalInfoViewController.swift */; };
 		BF237BF729FBFDE9006DB129 /* OpenSourceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF237BF629FBFDE9006DB129 /* OpenSourceViewController.swift */; };
 		BF237BF929FBFE10006DB129 /* SetPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF237BF829FBFE10006DB129 /* SetPasswordViewController.swift */; };
 		BF237BFB29FBFE38006DB129 /* AppPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF237BFA29FBFE38006DB129 /* AppPasswordViewController.swift */; };
 		C92797C77B52716E7BB699DD /* Pods_TeamProject.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3D89FE3648EDD3FB1AFC9369 /* Pods_TeamProject.framework */; };
 		F117F5D829E2777300A44FCC /* MonthlyNavigationStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F117F5D729E2777300A44FCC /* MonthlyNavigationStackView.swift */; };
+		F12B6C592A1361D800F9446C /* SocialLoginAccountView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F12B6C582A1361D800F9446C /* SocialLoginAccountView.swift */; };
+		F12B6C5B2A1361F300F9446C /* SocialLoginAccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F12B6C5A2A1361F300F9446C /* SocialLoginAccountViewController.swift */; };
 		F13ACB912A1261430036214F /* MenuHeaderStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F13ACB902A1261430036214F /* MenuHeaderStackView.swift */; };
 		F13ACB932A1323CC0036214F /* HamburgerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F13ACB922A1323CC0036214F /* HamburgerView.swift */; };
 		F13ACB972A1323F80036214F /* HamburgerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F13ACB962A1323F80036214F /* HamburgerViewController.swift */; };
@@ -42,17 +44,19 @@
 		3D89FE3648EDD3FB1AFC9369 /* Pods_TeamProject.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TeamProject.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		50FEC4B61C2395ABF26807A6 /* Pods-TeamProject.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TeamProject.release.xcconfig"; path = "Target Support Files/Pods-TeamProject/Pods-TeamProject.release.xcconfig"; sourceTree = "<group>"; };
 		6B2D016BBEDCFC94DBC0DD40 /* Pods-TeamProject.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TeamProject.debug.xcconfig"; path = "Target Support Files/Pods-TeamProject/Pods-TeamProject.debug.xcconfig"; sourceTree = "<group>"; };
-		BF237BE829FBFC9B006DB129 /* AccountView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountView.swift; sourceTree = "<group>"; };
+		BF237BE829FBFC9B006DB129 /* EmailLoginAccountView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailLoginAccountView.swift; sourceTree = "<group>"; };
 		BF237BEA29FBFCE1006DB129 /* PersonalInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonalInfoView.swift; sourceTree = "<group>"; };
 		BF237BEC29FBFD00006DB129 /* OpenSourceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenSourceView.swift; sourceTree = "<group>"; };
 		BF237BEE29FBFD2C006DB129 /* SetPasswordView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetPasswordView.swift; sourceTree = "<group>"; };
 		BF237BF029FBFD50006DB129 /* AppPasswordView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppPasswordView.swift; sourceTree = "<group>"; };
-		BF237BF229FBFD7F006DB129 /* AccountViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountViewController.swift; sourceTree = "<group>"; };
+		BF237BF229FBFD7F006DB129 /* EmailLoginAccountViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailLoginAccountViewController.swift; sourceTree = "<group>"; };
 		BF237BF429FBFDC9006DB129 /* PersonalInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonalInfoViewController.swift; sourceTree = "<group>"; };
 		BF237BF629FBFDE9006DB129 /* OpenSourceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenSourceViewController.swift; sourceTree = "<group>"; };
 		BF237BF829FBFE10006DB129 /* SetPasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetPasswordViewController.swift; sourceTree = "<group>"; };
 		BF237BFA29FBFE38006DB129 /* AppPasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppPasswordViewController.swift; sourceTree = "<group>"; };
 		F117F5D729E2777300A44FCC /* MonthlyNavigationStackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MonthlyNavigationStackView.swift; sourceTree = "<group>"; };
+		F12B6C582A1361D800F9446C /* SocialLoginAccountView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SocialLoginAccountView.swift; sourceTree = "<group>"; };
+		F12B6C5A2A1361F300F9446C /* SocialLoginAccountViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SocialLoginAccountViewController.swift; sourceTree = "<group>"; };
 		F13ACB902A1261430036214F /* MenuHeaderStackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuHeaderStackView.swift; sourceTree = "<group>"; };
 		F13ACB922A1323CC0036214F /* HamburgerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HamburgerView.swift; sourceTree = "<group>"; };
 		F13ACB962A1323F80036214F /* HamburgerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HamburgerViewController.swift; sourceTree = "<group>"; };
@@ -119,11 +123,29 @@
 			path = Cells;
 			sourceTree = "<group>";
 		};
+		F12B6C562A13613D00F9446C /* AccountView */ = {
+			isa = PBXGroup;
+			children = (
+				BF237BE829FBFC9B006DB129 /* EmailLoginAccountView.swift */,
+				F12B6C582A1361D800F9446C /* SocialLoginAccountView.swift */,
+			);
+			path = AccountView;
+			sourceTree = "<group>";
+		};
+		F12B6C572A1361BE00F9446C /* AccountViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				BF237BF229FBFD7F006DB129 /* EmailLoginAccountViewController.swift */,
+				F12B6C5A2A1361F300F9446C /* SocialLoginAccountViewController.swift */,
+			);
+			path = AccountViewControllers;
+			sourceTree = "<group>";
+		};
 		F13ACBAA2A1326690036214F /* MenuControllers */ = {
 			isa = PBXGroup;
 			children = (
 				F13ACB962A1323F80036214F /* HamburgerViewController.swift */,
-				BF237BF229FBFD7F006DB129 /* AccountViewController.swift */,
+				F12B6C572A1361BE00F9446C /* AccountViewControllers */,
 				BF237BFA29FBFE38006DB129 /* AppPasswordViewController.swift */,
 				BF237BF829FBFE10006DB129 /* SetPasswordViewController.swift */,
 				BF237BF429FBFDC9006DB129 /* PersonalInfoViewController.swift */,
@@ -137,7 +159,7 @@
 			children = (
 				F13ACB902A1261430036214F /* MenuHeaderStackView.swift */,
 				F13ACB922A1323CC0036214F /* HamburgerView.swift */,
-				BF237BE829FBFC9B006DB129 /* AccountView.swift */,
+				F12B6C562A13613D00F9446C /* AccountView */,
 				BF237BEC29FBFD00006DB129 /* OpenSourceView.swift */,
 				BF237BF029FBFD50006DB129 /* AppPasswordView.swift */,
 				BF237BEE29FBFD2C006DB129 /* SetPasswordView.swift */,
@@ -329,13 +351,14 @@
 			files = (
 				BF237BEF29FBFD2C006DB129 /* SetPasswordView.swift in Sources */,
 				F13ACBA92A1325710036214F /* HamburgerSettingsTableCell.swift in Sources */,
+				F12B6C5B2A1361F300F9446C /* SocialLoginAccountViewController.swift in Sources */,
 				BF237BEB29FBFCE1006DB129 /* PersonalInfoView.swift in Sources */,
 				BF237BED29FBFD00006DB129 /* OpenSourceView.swift in Sources */,
 				BF237BF129FBFD50006DB129 /* AppPasswordView.swift in Sources */,
 				F13ACBA32A1324AF0036214F /* MemoCheckListTableViewCell.swift in Sources */,
 				BF237BF529FBFDC9006DB129 /* PersonalInfoViewController.swift in Sources */,
 				BF237BFB29FBFE38006DB129 /* AppPasswordViewController.swift in Sources */,
-				BF237BF329FBFD7F006DB129 /* AccountViewController.swift in Sources */,
+				BF237BF329FBFD7F006DB129 /* EmailLoginAccountViewController.swift in Sources */,
 				F1D0FD0729DBE9B000AB1295 /* CustomAlertView.swift in Sources */,
 				F13ACB912A1261430036214F /* MenuHeaderStackView.swift in Sources */,
 				F13ACB972A1323F80036214F /* HamburgerViewController.swift in Sources */,
@@ -348,9 +371,10 @@
 				F1F4F87D29F4CF980096F77F /* AlertTitleButton.swift in Sources */,
 				F1D0FD0529DBE6A500AB1295 /* CustomAlertViewController.swift in Sources */,
 				F13ACBAF2A1327460036214F /* MemoViews.swift in Sources */,
-				BF237BE929FBFC9B006DB129 /* AccountView.swift in Sources */,
+				BF237BE929FBFC9B006DB129 /* EmailLoginAccountView.swift in Sources */,
 				F1DECA7B29D3E259001C758F /* CalendarView.swift in Sources */,
 				F1F4F87929F4C7F80096F77F /* Extensions.swift in Sources */,
+				F12B6C592A1361D800F9446C /* SocialLoginAccountView.swift in Sources */,
 				F1DECA6929D3CC8B001C758F /* SceneDelegate.swift in Sources */,
 				F13ACBAD2A1327320036214F /* MemoViewController.swift in Sources */,
 			);
