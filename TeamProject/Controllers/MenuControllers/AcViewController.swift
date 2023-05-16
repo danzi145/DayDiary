@@ -11,23 +11,44 @@ class AcViewController: UIViewController {
     
     // MARK: - AccountView의 인스턴스
     private let accountView = AcView()
+    private let headerView = MenuHeaderStackView(title: "계정")
     
-    override func loadView() {
-        view = accountView
-    }
+    private lazy var stackView: UIStackView = {
+        let stack = UIStackView(arrangedSubviews: [headerView, accountView])
+        stack.axis = .vertical
+        stack.alignment = .fill
+        stack.distribution = .fill
+        return stack
+    }()
+//    override func loadView() {
+//        view = accountView
+//    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .white
+        view.addSubview(stackView)
+        setAutolayout()
         setupAddTarget()
     }
 
+    // MARK: - Helpers
+    
+    private func setAutolayout() {
+        stackView.translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint.activate([
+            stackView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 20),
+            stackView.widthAnchor.constraint(equalToConstant: view.frame.width),
+            stackView.bottomAnchor.constraint(equalTo: view.bottomAnchor)
+        ])
+    }
+    
     // MARK: - 인스턴스의 속성과 연결된 addTarget함수를 모은 함수
     func setupAddTarget() {
         accountView.appPasswordSettingButton.addTarget(self, action: #selector(appPasswordSettingBtnTapped), for: .touchUpInside)
         accountView.passwordChangeButton.addTarget(self, action: #selector(passwordChangeBtnTapped), for: .touchUpInside)
         accountView.leaveAppButton.addTarget(self, action: #selector(leaveAppAlert), for: .touchUpInside)
-        accountView.backBtn.addTarget(self, action: #selector(backButtonTapped), for: .touchUpInside)
+        headerView.backButton.addTarget(self, action: #selector(backButtonTapped), for: .touchUpInside)
     }
     
     // MARK: - 앱 비밀번호 설정하기 버튼 클릭 함수 (AppPasswordViewController로 넘어가는 함수)
@@ -67,7 +88,7 @@ class AcViewController: UIViewController {
     
     // MARK: - 상단의 뒤로가기 버튼 클릭 함수 (이전 화면으로 넘어가는 함수)
     @objc func backButtonTapped() {
-//        dismiss(animated: true, completion: nil)
+        navigationController?.popViewController(animated: true)
         print("뒤로가기 버튼 눌림")
     }
     

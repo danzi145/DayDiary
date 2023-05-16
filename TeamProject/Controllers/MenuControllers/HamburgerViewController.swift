@@ -7,15 +7,17 @@
 
 import UIKit
 
+struct HamburgerSettings {
+    var logoImage: UIImage?
+    var settingsLabel: String
+}
 
 class HamburgerViewController: UIViewController {
     
     // MARK: - Object
+    
     let hamburgerView = HamburgerView()
     let headerView = MenuHeaderStackView(title: "")
-//    var settingsManager = HamburgerSettingsManager()
-    
-    
     
     // MARK: - Variable
 
@@ -27,22 +29,14 @@ class HamburgerViewController: UIViewController {
     
     // MARK: - ViewController LifeCycle
     
-    override func loadView() {
-        super.loadView()
-//        view = hamburgerView
-    }
-    
     override func viewDidLoad() {
         super.viewDidLoad()
-//        settingsManager.makeData()
-//        dataArray = settingsManager.getDataArray()
         view.backgroundColor = .white
         view.addSubview(headerView)
         view.addSubview(hamburgerView)
         setAutolayout()
         
         hamburgerView.getMenuTableView().register(HamburgerSettingsTableCell.self, forCellReuseIdentifier: "DataCell")
-//        setupNaviBar()
         setupDelegate()
         
         // 커스텀뷰의 백버튼에 대한 액션 (dismiss)
@@ -78,22 +72,7 @@ class HamburgerViewController: UIViewController {
         hamburgerView.getMenuTableView().delegate = self
         hamburgerView.getMenuTableView().dataSource = self
     }
-    
-//    private func setupNaviBar() {
-//        // 네이게션바
-//        let appearance = UINavigationBarAppearance()
-//        appearance.backgroundColor = .white
-//        appearance.shadowColor = .clear
-//        navigationController?.navigationBar.standardAppearance = appearance
-//        navigationController?.navigationBar.scrollEdgeAppearance = appearance
-//        navigationController?.navigationBar.isHidden = false
-//        
-//        // 네비게이션 백 버튼
-//        let backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: self, action: nil)
-//        backBarButtonItem.tintColor = .black
-//        self.navigationItem.backBarButtonItem = backBarButtonItem
-//       
-//    }
+
 }
 
 // MARK: - UITableViewDataSource
@@ -124,13 +103,14 @@ extension HamburgerViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         print(#function)
         tableView.deselectRow(at: indexPath, animated: true)
-        let accountVC = AccountViewController()
+        let accountVC = AcViewController()
+        let personalVC = PersonalInfoViewController()
+        let opensourceVC = OpenSourceViewController()
         
         switch indexPath.row {
         case 0: navigationController?.pushViewController(accountVC, animated: true)
-            //우선 동일한 View Push 구현
-        case 1: navigationController?.pushViewController(accountVC, animated: true)
-        case 2: navigationController?.pushViewController(accountVC, animated: true)
+        case 1: navigationController?.pushViewController(personalVC, animated: true)
+        case 2: navigationController?.pushViewController(opensourceVC, animated: true)
         default: return
         }
     

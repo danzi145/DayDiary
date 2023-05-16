@@ -9,21 +9,21 @@ import UIKit
 
 class AcView: UIView {
     // MARK: - 상단
-    private let accountLabel: UILabel = {
-         let label = UILabel()
-         label.text = "계정"
-         label.font = UIFont.systemFont(ofSize: 15)
-         label.textColor = .black
-         return label
-     }()
-    
-    // 상단의 뒤로가기 버튼
-    let backBtn: UIButton = {
-         let button = UIButton()
-         button.setImage(UIImage(systemName: "chevron.left"), for: .normal)
-         button.tintColor = UIColor.black
-         return button
-     }()
+//    private let accountLabel: UILabel = {
+//         let label = UILabel()
+//         label.text = "계정"
+//         label.font = UIFont.systemFont(ofSize: 15)
+//         label.textColor = .black
+//         return label
+//     }()
+//
+//    // 상단의 뒤로가기 버튼
+//    let backBtn: UIButton = {
+//         let button = UIButton()
+//         button.setImage(UIImage(systemName: "chevron.left"), for: .normal)
+//         button.tintColor = UIColor.black
+//         return button
+//     }()
      
     // MARK: - 이메일 관련 레이블
      private let joinedEmail: UILabel = {
@@ -100,8 +100,8 @@ class AcView: UIView {
     func setAutoLayout() {
         
         addSubview(emailContainer)
-        addSubview(accountLabel)
-        addSubview(backBtn)
+//        addSubview(accountLabel)
+//        addSubview(backBtn)
         addSubview(appPasswordSettingButton)
         addSubview(passwordChangeButton)
         addSubview(leaveAppButton)
@@ -109,13 +109,13 @@ class AcView: UIView {
         
         
         emailContainer.translatesAutoresizingMaskIntoConstraints = false
-        accountLabel.translatesAutoresizingMaskIntoConstraints = false
+//        accountLabel.translatesAutoresizingMaskIntoConstraints = false
         joinedEmail.translatesAutoresizingMaskIntoConstraints = false
         emailLabel.translatesAutoresizingMaskIntoConstraints = false
         appPasswordSettingButton.translatesAutoresizingMaskIntoConstraints = false
         passwordChangeButton.translatesAutoresizingMaskIntoConstraints = false
         leaveAppButton.translatesAutoresizingMaskIntoConstraints = false
-        backBtn.translatesAutoresizingMaskIntoConstraints = false
+//        backBtn.translatesAutoresizingMaskIntoConstraints = false
         logOutButton.translatesAutoresizingMaskIntoConstraints = false
         
         
@@ -125,8 +125,8 @@ class AcView: UIView {
             emailContainer.topAnchor.constraint(equalTo: self.topAnchor, constant: 110),
             emailContainer.heightAnchor.constraint(equalToConstant: 110),
             
-            accountLabel.topAnchor.constraint(equalTo: self.topAnchor, constant: 64),
-            accountLabel.centerXAnchor.constraint(equalTo: self.centerXAnchor),
+//            accountLabel.topAnchor.constraint(equalTo: self.topAnchor, constant: 64),
+//            accountLabel.centerXAnchor.constraint(equalTo: self.centerXAnchor),
             
             joinedEmail.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 40),
             joinedEmail.topAnchor.constraint(equalTo: self.topAnchor, constant: 127),
@@ -146,10 +146,10 @@ class AcView: UIView {
             leaveAppButton.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 41),
             leaveAppButton.topAnchor.constraint(equalTo: self.topAnchor, constant: 400),
             
-            backBtn.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 16),
-            backBtn.topAnchor.constraint(equalTo: self.topAnchor, constant: 61),
-            backBtn.heightAnchor.constraint(equalToConstant: 24),
-            backBtn.widthAnchor.constraint(equalToConstant: 24)
+//            backBtn.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 16),
+//            backBtn.topAnchor.constraint(equalTo: self.topAnchor, constant: 61),
+//            backBtn.heightAnchor.constraint(equalToConstant: 24),
+//            backBtn.widthAnchor.constraint(equalToConstant: 24)
         ])
         
     }

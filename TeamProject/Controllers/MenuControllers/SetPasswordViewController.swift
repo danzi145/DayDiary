@@ -38,6 +38,6 @@ class SetPasswordViewController: UIViewController {
     
     // MARK: - 상단의 뒤로가기 버튼 클릭 함수 (이전 화면으로 넘어가는 함수)
     @objc func backButtonTapped() {
-        dismiss(animated: true, completion: nil)
+        navigationController?.popViewController(animated: true)
     }
 }

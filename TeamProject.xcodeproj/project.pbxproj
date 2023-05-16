@@ -20,6 +20,14 @@
 		C92797C77B52716E7BB699DD /* Pods_TeamProject.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3D89FE3648EDD3FB1AFC9369 /* Pods_TeamProject.framework */; };
 		F117F5D829E2777300A44FCC /* MonthlyNavigationStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F117F5D729E2777300A44FCC /* MonthlyNavigationStackView.swift */; };
 		F13ACB912A1261430036214F /* MenuHeaderStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F13ACB902A1261430036214F /* MenuHeaderStackView.swift */; };
+		F13ACB932A1323CC0036214F /* HamburgerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F13ACB922A1323CC0036214F /* HamburgerView.swift */; };
+		F13ACB952A1323DE0036214F /* AccountView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F13ACB942A1323DE0036214F /* AccountView.swift */; };
+		F13ACB972A1323F80036214F /* HamburgerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F13ACB962A1323F80036214F /* HamburgerViewController.swift */; };
+		F13ACB9B2A1324230036214F /* AccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F13ACB9A2A1324230036214F /* AccountViewController.swift */; };
+		F13ACBA32A1324AF0036214F /* MemoCheckListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F13ACBA22A1324AF0036214F /* MemoCheckListTableViewCell.swift */; };
+		F13ACBA92A1325710036214F /* HamburgerSettingsTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F13ACBA82A1325710036214F /* HamburgerSettingsTableCell.swift */; };
+		F13ACBAD2A1327320036214F /* MemoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F13ACBAC2A1327320036214F /* MemoViewController.swift */; };
+		F13ACBAF2A1327460036214F /* MemoViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = F13ACBAE2A1327460036214F /* MemoViews.swift */; };
 		F1D0FD0529DBE6A500AB1295 /* CustomAlertViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1D0FD0429DBE6A500AB1295 /* CustomAlertViewController.swift */; };
 		F1D0FD0729DBE9B000AB1295 /* CustomAlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1D0FD0629DBE9B000AB1295 /* CustomAlertView.swift */; };
 		F1DECA6729D3CC8B001C758F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1DECA6629D3CC8B001C758F /* AppDelegate.swift */; };
@@ -48,6 +56,14 @@
 		BF237BFA29FBFE38006DB129 /* AppPasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppPasswordViewController.swift; sourceTree = "<group>"; };
 		F117F5D729E2777300A44FCC /* MonthlyNavigationStackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MonthlyNavigationStackView.swift; sourceTree = "<group>"; };
 		F13ACB902A1261430036214F /* MenuHeaderStackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuHeaderStackView.swift; sourceTree = "<group>"; };
+		F13ACB922A1323CC0036214F /* HamburgerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HamburgerView.swift; sourceTree = "<group>"; };
+		F13ACB942A1323DE0036214F /* AccountView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountView.swift; sourceTree = "<group>"; };
+		F13ACB962A1323F80036214F /* HamburgerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HamburgerViewController.swift; sourceTree = "<group>"; };
+		F13ACB9A2A1324230036214F /* AccountViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountViewController.swift; sourceTree = "<group>"; };
+		F13ACBA22A1324AF0036214F /* MemoCheckListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoCheckListTableViewCell.swift; sourceTree = "<group>"; };
+		F13ACBA82A1325710036214F /* HamburgerSettingsTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HamburgerSettingsTableCell.swift; sourceTree = "<group>"; };
+		F13ACBAC2A1327320036214F /* MemoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoViewController.swift; sourceTree = "<group>"; };
+		F13ACBAE2A1327460036214F /* MemoViews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoViews.swift; sourceTree = "<group>"; };
 		F1D0FD0429DBE6A500AB1295 /* CustomAlertViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomAlertViewController.swift; sourceTree = "<group>"; };
 		F1D0FD0629DBE9B000AB1295 /* CustomAlertView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomAlertView.swift; sourceTree = "<group>"; };
 		F1DECA6329D3CC8B001C758F /* TeamProject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TeamProject.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -94,8 +110,6 @@
 		B0743FCA2A111D2000E3E8FF /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				B0743FCB2A111D4100E3E8FF /* HamburgerSettings.swift */,
-				B0743FCD2A111D5900E3E8FF /* HamburgerSettingsManager.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -103,10 +117,39 @@
 		B0743FDC2A111E1800E3E8FF /* Cells */ = {
 			isa = PBXGroup;
 			children = (
-				B0743FDD2A111E2F00E3E8FF /* HamburgerSettingsTableCell.swift */,
-				B0743FDF2A111E5800E3E8FF /* MemoCheckListTableViewCell.swift */,
+				F13ACBA22A1324AF0036214F /* MemoCheckListTableViewCell.swift */,
+				F13ACBA82A1325710036214F /* HamburgerSettingsTableCell.swift */,
 			);
 			path = Cells;
+			sourceTree = "<group>";
+		};
+		F13ACBAA2A1326690036214F /* MenuControllers */ = {
+			isa = PBXGroup;
+			children = (
+				F13ACB962A1323F80036214F /* HamburgerViewController.swift */,
+				BF237BF229FBFD7F006DB129 /* AcViewController.swift */,
+				F13ACB9A2A1324230036214F /* AccountViewController.swift */,
+				BF237BF429FBFDC9006DB129 /* PersonalInfoViewController.swift */,
+				BF237BF629FBFDE9006DB129 /* OpenSourceViewController.swift */,
+				BF237BF829FBFE10006DB129 /* SetPasswordViewController.swift */,
+				BF237BFA29FBFE38006DB129 /* AppPasswordViewController.swift */,
+			);
+			path = MenuControllers;
+			sourceTree = "<group>";
+		};
+		F13ACBAB2A13269D0036214F /* MenuViews */ = {
+			isa = PBXGroup;
+			children = (
+				F13ACB902A1261430036214F /* MenuHeaderStackView.swift */,
+				F13ACB922A1323CC0036214F /* HamburgerView.swift */,
+				BF237BE829FBFC9B006DB129 /* AcView.swift */,
+				BF237BEA29FBFCE1006DB129 /* PersonalInfoView.swift */,
+				BF237BEC29FBFD00006DB129 /* OpenSourceView.swift */,
+				BF237BEE29FBFD2C006DB129 /* SetPasswordView.swift */,
+				BF237BF029FBFD50006DB129 /* AppPasswordView.swift */,
+				F13ACB942A1323DE0036214F /* AccountView.swift */,
+			);
+			path = MenuViews;
 			sourceTree = "<group>";
 		};
 		F1DECA5A29D3CC8B001C758F = {
@@ -149,15 +192,8 @@
 				F117F5D729E2777300A44FCC /* MonthlyNavigationStackView.swift */,
 				F1DECA7A29D3E259001C758F /* CalendarView.swift */,
 				F1D0FD0629DBE9B000AB1295 /* CustomAlertView.swift */,
-				BF237BE829FBFC9B006DB129 /* AcView.swift */,
-				BF237BEA29FBFCE1006DB129 /* PersonalInfoView.swift */,
-				BF237BEC29FBFD00006DB129 /* OpenSourceView.swift */,
-				BF237BEE29FBFD2C006DB129 /* SetPasswordView.swift */,
-				BF237BF029FBFD50006DB129 /* AppPasswordView.swift */,
-				B0743FD02A111D8B00E3E8FF /* MemoView.swift */,
-				F13ACB902A1261430036214F /* MenuHeaderStackView.swift */,
-				B0743FD22A111DA100E3E8FF /* HamburgerView.swift */,
-				B0743FD42A111DB300E3E8FF /* AccountView.swift */,
+				F13ACBAE2A1327460036214F /* MemoViews.swift */,
+				F13ACBAB2A13269D0036214F /* MenuViews */,
 				B0743FDC2A111E1800E3E8FF /* Cells */,
 			);
 			path = Views;
@@ -168,14 +204,8 @@
 			children = (
 				F1DECA6A29D3CC8B001C758F /* MonthlyViewController.swift */,
 				F1D0FD0429DBE6A500AB1295 /* CustomAlertViewController.swift */,
-				BF237BF229FBFD7F006DB129 /* AcViewController.swift */,
-				BF237BF429FBFDC9006DB129 /* PersonalInfoViewController.swift */,
-				BF237BF629FBFDE9006DB129 /* OpenSourceViewController.swift */,
-				BF237BF829FBFE10006DB129 /* SetPasswordViewController.swift */,
-				BF237BFA29FBFE38006DB129 /* AppPasswordViewController.swift */,
-				B0743FD62A111DD200E3E8FF /* MemoViewController.swift */,
-				B0743FD82A111DE600E3E8FF /* HamburgerViewController.swift */,
-				B0743FDA2A111DFD00E3E8FF /* AccountViewController.swift */,
+				F13ACBAC2A1327320036214F /* MemoViewController.swift */,
+				F13ACBAA2A1326690036214F /* MenuControllers */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -304,35 +334,33 @@
 			buildActionMask = 2147483647;
 			files = (
 				BF237BEF29FBFD2C006DB129 /* SetPasswordView.swift in Sources */,
+				F13ACB9B2A1324230036214F /* AccountViewController.swift in Sources */,
+				F13ACBA92A1325710036214F /* HamburgerSettingsTableCell.swift in Sources */,
 				BF237BEB29FBFCE1006DB129 /* PersonalInfoView.swift in Sources */,
 				BF237BED29FBFD00006DB129 /* OpenSourceView.swift in Sources */,
 				BF237BF129FBFD50006DB129 /* AppPasswordView.swift in Sources */,
+				F13ACBA32A1324AF0036214F /* MemoCheckListTableViewCell.swift in Sources */,
+				F13ACB952A1323DE0036214F /* AccountView.swift in Sources */,
 				BF237BF529FBFDC9006DB129 /* PersonalInfoViewController.swift in Sources */,
 				BF237BFB29FBFE38006DB129 /* AppPasswordViewController.swift in Sources */,
 				BF237BF329FBFD7F006DB129 /* AcViewController.swift in Sources */,
-				B0743FD92A111DE600E3E8FF /* HamburgerViewController.swift in Sources */,
-				B0743FD52A111DB300E3E8FF /* AccountView.swift in Sources */,
-				B0743FE02A111E5800E3E8FF /* MemoCheckListTableViewCell.swift in Sources */,
 				F1D0FD0729DBE9B000AB1295 /* CustomAlertView.swift in Sources */,
 				F13ACB912A1261430036214F /* MenuHeaderStackView.swift in Sources */,
-				B0743FCE2A111D5900E3E8FF /* HamburgerSettingsManager.swift in Sources */,
+				F13ACB972A1323F80036214F /* HamburgerViewController.swift in Sources */,
 				F1DECA6B29D3CC8B001C758F /* MonthlyViewController.swift in Sources */,
 				BF237BF729FBFDE9006DB129 /* OpenSourceViewController.swift in Sources */,
-				B0743FD32A111DA100E3E8FF /* HamburgerView.swift in Sources */,
-				B0743FDE2A111E2F00E3E8FF /* HamburgerSettingsTableCell.swift in Sources */,
+				F13ACB932A1323CC0036214F /* HamburgerView.swift in Sources */,
 				F117F5D829E2777300A44FCC /* MonthlyNavigationStackView.swift in Sources */,
 				BF237BF929FBFE10006DB129 /* SetPasswordViewController.swift in Sources */,
 				F1DECA6729D3CC8B001C758F /* AppDelegate.swift in Sources */,
 				F1F4F87D29F4CF980096F77F /* AlertTitleButton.swift in Sources */,
 				F1D0FD0529DBE6A500AB1295 /* CustomAlertViewController.swift in Sources */,
+				F13ACBAF2A1327460036214F /* MemoViews.swift in Sources */,
 				BF237BE929FBFC9B006DB129 /* AcView.swift in Sources */,
-				B0743FDB2A111DFD00E3E8FF /* AccountViewController.swift in Sources */,
-				B0743FD12A111D8B00E3E8FF /* MemoView.swift in Sources */,
 				F1DECA7B29D3E259001C758F /* CalendarView.swift in Sources */,
-				B0743FD72A111DD200E3E8FF /* MemoViewController.swift in Sources */,
-				B0743FCC2A111D4100E3E8FF /* HamburgerSettings.swift in Sources */,
 				F1F4F87929F4C7F80096F77F /* Extensions.swift in Sources */,
 				F1DECA6929D3CC8B001C758F /* SceneDelegate.swift in Sources */,
+				F13ACBAD2A1327320036214F /* MemoViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
