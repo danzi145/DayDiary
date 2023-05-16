@@ -133,7 +133,7 @@ class SetPasswordView: UIView {
         view.layer.borderColor = #colorLiteral(red: 0.7295668721, green: 0.7580708861, blue: 0.7912309766, alpha: 1)
         view.layer.cornerRadius = 8
         view.clipsToBounds = true
-        view.addSubview(passwordSecureButton)
+//        view.addSubview(passwordSecureButton)
         return view
     }()
     
@@ -187,9 +187,10 @@ class SetPasswordView: UIView {
         addSubview(changeButton)
         currentPasswordTextFieldView.addSubview(currentPasswordTextField)
         firstChangePasswordTextFieldView.addSubview(firstChangePasswordTextField)
+        firstChangePasswordTextFieldView.addSubview(passwordSecureButton)
         secondChangePasswordTextFieldView.addSubview(secondChangePasswordTextField)
 //        firstChangePasswordTextField.addSubview(passwordSecureButton)
-        
+
 //        accountLabel.translatesAutoresizingMaskIntoConstraints = false
 //        backBtn.translatesAutoresizingMaskIntoConstraints = false
         currentPasswordTextField.translatesAutoresizingMaskIntoConstraints = false
@@ -243,7 +244,7 @@ class SetPasswordView: UIView {
 //            firstChangePasswordTextField.widthAnchor.constraint(equalToConstant: 361),
 //            firstChangePasswordTextField.heightAnchor.constraint(equalToConstant: 42),
             firstChangePasswordTextField.leadingAnchor.constraint(equalTo: firstChangePasswordTextFieldView.leadingAnchor, constant: 14),
-            firstChangePasswordTextField.trailingAnchor.constraint(equalTo: firstChangePasswordTextFieldView.trailingAnchor, constant: -14),
+            firstChangePasswordTextField.trailingAnchor.constraint(equalTo: firstChangePasswordTextFieldView.trailingAnchor, constant: -35),
             
             
             secondChangePasswordTextFieldView.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 16),
@@ -257,15 +258,15 @@ class SetPasswordView: UIView {
 //            secondChangePasswordTextField.widthAnchor.constraint(equalToConstant: 361),
 //            secondChangePasswordTextField.heightAnchor.constraint(equalToConstant: 42),
             secondChangePasswordTextField.leadingAnchor.constraint(equalTo: secondChangePasswordTextFieldView.leadingAnchor, constant: 14),
-            secondChangePasswordTextField.trailingAnchor.constraint(equalTo: secondChangePasswordTextFieldView.trailingAnchor, constant: -35),
+            secondChangePasswordTextField.trailingAnchor.constraint(equalTo: secondChangePasswordTextFieldView.trailingAnchor, constant: -14),
             
             changeButton.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 16),
             changeButton.topAnchor.constraint(equalTo: secondChangePasswordTextFieldView.bottomAnchor, constant: 50),
             changeButton.widthAnchor.constraint(equalToConstant: 361),
             changeButton.heightAnchor.constraint(equalToConstant: 44),
             
-            passwordSecureButton.rightAnchor.constraint(equalTo: secondChangePasswordTextFieldView.rightAnchor, constant: -8),
-            passwordSecureButton.bottomAnchor.constraint(equalTo: secondChangePasswordTextFieldView.bottomAnchor, constant: -8),
+            passwordSecureButton.rightAnchor.constraint(equalTo: firstChangePasswordTextFieldView.rightAnchor, constant: -8),
+            passwordSecureButton.bottomAnchor.constraint(equalTo: firstChangePasswordTextFieldView.bottomAnchor, constant: -8),
             passwordSecureButton.widthAnchor.constraint(equalToConstant: 28),
             passwordSecureButton.heightAnchor.constraint(equalToConstant: 21)
         ])
