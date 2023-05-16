@@ -1,0 +1,4 @@
+Target dependency graph (2 targets)
+FSCalendar in Pods, no dependencies
+Pods-TeamProject in Pods, depends on:
+FSCalendar in Pods (explicit)
