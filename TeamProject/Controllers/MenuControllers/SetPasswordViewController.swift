@@ -24,10 +24,6 @@ class SetPasswordViewController: UIViewController {
         return stack
     }()
     
-//    override func loadView() {
-//        view = setPasswordView
-//    }
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .white

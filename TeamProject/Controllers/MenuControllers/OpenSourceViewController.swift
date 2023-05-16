@@ -21,10 +21,6 @@ class OpenSourceViewController: UIViewController {
         return stack
     }()
     
-//    override func loadView() {
-//        view = openSourceView
-//    }
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .white

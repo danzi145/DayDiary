@@ -9,23 +9,6 @@ import UIKit
 
 class OpenSourceView: UIView {
     
-//    // MARK: - 상단
-//    private let openSourceLabel: UILabel = {
-//        let label = UILabel()
-//        label.text = "오픈소스 라이브러리"
-//        label.font = UIFont.systemFont(ofSize: 15)
-//        label.textColor = UIColor.black
-//        return label
-//    }()
-//
-//    // 뒤로가기 버튼
-//    let backBtn: UIButton = {
-//         let button = UIButton()
-//         button.setImage(UIImage(systemName: "chevron.left"), for: .normal)
-//         button.tintColor = UIColor.black
-//         return button
-//     }()
-    
     // MARK: - 오픈소스 라이브러리 버튼
     private let openSourceButton: UIButton = {
         let button = UIButton()
@@ -64,27 +47,14 @@ class OpenSourceView: UIView {
     }
     
     func setAutoLayout() {
-        
         backgroundColor = .white
         addSubview(stackView)
-//        addSubview(openSourceLabel)
-//        addSubview(backBtn)
         
         stackView.translatesAutoresizingMaskIntoConstraints = false
-//        openSourceLabel.translatesAutoresizingMaskIntoConstraints = false
         titleDotImg.translatesAutoresizingMaskIntoConstraints = false
-//        backBtn.translatesAutoresizingMaskIntoConstraints = false
         
         
         NSLayoutConstraint.activate([
-//            openSourceLabel.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 139),
-//            openSourceLabel.topAnchor.constraint(equalTo: self.topAnchor, constant: 64),
-            
-//            backBtn.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 16),
-//            backBtn.topAnchor.constraint(equalTo: self.topAnchor, constant: 61),
-//            backBtn.heightAnchor.constraint(equalToConstant: 24),
-//            backBtn.widthAnchor.constraint(equalToConstant: 24),
-            
             stackView.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 22),
             stackView.topAnchor.constraint(equalTo: self.safeAreaLayoutGuide.topAnchor),
             stackView.widthAnchor.constraint(equalToConstant: 120),

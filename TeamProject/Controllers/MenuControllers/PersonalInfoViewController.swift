@@ -21,10 +21,6 @@ class PersonalInfoViewController: UIViewController {
         return stack
     }()
     
-//    override func loadView() {
-//        view = personalInfoView
-//    }
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .white
@@ -46,7 +42,6 @@ class PersonalInfoViewController: UIViewController {
     
     // MARK: - 인스턴스의 속성과 연결된 addTarget함수를 모은 함수
     func setupAddTarget() {
-//        personalInfoView.backBtn.addTarget(self, action: #selector(backButtonTapped), for: .touchUpInside)
         headerView.backButton.addTarget(self,action: #selector(backButtonTapped),for: .touchUpInside)
     }
 

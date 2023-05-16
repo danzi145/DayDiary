@@ -55,7 +55,6 @@ class MenuHeaderStackView: UIStackView {
         NSLayoutConstraint.activate([
             backButton.leftAnchor.constraint(equalTo: leftAnchor, constant: 16),
             backButton.centerYAnchor.constraint(equalTo: centerYAnchor),
-//            titleLabel.leftAnchor.constraint(equalTo: backButton.rightAnchor, constant: 151),
             titleLabel.centerYAnchor.constraint(equalTo: centerYAnchor),
             titleLabel.centerXAnchor.constraint(equalTo: centerXAnchor)
             

@@ -20,9 +20,6 @@ class EmailLoginAccountViewController: UIViewController {
         stack.distribution = .fill
         return stack
     }()
-//    override func loadView() {
-//        view = accountView
-//    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -63,7 +60,6 @@ class EmailLoginAccountViewController: UIViewController {
         let setPasswordSettingVC = SetPasswordViewController()
         setPasswordSettingVC.modalPresentationStyle = .fullScreen
         navigationController?.pushViewController(setPasswordSettingVC, animated: true)
-//        present(setPasswordSettingVC, animated: true, completion: nil)
     }
     
     // MARK: - 앱 탈퇴 버튼 클릭 함수 (탈퇴 확인 알림 함수)
@@ -71,7 +67,7 @@ class EmailLoginAccountViewController: UIViewController {
         let alert = UIAlertController(title: "앱 탈퇴", message: "탈퇴 시 모든 정보가 사라집니다. \n 탈퇴하시겠습니까?", preferredStyle: .alert)
         
         let leave = UIAlertAction(title: "탈퇴", style: .cancel) { action in
-            print("탈퇴버튼이 눌렸습니다.")
+            print("EmailLoginAccountVC - 탈퇴버튼이 눌렸습니다.")
         }
         
         let cancel = UIAlertAction(title: "취소", style: .default) { action in

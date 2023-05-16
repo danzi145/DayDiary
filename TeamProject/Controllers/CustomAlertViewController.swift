@@ -53,7 +53,7 @@ final class CustomAlertViewController: UIViewController {
 
 extension CustomAlertViewController: CustomAlertViewDelegate {
     func handleAddButton() {
-        print("plus button tapped")
+        print("CustomAlertVC - Add button Tapped")
     }
     
     

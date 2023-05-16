@@ -13,23 +13,6 @@ class AppPasswordView: UIView {
     // 간단하게 다루기 위한 배열 추가
     lazy var circleViews = [firstPasswordCircleView, secondPasswordCircleView, thirdPasswordCircleView, fourthPasswordCircleView]
     
-//    // MARK: - 상단
-//    private let appPasswordLabel: UILabel = {
-//         let label = UILabel()
-//         label.text = "앱 비밀번호 설정"
-//         label.font = UIFont.systemFont(ofSize: 15)
-//         label.textColor = .black
-//         return label
-//     }()
-//
-//    // 상단의 뒤로가기 버튼
-//    let backBtn: UIButton = {
-//         let button = UIButton()
-//         button.setImage(UIImage(systemName: "chevron.left"), for: .normal)
-//         button.tintColor = UIColor.black
-//         return button
-//     }()
-//
     // MARK: - 중단
     // 중단 안내 레이블
     lazy var passwordGuideLabel: UILabel = {
@@ -114,9 +97,7 @@ class AppPasswordView: UIView {
     
     func setAutoLayout() {
         backgroundColor = .white
-        
-//        addSubview(backBtn)
-//        addSubview(appPasswordLabel)
+
         addSubview(passwordGuideLabel)
         addSubview(firstPasswordCircleView)
         addSubview(secondPasswordCircleView)
@@ -125,10 +106,6 @@ class AppPasswordView: UIView {
         addSubview(stackView)
         addSubview(passwordTextField)
         
-        
-        
-//        appPasswordLabel.translatesAutoresizingMaskIntoConstraints = false
-//        backBtn.translatesAutoresizingMaskIntoConstraints = false
         passwordGuideLabel.translatesAutoresizingMaskIntoConstraints = false
         firstPasswordCircleView.translatesAutoresizingMaskIntoConstraints = false
         secondPasswordCircleView.translatesAutoresizingMaskIntoConstraints = false
@@ -139,31 +116,8 @@ class AppPasswordView: UIView {
         
         
         NSLayoutConstraint.activate([
-//            appPasswordLabel.topAnchor.constraint(equalTo: self.topAnchor, constant: 64),
-//            appPasswordLabel.centerXAnchor.constraint(equalTo: self.centerXAnchor),
-//
-//            backBtn.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 16),
-//            backBtn.topAnchor.constraint(equalTo: self.topAnchor, constant: 61),
-//            backBtn.heightAnchor.constraint(equalToConstant: 24),
-//            backBtn.widthAnchor.constraint(equalToConstant: 24),
-            
             passwordGuideLabel.centerXAnchor.constraint(equalTo: self.centerXAnchor),
             passwordGuideLabel.topAnchor.constraint(equalTo: self.topAnchor, constant: 100),
-            
-
-//            firstPasswordCircleView.widthAnchor.constraint(equalToConstant: 40),
-//            firstPasswordCircleView.heightAnchor.constraint(equalToConstant: 40),
-//
-//            secondPasswordCircleView.widthAnchor.constraint(equalToConstant: 40),
-//            secondPasswordCircleView.heightAnchor.constraint(equalToConstant: 40),
-//
-//            thirdPasswordCircleView.widthAnchor.constraint(equalToConstant: 40),
-//            thirdPasswordCircleView.heightAnchor.constraint(equalToConstant: 40),
-            
-//            fourthPasswordCircleView.widthAnchor.constraint(equalToConstant: 40),
-//            fourthPasswordCircleView.heightAnchor.constraint(equalToConstant: 40),
-            
-//            stackView.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 87),
 
             stackView.topAnchor.constraint(equalTo: passwordGuideLabel.bottomAnchor, constant: 40),
             stackView.widthAnchor.constraint(equalToConstant: 235),

@@ -9,22 +9,6 @@ import UIKit
 
 class SetPasswordView: UIView {
     
-//    // MARK: - 상단
-//    private let accountLabel: UILabel = {
-//         let label = UILabel()
-//         label.text = "비밀번호 변경"
-//         label.font = UIFont.systemFont(ofSize: 15)
-//         label.textColor = .black
-//         return label
-//     }()
-//    
-//    // 상단의 뒤로가기 버튼
-//    let backBtn: UIButton = {
-//         let button = UIButton()
-//         button.setImage(UIImage(systemName: "chevron.left"), for: .normal)
-//         button.tintColor = UIColor.black
-//         return button
-//     }()
     
     // MARK: - 텍스트 필드 위 비밀번호 레이블
     private let currentPasswordLabel: UILabel = {
@@ -133,7 +117,6 @@ class SetPasswordView: UIView {
         view.layer.borderColor = #colorLiteral(red: 0.7295668721, green: 0.7580708861, blue: 0.7912309766, alpha: 1)
         view.layer.cornerRadius = 8
         view.clipsToBounds = true
-//        view.addSubview(passwordSecureButton)
         return view
     }()
     
@@ -176,9 +159,7 @@ class SetPasswordView: UIView {
         currentPasswordTextField.delegate = self
         firstChangePasswordTextField.delegate = self
         secondChangePasswordTextField.delegate = self
-        
-//        addSubview(backBtn)
-//        addSubview(accountLabel)
+
         addSubview(currentPasswordLabel)
         addSubview(currentPasswordTextFieldView)
         addSubview(changePasswordLabel)
@@ -189,10 +170,7 @@ class SetPasswordView: UIView {
         firstChangePasswordTextFieldView.addSubview(firstChangePasswordTextField)
         firstChangePasswordTextFieldView.addSubview(passwordSecureButton)
         secondChangePasswordTextFieldView.addSubview(secondChangePasswordTextField)
-//        firstChangePasswordTextField.addSubview(passwordSecureButton)
 
-//        accountLabel.translatesAutoresizingMaskIntoConstraints = false
-//        backBtn.translatesAutoresizingMaskIntoConstraints = false
         currentPasswordTextField.translatesAutoresizingMaskIntoConstraints = false
         currentPasswordLabel.translatesAutoresizingMaskIntoConstraints = false
         currentPasswordTextFieldView.translatesAutoresizingMaskIntoConstraints = false

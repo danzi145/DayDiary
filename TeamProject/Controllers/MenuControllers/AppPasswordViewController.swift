@@ -34,10 +34,6 @@ class AppPasswordViewController: UIViewController {
         return stack
     }()
     
-//    override func loadView() {
-//        view = appPasswordView
-//    }
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .white

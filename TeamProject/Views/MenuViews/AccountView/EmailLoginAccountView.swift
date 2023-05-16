@@ -8,22 +8,6 @@
 import UIKit
 
 class EmailLoginAccountView: UIView {
-    // MARK: - 상단
-//    private let accountLabel: UILabel = {
-//         let label = UILabel()
-//         label.text = "계정"
-//         label.font = UIFont.systemFont(ofSize: 15)
-//         label.textColor = .black
-//         return label
-//     }()
-//
-//    // 상단의 뒤로가기 버튼
-//    let backBtn: UIButton = {
-//         let button = UIButton()
-//         button.setImage(UIImage(systemName: "chevron.left"), for: .normal)
-//         button.tintColor = UIColor.black
-//         return button
-//     }()
      
     // MARK: - 이메일 관련 레이블
      private let joinedEmail: UILabel = {
@@ -100,8 +84,6 @@ class EmailLoginAccountView: UIView {
     func setAutoLayout() {
         
         addSubview(emailContainer)
-//        addSubview(accountLabel)
-//        addSubview(backBtn)
         addSubview(appPasswordSettingButton)
         addSubview(passwordChangeButton)
         addSubview(leaveAppButton)
@@ -109,13 +91,11 @@ class EmailLoginAccountView: UIView {
         
         
         emailContainer.translatesAutoresizingMaskIntoConstraints = false
-//        accountLabel.translatesAutoresizingMaskIntoConstraints = false
         joinedEmail.translatesAutoresizingMaskIntoConstraints = false
         emailLabel.translatesAutoresizingMaskIntoConstraints = false
         appPasswordSettingButton.translatesAutoresizingMaskIntoConstraints = false
         passwordChangeButton.translatesAutoresizingMaskIntoConstraints = false
         leaveAppButton.translatesAutoresizingMaskIntoConstraints = false
-//        backBtn.translatesAutoresizingMaskIntoConstraints = false
         logOutButton.translatesAutoresizingMaskIntoConstraints = false
         
         
