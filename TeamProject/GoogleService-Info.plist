@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>242018616787-r427h16edbup5ap3869tog5s5jrh01ni.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.242018616787-r427h16edbup5ap3869tog5s5jrh01ni</string>
+	<key>API_KEY</key>
+	<string>AIzaSyC1oGXE0RT3kGIB068l2zUz4A6O_LSCvwA</string>
+	<key>GCM_SENDER_ID</key>
+	<string>242018616787</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>com.samSung.TeamProject</string>
+	<key>PROJECT_ID</key>
+	<string>daydiary-d3dbb</string>
+	<key>STORAGE_BUCKET</key>
+	<string>daydiary-d3dbb.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:242018616787:ios:fb6598e4fe39f453f99b26</string>
+</dict>
+</plist>
