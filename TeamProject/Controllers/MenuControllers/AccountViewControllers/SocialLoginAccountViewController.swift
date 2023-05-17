@@ -5,6 +5,8 @@
 //  Created by 최민경 on 2023/04/14.
 //
 import UIKit
+import FirebaseAuth
+import GoogleSignIn
 
 
 class SocialLoginAccountViewController: UIViewController {
@@ -32,12 +34,29 @@ class SocialLoginAccountViewController: UIViewController {
         headerView.backButton.addTarget(self,
                                         action: #selector(backButtonTapped),
                                         for: .touchUpInside)
+        accountView.logOutButton.addTarget(self,
+                                           action: #selector(logOutButtonTapped),
+                                           for: .touchUpInside)
     }
     
     // MARK: - Actions
     
     @objc private func backButtonTapped() {
         navigationController?.popViewController(animated: true)
+    }
+    
+    @objc private func logOutButtonTapped() {
+        let firebaseAuth = Auth.auth()
+        do {
+          try firebaseAuth.signOut()
+            let loginVC = MultiAuthViewController()
+            if let sceneDelegate = UIApplication.shared.connectedScenes.first?.delegate as? SceneDelegate,
+               let window = sceneDelegate.window {
+                window.rootViewController = loginVC
+            }
+        } catch let signOutError as NSError {
+          print("Error signing out: %@", signOutError)
+        }
     }
     
     // MARK: - Helpers

@@ -53,7 +53,7 @@ class SocialLoginAccountView: UIView {
         return button
     }()
     
-    private let logOutButton: UIButton = {
+    let logOutButton: UIButton = {
         var button = UIButton()
         button.setTitle("로그아웃", for: .normal)
         button.contentHorizontalAlignment = .left

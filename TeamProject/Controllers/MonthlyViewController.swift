@@ -7,6 +7,8 @@
 
 import UIKit
 import FSCalendar
+import FirebaseAuth
+import GoogleSignIn
 
 // MARK: - Object
 protocol MonthlyViewControllerDelegate: AnyObject {
@@ -32,11 +34,17 @@ final class MonthlyViewController: UIViewController, UINavigationControllerDeleg
         setMenuButtonAction()
     }
     
-    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         navigationController?.navigationBar.isHidden = true
     }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        handleNotAuthenticated()
+    }
+    
+    
     
     // MARK: - Helper
     private func configureUI() {
@@ -66,10 +74,32 @@ final class MonthlyViewController: UIViewController, UINavigationControllerDeleg
         calendarView.calendarView.dataSource = self
     }
     
-    
     private func setMenuButtonAction() {
         topStackView.menuButton.addTarget(self, action: #selector(menuTapped), for: .touchUpInside)
     }
+    
+//    private func handleNotAuthenticated() {
+//        // Check auth status (유저 로그인 유무 확인)
+//        if Auth.auth().currentUser == nil {
+//            // 로그인 화면 보여주기
+//            let loginVC = MultiAuthViewController()
+//            loginVC.modalPresentationStyle = .fullScreen
+//            present(loginVC, animated: false)
+//        }
+//    }
+    
+    private func handleNotAuthenticated() {
+        // Check auth status
+        if let appDelegate = UIApplication.shared.delegate as? AppDelegate, appDelegate.isAuthenticated {
+            // User is authenticated, proceed with the app
+        } else {
+            // User is not authenticated, present login view controller
+            let loginVC = MultiAuthViewController()
+            loginVC.modalPresentationStyle = .fullScreen
+            present(loginVC, animated: false)
+        }
+    }
+    
 
     
     // MARK: - Actions
@@ -179,5 +209,4 @@ extension MonthlyViewController: FSCalendarDelegate, FSCalendarDataSource,  FSCa
 //
 }
 
-
-    
+ 

@@ -6,15 +6,43 @@
 //
 
 import UIKit
+import Firebase
+import GoogleSignIn
+import KakaoSDKCommon
+import KakaoSDKAuth
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
-
-
+    
+    var isAuthenticated = false
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        // Override point for customization after application launch.
+        
+        FirebaseApp.configure()
+        
+        let nativeAppKey = Bundle.main.infoDictionary?["KAKAO_NATIVE_APP_KEY"] ?? ""
+        KakaoSDK.initSDK(appKey: nativeAppKey as! String)
+        
         return true
+    }
+    
+    //MARK: - 구글, 카카오 로그인 웹뷰 열기
+    
+    func application(_ app: UIApplication,
+                     open url: URL,
+                     options: [UIApplication.OpenURLOptionsKey: Any] = [:]) -> Bool {
+        // Handle Google sign in callback
+        if GIDSignIn.sharedInstance.handle(url) {
+            return true
+            
+            // Handle Kakao sign in callback
+        } else if AuthApi.isKakaoTalkLoginUrl(url) {
+            // Update isAuthenticated property to true
+            isAuthenticated = true
+            // Handle Kakao authentication
+            return AuthController.handleOpenUrl(url: url)
+        }
+        return false
     }
 
     // MARK: UISceneSession Lifecycle

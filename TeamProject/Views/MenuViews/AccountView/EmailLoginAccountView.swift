@@ -53,7 +53,7 @@ class EmailLoginAccountView: UIView {
      }()
      
     // MARK: - 로그아웃 버튼
-     private let logOutButton: UIButton = {
+     let logOutButton: UIButton = {
           let button = UIButton()
           button.setTitle("로그아웃", for: .normal)
           button.setTitleColor(UIColor.black, for: .normal)
