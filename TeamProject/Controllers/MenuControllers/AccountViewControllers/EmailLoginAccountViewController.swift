@@ -6,6 +6,8 @@
 //
 
 import UIKit
+import FirebaseAuth
+import GoogleSignIn
 
 class EmailLoginAccountViewController: UIViewController {
     
@@ -50,6 +52,7 @@ class EmailLoginAccountViewController: UIViewController {
     
     // MARK: - 앱 비밀번호 설정하기 버튼 클릭 함수 (AppPasswordViewController로 넘어가는 함수)
     @objc func appPasswordSettingBtnTapped() {
+        print(#function)
         let appPasswordSettingVC = AppPasswordViewController()
         appPasswordSettingVC.modalPresentationStyle = .fullScreen
         present(appPasswordSettingVC, animated: true, completion: nil)

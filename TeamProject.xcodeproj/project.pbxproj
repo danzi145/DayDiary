@@ -44,6 +44,7 @@
 		CC7BBBC22A13E4D8006E86E4 /* EmailSignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC7BBBC12A13E4D8006E86E4 /* EmailSignInViewController.swift */; };
 		CC7BBBC42A13E4E4006E86E4 /* EmailSignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC7BBBC32A13E4E4006E86E4 /* EmailSignUpViewController.swift */; };
 		CC7BBBC62A13E5DE006E86E4 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = CC7BBBC52A13E5DE006E86E4 /* GoogleService-Info.plist */; };
+		CC7BBBD12A154D24006E86E4 /* MultiAuthView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC7BBBD02A154D24006E86E4 /* MultiAuthView.swift */; };
 		F117F5D829E2777300A44FCC /* MonthlyNavigationStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F117F5D729E2777300A44FCC /* MonthlyNavigationStackView.swift */; };
 		F12B6C592A1361D800F9446C /* SocialLoginAccountView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F12B6C582A1361D800F9446C /* SocialLoginAccountView.swift */; };
 		F12B6C5B2A1361F300F9446C /* SocialLoginAccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F12B6C5A2A1361F300F9446C /* SocialLoginAccountViewController.swift */; };
@@ -93,6 +94,7 @@
 		CC7BBBC12A13E4D8006E86E4 /* EmailSignInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailSignInViewController.swift; sourceTree = "<group>"; };
 		CC7BBBC32A13E4E4006E86E4 /* EmailSignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailSignUpViewController.swift; sourceTree = "<group>"; };
 		CC7BBBC52A13E5DE006E86E4 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		CC7BBBD02A154D24006E86E4 /* MultiAuthView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultiAuthView.swift; sourceTree = "<group>"; };
 		F117F5D729E2777300A44FCC /* MonthlyNavigationStackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MonthlyNavigationStackView.swift; sourceTree = "<group>"; };
 		F12B6C582A1361D800F9446C /* SocialLoginAccountView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SocialLoginAccountView.swift; sourceTree = "<group>"; };
 		F12B6C5A2A1361F300F9446C /* SocialLoginAccountViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SocialLoginAccountViewController.swift; sourceTree = "<group>"; };
@@ -203,6 +205,14 @@
 			path = Fonts;
 			sourceTree = "<group>";
 		};
+		CC7BBBCD2A1549EC006E86E4 /* AuthViews */ = {
+			isa = PBXGroup;
+			children = (
+				CC7BBBD02A154D24006E86E4 /* MultiAuthView.swift */,
+			);
+			path = AuthViews;
+			sourceTree = "<group>";
+		};
 		F12B6C562A13613D00F9446C /* AccountView */ = {
 			isa = PBXGroup;
 			children = (
@@ -288,6 +298,7 @@
 		F1DECA7C29D40B87001C758F /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				CC7BBBCD2A1549EC006E86E4 /* AuthViews */,
 				F117F5D729E2777300A44FCC /* MonthlyNavigationStackView.swift */,
 				F1DECA7A29D3E259001C758F /* CalendarView.swift */,
 				F1D0FD0629DBE9B000AB1295 /* CustomAlertView.swift */,
@@ -493,6 +504,7 @@
 				F1DECA7B29D3E259001C758F /* CalendarView.swift in Sources */,
 				F1F4F87929F4C7F80096F77F /* Extensions.swift in Sources */,
 				3BB725492A13865100F843EC /* DiaryViewController.swift in Sources */,
+				CC7BBBD12A154D24006E86E4 /* MultiAuthView.swift in Sources */,
 				CC7BBBC42A13E4E4006E86E4 /* EmailSignUpViewController.swift in Sources */,
 				F12B6C592A1361D800F9446C /* SocialLoginAccountView.swift in Sources */,
 				F1DECA6929D3CC8B001C758F /* SceneDelegate.swift in Sources */,

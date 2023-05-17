@@ -12,76 +12,26 @@ import Combine
 import AuthenticationServices
 import CryptoKit
 
-class MultiAuthViewController: UIViewController {
+class MultiAuthViewController: UIViewController{
     
     var subscriptions = Set<AnyCancellable>()
+    
+    private lazy var multiAuthView: MultiAuthView = {
+        let view = MultiAuthView()
+        view.translatesAutoresizingMaskIntoConstraints = false
+        // Customize the view or access its subviews if needed
+        return view
+    }()
         
-    
-    //MARK: - 데이 다이어리 로고 이미지
-    private let logoImage: UIImageView = {
-        let logo = UIImageView()
-        logo.image = UIImage(named: "logo")
-        logo.translatesAutoresizingMaskIntoConstraints = false
-        logo.contentMode = .scaleAspectFill
-        return logo
-    }()
-    
-    //MARK: - 로그인 버튼 모음
-    /// 카카오 로그인 버튼
-    private lazy var kakaoLoginButton: UIButton = {
-        let button = UIButton(type: .custom)
-        button.setImage(UIImage(named: "kakaoButton"), for: .normal)
-        button.contentMode = .scaleAspectFill
-        button.addTarget(self, action: #selector(kakaoLoginTapped), for: .touchUpInside)
-        return button
-    }()
-    
     private lazy var kakaoAuthVM: KakaoAuth = { KakaoAuth() }()
-    
-    /// 구글 로그인 버튼
-    private lazy var googleLoginButton: UIButton = {
-        let button = UIButton(type: .custom)
-        button.setImage(UIImage(named: "googleButton"), for: .normal)
-        button.contentMode = .scaleAspectFill
-        button.addTarget(self, action: #selector(googleLoginTapped), for: .touchUpInside)
-        return button
-    }()
-    
-    /// 애플 로그인 버튼
-    private lazy var appleLoginButton: UIButton = {
-        let button = UIButton(type: .custom)
-        button.setImage(UIImage(named: "appleButton"), for: .normal)
-        button.contentMode = .scaleAspectFill
-        button.addTarget(self, action: #selector(appleLoginTapped), for: .touchUpInside)
-        return button
-    }()
-    
-    /// 이메일 로그인 버튼
-    private lazy var emailLoginButton: UIButton = {
-        let button = UIButton(type: .custom)
-        button.setImage(UIImage(named: "emailButton"), for: .normal)
-        button.contentMode = .scaleAspectFill
-        button.addTarget(self, action: #selector(emailLoginTapped), for: .touchUpInside)
-        return button
-    }()
-    
-    //MARK: - 로그인 없이 구경하기 버튼
-    private lazy var exploreButton: UIButton = {
-        let button = UIButton(type: .system)
-        button.setTitle("로그인 없이 구경하기 >", for: .normal)
-        button.titleLabel?.font = UIFont.customFont(ofSize: 16, weight: .regular, fontName: "GowunDodum-Regular")
-        button.translatesAutoresizingMaskIntoConstraints = false
-        button.setTitleColor(.gray, for: .normal)
-        button.addTarget(self, action: #selector(exploreWithoutAcct), for: .touchUpInside)
-        return button
-    }()
-    
-    
+
+
 
     //MARK: - ViewDidLoad
     override func viewDidLoad() {
         super.viewDidLoad()
         configureUI()
+        setupButtonActions()
     }
     
     
@@ -89,40 +39,30 @@ class MultiAuthViewController: UIViewController {
     func configureUI() {
         title = ""
         view.backgroundColor = .white
-        
-        view.addSubview(logoImage)
-        
-        let stack = UIStackView(arrangedSubviews: [kakaoLoginButton, googleLoginButton, appleLoginButton, emailLoginButton])
-        stack.translatesAutoresizingMaskIntoConstraints = false
-        stack.axis = .horizontal
-        stack.spacing = 20
-        
-        view.addSubview(stack)
-        
-        view.addSubview(exploreButton)
+        view.addSubview(multiAuthView)
         
         NSLayoutConstraint.activate([
-            logoImage.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-            logoImage.topAnchor.constraint(equalTo: view.topAnchor, constant: 250),
-            logoImage.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -480),
-            
-            stack.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-            stack.topAnchor.constraint(equalTo: logoImage.bottomAnchor, constant: 180),
-            
-            exploreButton.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-            exploreButton.topAnchor.constraint(equalTo: stack.bottomAnchor, constant: 50)
-            
+            multiAuthView.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            multiAuthView.centerYAnchor.constraint(equalTo: view.centerYAnchor),
+            multiAuthView.widthAnchor.constraint(equalTo: view.widthAnchor),
+            multiAuthView.heightAnchor.constraint(equalTo: view.heightAnchor)
         ])
         
     }
+    
+    func setupButtonActions() {
+        multiAuthView.emailLoginButton.addTarget(self, action: #selector(emailLoginTapped), for: .touchUpInside)
+        multiAuthView.exploreButton.addTarget(self, action: #selector(exploreWithoutAcct), for: .touchUpInside)
+        multiAuthView.kakaoLoginButton.addTarget(self, action: #selector(kakaoLoginTapped), for: .touchUpInside)
+        multiAuthView.googleLoginButton.addTarget(self, action: #selector(googleLoginTapped), for: .touchUpInside)
+        multiAuthView.appleLoginButton.addTarget(self, action: #selector(appleLoginTapped), for: .touchUpInside)
+    }
+
     //MARK: - 이메일 로그인
     @objc private func emailLoginTapped() {
         let rootVC = EmailSignInViewController()
         let navVC = UINavigationController(rootViewController: rootVC)
         present(navVC, animated: true)
-//        let vc = EmailLoginViewController()
-//        vc.title = ""
-//        navigationController?.pushViewController(vc, animated: true)
     }
     
     @objc private func exploreWithoutAcct() {
@@ -175,9 +115,13 @@ class MultiAuthViewController: UIViewController {
                     print("Successfully signed in with Google credential")
                     // If sign in succeed, display the app's main content view.
                     let vc = MonthlyViewController()
+                    // 
+                    let navVC = UINavigationController(rootViewController: vc)
                     vc.title = ""
-                    self?.navigationController?.pushViewController(vc, animated: true)
-                    self?.present(vc, animated: true)
+                    navVC.modalPresentationStyle = .fullScreen
+                    self?.dismiss(animated: true) {
+                        self?.present(navVC, animated: true)
+                    }
 //                    DatabaseManager.shared.insertUser(with: DayDiaryAppUser(emailAddress: idToken))
 //                    strongSelf.navigationController?.dismiss(animated: true)
                     
