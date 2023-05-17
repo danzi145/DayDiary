@@ -41,6 +41,7 @@ final class MemoViewController: UIViewController {
         super.viewDidLoad()
         setupDelegate()
         setupNaviBar()
+        setupAddTarget()
     }
     
     
@@ -79,7 +80,22 @@ final class MemoViewController: UIViewController {
     
     // MARK: - Custom Method
     
+    func setupAddTarget() {
+        memoView.getPlusCheckButton().addTarget(self, action: #selector(plusCheckButtonTapped), for: .touchUpInside)
+        memoView.getTrashButton().addTarget(self, action: #selector(trashButtonTapped), for: .touchUpInside)
+    }
     
+    @objc func plusCheckButtonTapped(){
+        checkTextArray.append("")
+        memoView.getMemoTableView().reloadData()
+        print("plusCheckButtonTapped: \(checkTextArray) ")
+    }
+    
+    @objc func trashButtonTapped() {
+        memoView.getTitleTextField().text = ""
+        memoView.getMemoTextView().text = ""
+        // 셀 없애기
+    }
 
     @objc func saveButtonTapped() {
         
@@ -177,19 +193,16 @@ extension MemoViewController: UITableViewDataSource {
 extension MemoViewController: UITextFieldDelegate {
 
     public func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        print(#function)
         
-//        guard let text = textField.text else {
-//            return false }
         
-//        let point = textField.convert(CGPoint.zero, to: memoView.getMemoTableView())
-//        guard let indexPath = self.memoView.getMemoTableView().indexPathForRow(at: point) else { return false }
-//
-//        print(" ==== indexPath : \(indexPath) ==== ")
-//
-//        checkTextArray[indexPath.row] = text
-//
-        checkTextArray.append("")
+        
+        let point = textField.convert(CGPoint.zero, to: memoView.getMemoTableView())
+        guard let indexPath = self.memoView.getMemoTableView().indexPathForRow(at: point) else { return false }
+
+        
+        checkTextArray.insert(contentsOf: [""], at: indexPath.row + 1)
+        
+
 
         print("=== 체크리스트 빈배열 추가 확인용 \(checkTextArray) === ")
 

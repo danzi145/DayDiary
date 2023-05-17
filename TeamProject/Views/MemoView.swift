@@ -97,7 +97,6 @@ class MemoView : UIView {
         let button = UIButton()
         button.tintColor = .black
         button.setImage(UIImage(systemName: "checkmark.square", withConfiguration: UIImage.SymbolConfiguration(pointSize: 20)), for: .normal)
-        button.addTarget(self, action: #selector(plusCheckButtonTapped), for: .touchUpInside)
         return button
     }()
     
@@ -107,11 +106,6 @@ class MemoView : UIView {
         button.setImage(UIImage(systemName: "trash"), for: .normal)
         return button
     }()
-    
-    @objc func plusCheckButtonTapped(){
-        
-    }
-    
 
     // MARK: - Initializer
     
@@ -140,6 +134,14 @@ class MemoView : UIView {
     /// 메모 내용 (Text) - 텍스트뷰 반환
     func getMemoTextView() -> UITextView {
         return memoTextView
+    }
+    
+    func getPlusCheckButton() -> UIButton {
+        return plusCheckButton
+    }
+    
+    func getTrashButton() -> UIButton {
+        return trashButton
     }
     
     // MARK: - Autolayout()
