@@ -1,5 +1,5 @@
 //
-//  KakaoAuth.swift
+//  KakaoAuthModel.swift
 //  TeamProject
 //
 //  Created by Jung Hyun Kim on 2023/05/16.
@@ -10,7 +10,7 @@ import Combine
 import KakaoSDKAuth
 import KakaoSDKUser
 
-final class KakaoAuth: ObservableObject {
+final class KakaoAuthModel: ObservableObject {
     
     var subscriptions = Set<AnyCancellable>()
     

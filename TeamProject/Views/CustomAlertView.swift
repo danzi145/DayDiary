@@ -49,7 +49,7 @@ final class CustomAlertView: UIView {
         return label
     }()
     
-    private var diaryTitleButton: UIButton = {
+    private lazy var diaryTitleButton: UIButton = {
         let button = AlertTitleButton(type: .system)
         button.setTitle("약과가 먹고싶은 날", for: .normal)
         button.addTarget(self, action: #selector(diaryTitleButtonTapped), for: .touchUpInside)
@@ -70,7 +70,7 @@ final class CustomAlertView: UIView {
         label.font = UIFont.systemFont(ofSize: 12)
         return label
     }()
-    private var noteTitleButton: UIButton = {
+    private lazy var noteTitleButton: UIButton = {
         let button = AlertTitleButton(type: .system)
         button.setTitle("치과 4:30", for: .normal)
         button.addTarget(self, action: #selector(noteTitleButtonTapped), for: .touchUpInside)
@@ -91,7 +91,7 @@ final class CustomAlertView: UIView {
         label.font = UIFont.systemFont(ofSize: 12)
         return label
     }()
-    private var lockedDiaryTitleButton: UIButton = {
+    private lazy var lockedDiaryTitleButton: UIButton = {
         let button = AlertTitleButton(type: .system)
         button.setTitle("수박이 먹고싶은 날", for: .normal)
         button.addTarget(self, action: #selector(lockedDiaryTitleButtonTapped), for: .touchUpInside)

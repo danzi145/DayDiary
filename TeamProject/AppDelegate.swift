@@ -13,8 +13,8 @@ import KakaoSDKAuth
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
-
-
+    
+    var isAuthenticated = false
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         
@@ -31,11 +31,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ app: UIApplication,
                      open url: URL,
                      options: [UIApplication.OpenURLOptionsKey: Any] = [:]) -> Bool {
-        //TODO: Google
+        // Handle Google sign in callback
         if GIDSignIn.sharedInstance.handle(url) {
             return true
-            //TODO: Kakao
+            
+            // Handle Kakao sign in callback
         } else if AuthApi.isKakaoTalkLoginUrl(url) {
+            // Update isAuthenticated property to true
+            isAuthenticated = true
+            // Handle Kakao authentication
             return AuthController.handleOpenUrl(url: url)
         }
         return false

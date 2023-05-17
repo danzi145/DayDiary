@@ -35,7 +35,7 @@
 		CC7BBBAC2A13DB6D006E86E4 /* KakaoSDKTalk in Frameworks */ = {isa = PBXBuildFile; productRef = CC7BBBAB2A13DB6D006E86E4 /* KakaoSDKTalk */; };
 		CC7BBBAE2A13DB6D006E86E4 /* KakaoSDKTemplate in Frameworks */ = {isa = PBXBuildFile; productRef = CC7BBBAD2A13DB6D006E86E4 /* KakaoSDKTemplate */; };
 		CC7BBBB02A13DB6D006E86E4 /* KakaoSDKUser in Frameworks */ = {isa = PBXBuildFile; productRef = CC7BBBAF2A13DB6D006E86E4 /* KakaoSDKUser */; };
-		CC7BBBB22A13DCF0006E86E4 /* KakaoAuth.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC7BBBB12A13DCF0006E86E4 /* KakaoAuth.swift */; };
+		CC7BBBB22A13DCF0006E86E4 /* KakaoAuthModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC7BBBB12A13DCF0006E86E4 /* KakaoAuthModel.swift */; };
 		CC7BBBB52A13E037006E86E4 /* MultiAuthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC7BBBB42A13E037006E86E4 /* MultiAuthViewController.swift */; };
 		CC7BBBB72A13E1AD006E86E4 /* GowunDodum-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = CC7BBBB62A13E1AD006E86E4 /* GowunDodum-Regular.ttf */; };
 		CC7BBBBA2A13E335006E86E4 /* AuthHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC7BBBB92A13E335006E86E4 /* AuthHelpers.swift */; };
@@ -45,6 +45,8 @@
 		CC7BBBC42A13E4E4006E86E4 /* EmailSignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC7BBBC32A13E4E4006E86E4 /* EmailSignUpViewController.swift */; };
 		CC7BBBC62A13E5DE006E86E4 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = CC7BBBC52A13E5DE006E86E4 /* GoogleService-Info.plist */; };
 		CC7BBBD12A154D24006E86E4 /* MultiAuthView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC7BBBD02A154D24006E86E4 /* MultiAuthView.swift */; };
+		CC7BBBD32A1563F7006E86E4 /* GoogleSignInModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC7BBBD22A1563F7006E86E4 /* GoogleSignInModel.swift */; };
+		CC7BBBD52A156813006E86E4 /* AppleSignInModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC7BBBD42A156813006E86E4 /* AppleSignInModel.swift */; };
 		F117F5D829E2777300A44FCC /* MonthlyNavigationStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F117F5D729E2777300A44FCC /* MonthlyNavigationStackView.swift */; };
 		F12B6C592A1361D800F9446C /* SocialLoginAccountView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F12B6C582A1361D800F9446C /* SocialLoginAccountView.swift */; };
 		F12B6C5B2A1361F300F9446C /* SocialLoginAccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F12B6C5A2A1361F300F9446C /* SocialLoginAccountViewController.swift */; };
@@ -85,7 +87,7 @@
 		BF237BF829FBFE10006DB129 /* SetPasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetPasswordViewController.swift; sourceTree = "<group>"; };
 		BF237BFA29FBFE38006DB129 /* AppPasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppPasswordViewController.swift; sourceTree = "<group>"; };
 		CC7BBB912A13DA90006E86E4 /* TeamProject.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = TeamProject.entitlements; sourceTree = "<group>"; };
-		CC7BBBB12A13DCF0006E86E4 /* KakaoAuth.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KakaoAuth.swift; sourceTree = "<group>"; };
+		CC7BBBB12A13DCF0006E86E4 /* KakaoAuthModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KakaoAuthModel.swift; sourceTree = "<group>"; };
 		CC7BBBB42A13E037006E86E4 /* MultiAuthViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultiAuthViewController.swift; sourceTree = "<group>"; };
 		CC7BBBB62A13E1AD006E86E4 /* GowunDodum-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "GowunDodum-Regular.ttf"; sourceTree = "<group>"; };
 		CC7BBBB92A13E335006E86E4 /* AuthHelpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthHelpers.swift; sourceTree = "<group>"; };
@@ -95,6 +97,8 @@
 		CC7BBBC32A13E4E4006E86E4 /* EmailSignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailSignUpViewController.swift; sourceTree = "<group>"; };
 		CC7BBBC52A13E5DE006E86E4 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		CC7BBBD02A154D24006E86E4 /* MultiAuthView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultiAuthView.swift; sourceTree = "<group>"; };
+		CC7BBBD22A1563F7006E86E4 /* GoogleSignInModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoogleSignInModel.swift; sourceTree = "<group>"; };
+		CC7BBBD42A156813006E86E4 /* AppleSignInModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppleSignInModel.swift; sourceTree = "<group>"; };
 		F117F5D729E2777300A44FCC /* MonthlyNavigationStackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MonthlyNavigationStackView.swift; sourceTree = "<group>"; };
 		F12B6C582A1361D800F9446C /* SocialLoginAccountView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SocialLoginAccountView.swift; sourceTree = "<group>"; };
 		F12B6C5A2A1361F300F9446C /* SocialLoginAccountViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SocialLoginAccountViewController.swift; sourceTree = "<group>"; };
@@ -173,7 +177,9 @@
 		B0743FCA2A111D2000E3E8FF /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				CC7BBBB12A13DCF0006E86E4 /* KakaoAuth.swift */,
+				CC7BBBB12A13DCF0006E86E4 /* KakaoAuthModel.swift */,
+				CC7BBBD22A1563F7006E86E4 /* GoogleSignInModel.swift */,
+				CC7BBBD42A156813006E86E4 /* AppleSignInModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -477,7 +483,7 @@
 				CC7BBBBE2A13E409006E86E4 /* AuthManager.swift in Sources */,
 				F13ACBA92A1325710036214F /* HamburgerSettingsTableCell.swift in Sources */,
 				F12B6C5B2A1361F300F9446C /* SocialLoginAccountViewController.swift in Sources */,
-				CC7BBBB22A13DCF0006E86E4 /* KakaoAuth.swift in Sources */,
+				CC7BBBB22A13DCF0006E86E4 /* KakaoAuthModel.swift in Sources */,
 				BF237BEB29FBFCE1006DB129 /* PersonalInfoView.swift in Sources */,
 				BF237BED29FBFD00006DB129 /* OpenSourceView.swift in Sources */,
 				BF237BF129FBFD50006DB129 /* AppPasswordView.swift in Sources */,
@@ -497,6 +503,7 @@
 				CC7BBBBC2A13E3D2006E86E4 /* AuthDBManager.swift in Sources */,
 				F1DECA6729D3CC8B001C758F /* AppDelegate.swift in Sources */,
 				F1F4F87D29F4CF980096F77F /* AlertTitleButton.swift in Sources */,
+				CC7BBBD32A1563F7006E86E4 /* GoogleSignInModel.swift in Sources */,
 				F1D0FD0529DBE6A500AB1295 /* CustomAlertViewController.swift in Sources */,
 				CC7BBBBA2A13E335006E86E4 /* AuthHelpers.swift in Sources */,
 				F13ACBAF2A1327460036214F /* MemoViews.swift in Sources */,
@@ -508,6 +515,7 @@
 				CC7BBBC42A13E4E4006E86E4 /* EmailSignUpViewController.swift in Sources */,
 				F12B6C592A1361D800F9446C /* SocialLoginAccountView.swift in Sources */,
 				F1DECA6929D3CC8B001C758F /* SceneDelegate.swift in Sources */,
+				CC7BBBD52A156813006E86E4 /* AppleSignInModel.swift in Sources */,
 				3BB725472A13862700F843EC /* DiaryView.swift in Sources */,
 				CC7BBBB52A13E037006E86E4 /* MultiAuthViewController.swift in Sources */,
 				F13ACBAD2A1327320036214F /* MemoViewController.swift in Sources */,
