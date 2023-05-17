@@ -83,27 +83,27 @@ final class MonthlyViewController: UIViewController, UINavigationControllerDeleg
     private func setAlert() {
         let alert = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
         
-        let diary = UIAlertAction(title: "일기", style: .default) { action in
+        let diary = UIAlertAction(title: "일기", style: .default) { [weak self] action in
             print("확인버튼 눌림.")
             let diaryVC = DiaryViewController()
             
-            guard let selectDate = self.calendarView.calendarView.selectedDate else { return }
+            guard let selectDate = self?.calendarView.calendarView.selectedDate else { return }
             
             let dateFormatter = DateFormatter()
             dateFormatter.dateFormat = "yyyy.MM.dd"
             
             let date = dateFormatter.string(from: selectDate)
             diaryVC.date = date
-            self.navigationController?.pushViewController(diaryVC, animated: true)
+            self?.navigationController?.pushViewController(diaryVC, animated: true)
         
     
         }
-        let memo = UIAlertAction(title: "메모", style: .default) { action in
+        let memo = UIAlertAction(title: "메모", style: .default) { [weak self] action in
             print("확인버튼 눌림.")
             
             let memoVC = MemoViewController()
             
-            guard let selectDate = self.calendarView.calendarView.selectedDate else { return }
+            guard let selectDate = self?.calendarView.calendarView.selectedDate else { return }
             
             let dateFormatter = DateFormatter()
             dateFormatter.dateFormat = "yyyy.MM.dd"
@@ -112,7 +112,7 @@ final class MonthlyViewController: UIViewController, UINavigationControllerDeleg
             memoVC.date = date
 //            let memo = Memo(saveButton: false, date: date, title: nil, contents: nil, checkList: [Memo.Check(isCheck: false, textField: "")])
 //            self.memoManager.memoArray.append(memo)
-            self.navigationController?.pushViewController(memoVC, animated: true)
+            self?.navigationController?.pushViewController(memoVC, animated: true)
         }
         
         let cancel = UIAlertAction(title: "취소하기", style: .cancel) { [weak self] action in
@@ -123,7 +123,7 @@ final class MonthlyViewController: UIViewController, UINavigationControllerDeleg
         alert.addAction(memo)
         alert.addAction(cancel)
         
-        self.present(alert, animated: true, completion: nil)
+        present(alert, animated: true, completion: nil)
     }
     
     private func setCustomAlert(date: Date) {
