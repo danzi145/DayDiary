@@ -84,6 +84,34 @@ class MemoView : UIView {
     }()
     
     
+    
+    
+    // Memo Bottom Button
+    
+    private lazy var bottomButtonView: UIView = {
+        let view = UIView()
+        return view
+    }()
+    
+    private lazy var plusCheckButton: UIButton = {
+        let button = UIButton()
+        button.tintColor = .black
+        button.setImage(UIImage(systemName: "checkmark.square", withConfiguration: UIImage.SymbolConfiguration(pointSize: 20)), for: .normal)
+        button.addTarget(self, action: #selector(plusCheckButtonTapped), for: .touchUpInside)
+        return button
+    }()
+    
+    private let trashButton: UIButton = {
+        let button = UIButton()
+        button.tintColor = .black
+        button.setImage(UIImage(systemName: "trash"), for: .normal)
+        return button
+    }()
+    
+    @objc func plusCheckButtonTapped(){
+        
+    }
+    
 
     // MARK: - Initializer
     
@@ -126,6 +154,10 @@ class MemoView : UIView {
         self.addSubview(checkView)
         checkView.addSubview(checkContentsView)
         checkView.addSubview(memoTableView)
+        
+        self.addSubview(bottomButtonView)
+        bottomButtonView.addSubview(plusCheckButton)
+        bottomButtonView.addSubview(trashButton)
     
 
         
@@ -140,6 +172,11 @@ class MemoView : UIView {
         checkView.translatesAutoresizingMaskIntoConstraints = false
         checkContentsView.translatesAutoresizingMaskIntoConstraints = false
         memoTableView.translatesAutoresizingMaskIntoConstraints = false
+        
+        bottomButtonView.translatesAutoresizingMaskIntoConstraints = false
+        plusCheckButton.translatesAutoresizingMaskIntoConstraints = false
+        trashButton.translatesAutoresizingMaskIntoConstraints = false
+        
         
         
 
@@ -173,7 +210,7 @@ class MemoView : UIView {
             checkView.topAnchor.constraint(equalTo: textView.bottomAnchor, constant: 10),
             checkView.leadingAnchor.constraint(equalTo: textView.leadingAnchor),
             checkView.trailingAnchor.constraint(equalTo: textView.trailingAnchor),
-            checkView.bottomAnchor.constraint(equalTo: safeAreaLayoutGuide.bottomAnchor),
+            checkView.bottomAnchor.constraint(equalTo: bottomButtonView.topAnchor),
             
             checkContentsView.topAnchor.constraint(equalTo: checkView.topAnchor),
             checkContentsView.leadingAnchor.constraint(equalTo: checkView.leadingAnchor),
@@ -184,6 +221,27 @@ class MemoView : UIView {
             memoTableView.leadingAnchor.constraint(equalTo: checkContentsView.trailingAnchor, constant: 5),
             memoTableView.trailingAnchor.constraint(equalTo: checkView.trailingAnchor),
             memoTableView.bottomAnchor.constraint(equalTo: checkView.bottomAnchor),
+            
+            
+            
+            bottomButtonView.leadingAnchor.constraint(equalTo: checkView.leadingAnchor ),
+            bottomButtonView.trailingAnchor.constraint(equalTo: checkView.trailingAnchor),
+            bottomButtonView.heightAnchor.constraint(equalToConstant: 30),
+            bottomButtonView.bottomAnchor.constraint(equalTo: self.safeAreaLayoutGuide.bottomAnchor),
+            
+            
+            plusCheckButton.topAnchor.constraint(equalTo: bottomButtonView.topAnchor),
+            plusCheckButton.leadingAnchor.constraint(equalTo: bottomButtonView.leadingAnchor),
+            plusCheckButton.bottomAnchor.constraint(equalTo: bottomButtonView.bottomAnchor),
+            plusCheckButton.widthAnchor.constraint(equalToConstant: 40),
+            
+            
+            trashButton.topAnchor.constraint(equalTo: bottomButtonView.topAnchor),
+            trashButton.trailingAnchor.constraint(equalTo: bottomButtonView.trailingAnchor),
+            trashButton.bottomAnchor.constraint(equalTo: bottomButtonView.bottomAnchor),
+            trashButton.widthAnchor.constraint(equalToConstant: 40),
+            
+           
         ])
     }
 }

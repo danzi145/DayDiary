@@ -123,6 +123,7 @@ final class MemoViewController: UIViewController {
     }
     
     
+    
     func resizingTextView() {
         
         print(memoView.getMemoTextView().text!)
@@ -178,8 +179,8 @@ extension MemoViewController: UITextFieldDelegate {
     public func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         print(#function)
         
-        guard let text = textField.text else {
-            return false }
+//        guard let text = textField.text else {
+//            return false }
         
 //        let point = textField.convert(CGPoint.zero, to: memoView.getMemoTableView())
 //        guard let indexPath = self.memoView.getMemoTableView().indexPathForRow(at: point) else { return false }
