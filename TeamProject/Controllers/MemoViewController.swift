@@ -92,9 +92,16 @@ final class MemoViewController: UIViewController {
     }
     
     @objc func trashButtonTapped() {
+        // 제목 텍스트 지우기
         memoView.getTitleTextField().text = ""
+        // 메모 내용(text) 지우기
         memoView.getMemoTextView().text = ""
-        // 셀 없애기
+        memoView.getMemoTextView().text = "내용"
+        memoView.getMemoTextView().textColor = .systemGray3
+        // 메모 체크리스트 지우기
+        checkTextArray = [""]
+        memoView.getMemoTableView().reloadData()
+        print(checkTextArray)
     }
 
     @objc func saveButtonTapped() {
