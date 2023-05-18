@@ -101,10 +101,16 @@ class MultiAuthViewController: UIViewController{
         googleSignInModel.signIn(withPresentingViewController: self) { [weak self] success, error in
             if success {
                 // Handle successful sign-in
-                let vc = MonthlyViewController()
-                let navVC = UINavigationController(rootViewController: vc)
-                navVC.modalPresentationStyle = .fullScreen
-                self?.dismiss(animated: true) {
+                DispatchQueue.main.async {
+                    let vc = MonthlyViewController()
+                    let navVC = UINavigationController(rootViewController: vc)
+                    navVC.modalPresentationStyle = .fullScreen
+                    
+                    if let appDelegate = UIApplication.shared.delegate as? AppDelegate {
+                        // Update the authentication status in the app delegate
+                        appDelegate.isAuthenticated = true
+                    }
+                    
                     self?.present(navVC, animated: true)
                 }
             } else {
@@ -117,6 +123,8 @@ class MultiAuthViewController: UIViewController{
             }
         }
     }
+
+
     
     //MARK: - 애플 로그인 - Firebase 연결
     // Unhashed nonce.
