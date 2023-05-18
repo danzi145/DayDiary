@@ -10,7 +10,7 @@ import UIKit
 final class CustomAlertViewController: UIViewController {
     
     // MARK: - Properties
-    lazy var customAlertView = CustomAlertView(date: baseDate)
+    private lazy var customAlertView = CustomAlertView(date: baseDate)
     
     // 얼럿뷰의 상단에 띄울 날짜 기준 잡기
     private var baseDate: Date
@@ -31,12 +31,18 @@ final class CustomAlertViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        customAlertView.delegate = self
+        setupAddTarget()
     }
 
     
     // MARK: - Helpers
 
+    private func setupAddTarget() {
+        customAlertView.diaryTitleButton.addTarget(self, action: #selector(diaryButtonTapped), for: .touchUpInside)
+        customAlertView.noteTitleButton.addTarget(self, action: #selector(noteButtonTapped), for: .touchUpInside)
+        customAlertView.lockedDiaryTitleButton.addTarget(self, action: #selector(lockedDiaryButtonTapped), for: .touchUpInside)
+        customAlertView.plusButton.addTarget(self, action: #selector(plusButtonTapped), for: .touchUpInside)
+    }
     
     // MARK: - Actions
     
@@ -45,16 +51,24 @@ final class CustomAlertViewController: UIViewController {
         self.dismiss(animated: true)
     }
     
-    
-}
-
-
-// MARK: - CustomAlertViewDelegate
-
-extension CustomAlertViewController: CustomAlertViewDelegate {
-    func handleAddButton() {
-        print("CustomAlertVC - Add button Tapped")
+    @objc func diaryButtonTapped() {
+        print(#function)
     }
     
+    @objc func noteButtonTapped() {
+        print(#function)
+    }
+    
+    @objc func lockedDiaryButtonTapped() {
+        let waitingVC = WaitingPopupViewController()
+        waitingVC.modalPresentationStyle = .fullScreen
+        present(waitingVC, animated: false)
+        print(#function)
+    }
+    
+    @objc func plusButtonTapped() {
+        print(#function)
+    }
     
 }
+

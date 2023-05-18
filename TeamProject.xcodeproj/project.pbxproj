@@ -57,6 +57,8 @@
 		F13ACBA92A1325710036214F /* HamburgerSettingsTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F13ACBA82A1325710036214F /* HamburgerSettingsTableCell.swift */; };
 		F13ACBAD2A1327320036214F /* MemoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F13ACBAC2A1327320036214F /* MemoViewController.swift */; };
 		F13ACBAF2A1327460036214F /* MemoViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = F13ACBAE2A1327460036214F /* MemoViews.swift */; };
+		F188389E2A1652AE00490CD5 /* WaitingPopupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F188389D2A1652AE00490CD5 /* WaitingPopupView.swift */; };
+		F18838A02A1652CE00490CD5 /* WaitingPopupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F188389F2A1652CE00490CD5 /* WaitingPopupViewController.swift */; };
 		F1D0FD0529DBE6A500AB1295 /* CustomAlertViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1D0FD0429DBE6A500AB1295 /* CustomAlertViewController.swift */; };
 		F1D0FD0729DBE9B000AB1295 /* CustomAlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1D0FD0629DBE9B000AB1295 /* CustomAlertView.swift */; };
 		F1DECA6729D3CC8B001C758F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1DECA6629D3CC8B001C758F /* AppDelegate.swift */; };
@@ -109,6 +111,8 @@
 		F13ACBA82A1325710036214F /* HamburgerSettingsTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HamburgerSettingsTableCell.swift; sourceTree = "<group>"; };
 		F13ACBAC2A1327320036214F /* MemoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoViewController.swift; sourceTree = "<group>"; };
 		F13ACBAE2A1327460036214F /* MemoViews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoViews.swift; sourceTree = "<group>"; };
+		F188389D2A1652AE00490CD5 /* WaitingPopupView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WaitingPopupView.swift; sourceTree = "<group>"; };
+		F188389F2A1652CE00490CD5 /* WaitingPopupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WaitingPopupViewController.swift; sourceTree = "<group>"; };
 		F1D0FD0429DBE6A500AB1295 /* CustomAlertViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomAlertViewController.swift; sourceTree = "<group>"; };
 		F1D0FD0629DBE9B000AB1295 /* CustomAlertView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomAlertView.swift; sourceTree = "<group>"; };
 		F1DECA6329D3CC8B001C758F /* TeamProject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TeamProject.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -310,6 +314,7 @@
 				F1D0FD0629DBE9B000AB1295 /* CustomAlertView.swift */,
 				3BB725462A13862700F843EC /* DiaryView.swift */,
 				F13ACBAE2A1327460036214F /* MemoViews.swift */,
+				F188389D2A1652AE00490CD5 /* WaitingPopupView.swift */,
 				F13ACBAB2A13269D0036214F /* MenuViews */,
 				B0743FDC2A111E1800E3E8FF /* Cells */,
 			);
@@ -321,6 +326,7 @@
 			children = (
 				F1DECA6A29D3CC8B001C758F /* MonthlyViewController.swift */,
 				F1D0FD0429DBE6A500AB1295 /* CustomAlertViewController.swift */,
+				F188389F2A1652CE00490CD5 /* WaitingPopupViewController.swift */,
 				3BB725482A13865100F843EC /* DiaryViewController.swift */,
 				F13ACBAC2A1327320036214F /* MemoViewController.swift */,
 				CC7BBBB32A13DE58006E86E4 /* AuthControllers */,
@@ -486,6 +492,7 @@
 				CC7BBBB22A13DCF0006E86E4 /* KakaoAuthModel.swift in Sources */,
 				BF237BEB29FBFCE1006DB129 /* PersonalInfoView.swift in Sources */,
 				BF237BED29FBFD00006DB129 /* OpenSourceView.swift in Sources */,
+				F188389E2A1652AE00490CD5 /* WaitingPopupView.swift in Sources */,
 				BF237BF129FBFD50006DB129 /* AppPasswordView.swift in Sources */,
 				F13ACBA32A1324AF0036214F /* MemoCheckListTableViewCell.swift in Sources */,
 				BF237BF529FBFDC9006DB129 /* PersonalInfoViewController.swift in Sources */,
@@ -514,6 +521,7 @@
 				CC7BBBD12A154D24006E86E4 /* MultiAuthView.swift in Sources */,
 				CC7BBBC42A13E4E4006E86E4 /* EmailSignUpViewController.swift in Sources */,
 				F12B6C592A1361D800F9446C /* SocialLoginAccountView.swift in Sources */,
+				F18838A02A1652CE00490CD5 /* WaitingPopupViewController.swift in Sources */,
 				F1DECA6929D3CC8B001C758F /* SceneDelegate.swift in Sources */,
 				CC7BBBD52A156813006E86E4 /* AppleSignInModel.swift in Sources */,
 				3BB725472A13862700F843EC /* DiaryView.swift in Sources */,

@@ -7,14 +7,9 @@
 
 import UIKit
 
-protocol CustomAlertViewDelegate: AnyObject {
-    func handleAddButton()
-}
-
 final class CustomAlertView: UIView {
     
     // MARK: - Properties
-    weak var delegate: CustomAlertViewDelegate?
     
     // 기준 날짜를 잡기 위한 속성
     private var date: Date
@@ -49,10 +44,10 @@ final class CustomAlertView: UIView {
         return label
     }()
     
-    private lazy var diaryTitleButton: UIButton = {
+     lazy var diaryTitleButton: UIButton = {
         let button = AlertTitleButton(type: .system)
         button.setTitle("약과가 먹고싶은 날", for: .normal)
-        button.addTarget(self, action: #selector(diaryTitleButtonTapped), for: .touchUpInside)
+//        button.addTarget(self, action: #selector(diaryTitleButtonTapped), for: .touchUpInside)
         return button
     }()
     private var diaryCircle: UILabel = {
@@ -70,10 +65,10 @@ final class CustomAlertView: UIView {
         label.font = UIFont.systemFont(ofSize: 12)
         return label
     }()
-    private lazy var noteTitleButton: UIButton = {
+     lazy var noteTitleButton: UIButton = {
         let button = AlertTitleButton(type: .system)
         button.setTitle("치과 4:30", for: .normal)
-        button.addTarget(self, action: #selector(noteTitleButtonTapped), for: .touchUpInside)
+//        button.addTarget(self, action: #selector(noteTitleButtonTapped), for: .touchUpInside)
         return button
     }()
     private var noteCircle: UILabel = {
@@ -91,10 +86,10 @@ final class CustomAlertView: UIView {
         label.font = UIFont.systemFont(ofSize: 12)
         return label
     }()
-    private lazy var lockedDiaryTitleButton: UIButton = {
+     lazy var lockedDiaryTitleButton: UIButton = {
         let button = AlertTitleButton(type: .system)
         button.setTitle("수박이 먹고싶은 날", for: .normal)
-        button.addTarget(self, action: #selector(lockedDiaryTitleButtonTapped), for: .touchUpInside)
+//        button.addTarget(self, action: #selector(lockedDiaryTitleButtonTapped), for: .touchUpInside)
         return button
     }()
     private var lockedDiaryCircle: UILabel = {
@@ -114,7 +109,7 @@ final class CustomAlertView: UIView {
     }()
     
     // + 버튼
-    private lazy var plusButton: UIButton = {
+     lazy var plusButton: UIButton = {
         let imageView = UIImageView()
          imageView.image = UIImage(systemName: "plus")
          imageView.frame = CGRect(x: 0, y: 0, width: 20, height: 20)
@@ -125,7 +120,7 @@ final class CustomAlertView: UIView {
         button.clipsToBounds = true
         button.setImage(imageView.image?.withRenderingMode(.alwaysTemplate), for: .normal)
         button.tintColor = .black
-        button.addTarget(self, action: #selector(plusButtonTapped), for: .touchUpInside)
+//        button.addTarget(self, action: #selector(plusButtonTapped), for: .touchUpInside)
         return button
     }()
     
@@ -174,24 +169,6 @@ final class CustomAlertView: UIView {
         fatalError("init(coder:) has not been implemented")
     }
     
-    
-    // MARK: - Actions
-    
-    @objc func plusButtonTapped() {
-        delegate?.handleAddButton()
-    }
-    
-    @objc func diaryTitleButtonTapped() {
-        print(#function)
-    }
-    
-    @objc func noteTitleButtonTapped() {
-        print(#function)
-    }
-    
-    @objc func lockedDiaryTitleButtonTapped() {
-        print(#function)
-    }
     
     // MARK: - Helpers
     private func setAlertView() {
