@@ -31,13 +31,7 @@ class MenuHeaderStackView: UIStackView {
     
     init(title: String) {
         super.init(frame: .zero)
-        backgroundColor = .white
-        titleLabel.text = title
-        heightAnchor.constraint(equalToConstant: 80).isActive = true
-        
-        addSubview(backButton)
-        addSubview(titleLabel)
-        
+        setUI(title: title)
         setAutolayout()
     }
     
@@ -46,9 +40,16 @@ class MenuHeaderStackView: UIStackView {
     }
 
     // MARK: - Helpers
+    private func setUI(title: String) {
+        backgroundColor = .white
+        titleLabel.text = title
+        heightAnchor.constraint(equalToConstant: 80).isActive = true
+        
+        addSubview(backButton)
+        addSubview(titleLabel)
+    }
     
     private func setAutolayout() {
-        
         backButton.translatesAutoresizingMaskIntoConstraints = false
         titleLabel.translatesAutoresizingMaskIntoConstraints = false
         
@@ -57,7 +58,6 @@ class MenuHeaderStackView: UIStackView {
             backButton.centerYAnchor.constraint(equalTo: centerYAnchor),
             titleLabel.centerYAnchor.constraint(equalTo: centerYAnchor),
             titleLabel.centerXAnchor.constraint(equalTo: centerXAnchor)
-            
         ])
     }
     

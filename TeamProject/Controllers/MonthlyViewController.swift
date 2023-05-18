@@ -31,7 +31,7 @@ final class MonthlyViewController: UIViewController, UINavigationControllerDeleg
         super.viewDidLoad()
         configureUI()
         setCalendar()
-        setMenuButtonAction()
+        setupAddTarget()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -74,7 +74,7 @@ final class MonthlyViewController: UIViewController, UINavigationControllerDeleg
         calendarView.calendarView.dataSource = self
     }
     
-    private func setMenuButtonAction() {
+    private func setupAddTarget() {
         topStackView.menuButton.addTarget(self, action: #selector(menuTapped), for: .touchUpInside)
     }
     

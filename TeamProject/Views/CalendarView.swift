@@ -49,7 +49,7 @@ class CalendarView: UIView {
     }
     
     // MARK: - set UI()
-    func setUI() {
+    private func setUI() {
         self.backgroundColor = .white
         self.addSubview(calendarView)
         setAutolayout()
@@ -57,7 +57,7 @@ class CalendarView: UIView {
     
     
     // MARK: - set Autolayout()
-    func setAutolayout() {
+    private func setAutolayout() {
         calendarView.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
             calendarView.topAnchor.constraint(equalTo: self.safeAreaLayoutGuide.topAnchor, constant: -15),

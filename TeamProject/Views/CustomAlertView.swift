@@ -89,7 +89,6 @@ final class CustomAlertView: UIView {
      lazy var lockedDiaryTitleButton: UIButton = {
         let button = AlertTitleButton(type: .system)
         button.setTitle("수박이 먹고싶은 날", for: .normal)
-//        button.addTarget(self, action: #selector(lockedDiaryTitleButtonTapped), for: .touchUpInside)
         return button
     }()
     private var lockedDiaryCircle: UILabel = {
@@ -120,7 +119,6 @@ final class CustomAlertView: UIView {
         button.clipsToBounds = true
         button.setImage(imageView.image?.withRenderingMode(.alwaysTemplate), for: .normal)
         button.tintColor = .black
-//        button.addTarget(self, action: #selector(plusButtonTapped), for: .touchUpInside)
         return button
     }()
     

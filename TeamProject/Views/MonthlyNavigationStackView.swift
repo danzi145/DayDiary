@@ -36,11 +36,7 @@ class MonthlyNavigationStackView: UIStackView {
     
     override init(frame: CGRect) {
         super.init(frame: frame)
-        heightAnchor.constraint(equalToConstant: 80).isActive = true
-        
-        addSubview(calendarDateLabel)
-        addSubview(menuButton)
-        
+        setUI()
         setAutolayout()
         changeMonthLabel()
     }
@@ -51,8 +47,14 @@ class MonthlyNavigationStackView: UIStackView {
     
     
     // MARK: - Helpers
+    private func setUI() {
+        heightAnchor.constraint(equalToConstant: 80).isActive = true
+        
+        addSubview(calendarDateLabel)
+        addSubview(menuButton)
+    }
     
-    func setAutolayout() {
+    private func setAutolayout() {
         calendarDateLabel.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([calendarDateLabel.leadingAnchor.constraint(equalTo: safeAreaLayoutGuide.leadingAnchor, constant: 31), calendarDateLabel.bottomAnchor.constraint(equalTo: safeAreaLayoutGuide.bottomAnchor)])
         
@@ -60,7 +62,7 @@ class MonthlyNavigationStackView: UIStackView {
         NSLayoutConstraint.activate([menuButton.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -27), menuButton.centerYAnchor.constraint(equalTo: calendarDateLabel.centerYAnchor, constant: -3), menuButton.widthAnchor.constraint(equalToConstant: 30)])
     }
     
-    func changeMonthLabel() {
+    private func changeMonthLabel() {
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "yyyy년 MM월"
         calendarDateLabel.text = dateFormatter.string(from: baseDate)

@@ -34,16 +34,6 @@ final class CustomAlertViewController: UIViewController {
         setupAddTarget()
     }
 
-    
-    // MARK: - Helpers
-
-    private func setupAddTarget() {
-        customAlertView.diaryTitleButton.addTarget(self, action: #selector(diaryButtonTapped), for: .touchUpInside)
-        customAlertView.noteTitleButton.addTarget(self, action: #selector(noteButtonTapped), for: .touchUpInside)
-        customAlertView.lockedDiaryTitleButton.addTarget(self, action: #selector(lockedDiaryButtonTapped), for: .touchUpInside)
-        customAlertView.plusButton.addTarget(self, action: #selector(plusButtonTapped), for: .touchUpInside)
-    }
-    
     // MARK: - Actions
     
     // 버튼 밖을 터치하면, dismiss 되도록 구현
@@ -60,15 +50,26 @@ final class CustomAlertViewController: UIViewController {
     }
     
     @objc func lockedDiaryButtonTapped() {
+        // waitingVC 사라지는 부분 부자연스러움 - 개선 필요
         let waitingVC = WaitingPopupViewController()
         waitingVC.modalPresentationStyle = .fullScreen
         present(waitingVC, animated: false)
-        print(#function)
     }
     
     @objc func plusButtonTapped() {
         print(#function)
     }
+    
+    // MARK: - Helpers
+
+    private func setupAddTarget() {
+        customAlertView.diaryTitleButton.addTarget(self, action: #selector(diaryButtonTapped), for: .touchUpInside)
+        customAlertView.noteTitleButton.addTarget(self, action: #selector(noteButtonTapped), for: .touchUpInside)
+        customAlertView.lockedDiaryTitleButton.addTarget(self, action: #selector(lockedDiaryButtonTapped), for: .touchUpInside)
+        customAlertView.plusButton.addTarget(self, action: #selector(plusButtonTapped), for: .touchUpInside)
+    }
+    
+
     
 }
 
