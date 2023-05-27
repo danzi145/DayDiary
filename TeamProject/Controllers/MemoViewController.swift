@@ -10,6 +10,12 @@ import UIKit
 
 final class MemoViewController: UIViewController {
     
+    
+    let memoManager = MemoCoreDataManager.shared
+    
+    var memoData: MemoCoreData?
+    
+    
     enum Save {
         case after
         case before
@@ -33,6 +39,19 @@ final class MemoViewController: UIViewController {
         super.loadView()
         view = memoView
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        let memoData = MemoCoreDataManager.shared
+        
+        let customView = view as? MemoView
+        
+        customView?.getTitleTextField().text = memoData.getMemoListFromCoreData().first?.value(forKey: "mTitle") as? String
+        
+        customView?.getMemoTextView().text = memoData.getMemoListFromCoreData().first?.value(forKey: "mContent") as? String
+        
+    }
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -72,22 +91,56 @@ final class MemoViewController: UIViewController {
     
     
 
-    @objc func saveButtonTapped() {
+        @objc func saveButtonTapped() {
+            if let memodata = self.memoData {
+                memodata.mTitle = memoView.getTitleTextField().text
+                memodata.mContent = memoView.getMemoTextView().text
+                
+                memoManager.updateMemo(newMemoCoreData: memodata) {
+                    print("update 완료")
+                    self.navigationController?.popViewController(animated: false)
+                }
+            } else {
+                let title = memoView.getTitleTextField().text
+                let content = memoView.getMemoTextView().text
+                
+                memoManager.saveMemoData(mtitle: title, mcontent: content) {
+                    print("save 완료")
+                    let alert = UIAlertController(title: "", message: "저장되었습니다", preferredStyle: .alert)
+                    let success1 = UIAlertAction(title: "확인", style: .default) {  action in self.mainButtonTapped()
+                    }
+                    
+                    
+                    alert.addAction(success1)
+                    //alert.addAction(cancel)
+                    self.present(alert, animated: true, completion: nil)
+                    
+                }
+            }
+        }
+    
+    
+    @objc func mainButtonTapped() {
+      
+        let vc = MonthlyViewController()
+        vc.modalPresentationStyle = .fullScreen
         
-        if memoView.getTitleTextField().text == "" {
-            let alert = UIAlertController(title: "제목 작성", message: "제목을 작성해야 저장이 가능합니다.", preferredStyle: .alert)
-            //메세지창 컨트롤러 버튼액션 인스턴스 생성
-            let close = UIAlertAction(title: "닫기", style: .cancel)
-            //메세지창 컨트롤러 버튼액션 추가
-            alert.addAction(close)
-            //메세지창 컨트롤러에 표시
-            present(alert, animated: false)
-        } else { print("제목을 입력했습니다.") }
-        
-        resizingTextView()
-        saveenum = .after
-        print(saveenum)
+        self.present(vc, animated: false, completion: nil)
     }
+//        if memoView.getTitleTextField().text == "" {
+//            let alert = UIAlertController(title: "제목 작성", message: "제목을 작성해야 저장이 가능합니다.", preferredStyle: .alert)
+//            //메세지창 컨트롤러 버튼액션 인스턴스 생성
+//            let close = UIAlertAction(title: "닫기", style: .cancel)
+//            //메세지창 컨트롤러 버튼액션 추가
+//            alert.addAction(close)
+//            //메세지창 컨트롤러에 표시
+//            present(alert, animated: false)
+//        } else { print("제목을 입력했습니다.") }
+//
+//        resizingTextView()
+//        saveenum = .after
+//        print(saveenum)
+    
     
   
     
