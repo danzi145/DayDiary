@@ -157,7 +157,7 @@ final class MonthlyViewController: UIViewController, UINavigationControllerDeleg
     }
     
     private func setCustomAlert(date: Date) {
-            let customAlert = CustomAlertViewController(baseDate: date)
+            let customAlert = CustomAlertViewController(baseDate: date, title: "")
         customAlert.modalPresentationStyle = UIModalPresentationStyle.overCurrentContext
         customAlert.modalTransitionStyle = UIModalTransitionStyle.crossDissolve
             self.present(customAlert, animated: true, completion: nil)

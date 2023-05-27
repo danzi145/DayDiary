@@ -11,9 +11,9 @@ import PhotosUI
 
 final class DiaryViewController: UIViewController {
     
-//    let diaryManager = DiaryCoreDataManager.shared
-//
-//    var diaryData: DiaryCoreData?
+    let diaryManager = DiaryCoreDataManager.shared
+
+    var diaryData: DiaryCoreData?
     
     
     
@@ -32,19 +32,20 @@ final class DiaryViewController: UIViewController {
         view = diaryV
         
     }
+
     
-//    override func viewWillAppear(_ animated: Bool) {
-//        super.viewWillAppear(animated)
-//        print("여기에서 코어데이터에서 다시 제목 가져와서 표시")
-//        // 코어데이터에서 제목 데이터 가져오기
-//        let diaryData = DiaryCoreDataManager.shared
-//
-//        // 다시 표시 (예를 들어)
-//        let customView = view as? DiaryView
-//        customView?.titleTextField.text = diaryData.getDiaryListFromCoreData().first?.value(forKey: "dTitle") as? String
-//        customView?.memoTextView.text = diaryData.getDiaryListFromCoreData().first?.value(forKey: "dContent") as? String
-//
-//    }
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        print("여기에서 코어데이터에서 다시 제목 가져와서 표시")
+        // 코어데이터에서 제목 데이터 가져오기
+        let diaryData = DiaryCoreDataManager.shared
+
+        // 다시 표시 (예를 들어)
+        let customView = view as? DiaryView
+        customView?.titleTextField.text = diaryData.getDiaryListFromCoreData().first?.value(forKey: "dTitle") as? String
+        customView?.memoTextView.text = diaryData.getDiaryListFromCoreData().first?.value(forKey: "dContent") as? String
+        customView?.mainImageView.image = diaryData.getDiaryListFromCoreData().first?.value(forKey: "dPhoto") as? UIImage
+    }
 
     // MARK: - Lifecycle
     override func viewDidLoad() {
@@ -180,22 +181,43 @@ final class DiaryViewController: UIViewController {
         guard let memo = diaryV.titleTextField.text, memo.count > 0 else {
             alertSave(message:"제목을 입력하세요")
             return }
-        self.navigationController?.popViewController(animated: true)
-            let alert = UIAlertController(title: "", message: "저장되었습니다", preferredStyle: .alert)
-            let success1 = UIAlertAction(title: "확인", style: .default) { action in
-            self.mainButtonTapped()
-            }
-            
-//                        let cancel = UIAlertAction(title: "취소", style: .cancel) { action in
-//                            print("취소버튼이 눌렸습니다.")
-//                        }
-            alert.addAction(success1)
-            //alert.addAction(cancel)
-            self.present(alert, animated: true, completion: nil)
+        
+        if let diarydata = self.diaryData {
+            diarydata.dTitle = diaryV.titleTextField.text
+            diarydata.dContent = diaryV.memoTextView.text
+            diarydata.dPhoto = diaryV.mainImageView.image?.jpegData(compressionQuality: 1)
 
-    
-        
-        
+            diaryManager.updateDiary(newDiaryCoreData: diarydata) {
+                print("update 완료")
+                self.navigationController?.popViewController(animated: false)
+            }
+        } else {
+            let title = diaryV.titleTextField.text
+            let content = diaryV.memoTextView.text
+            let photo = diaryV.mainImageView.image?.jpegData(compressionQuality: 1)
+            diaryManager.saveDiaryData(dtitle: title, dcontent: content, dphoto: photo) {
+                print("save 완료")
+                let alert = UIAlertController(title: "", message: "저장되었습니다", preferredStyle: .alert)
+                let success1 = UIAlertAction(title: "확인", style: .default) {  action in self.mainButtonTapped()
+                    
+                }
+                
+                //        self.navigationController?.popViewController(animated: true)
+                //            let alert = UIAlertController(title: "", message: "저장되었습니다", preferredStyle: .alert)
+                //            let success1 = UIAlertAction(title: "확인", style: .default) { action in
+                //            self.mainButtonTapped()
+                //            }
+                
+                //                        let cancel = UIAlertAction(title: "취소", style: .cancel) { action in
+                //                            print("취소버튼이 눌렸습니다.")
+                //                        }
+                alert.addAction(success1)
+                //alert.addAction(cancel)
+                self.present(alert, animated: true, completion: nil)
+                
+            }
+        }
+    }
 //        if let diarydata = self.diaryData {
 //
 //            diarydata.dTitle = diaryV.titleTextField.text ?? "제목"
@@ -238,7 +260,7 @@ final class DiaryViewController: UIViewController {
 //
 //        self.present(alert, animated: true, completion: nil)
         
-    }
+    
 
 //    @objc func saveButton2() {
 //        if let text =  diaryV.titleTextField.text {
@@ -270,7 +292,7 @@ final class DiaryViewController: UIViewController {
         @objc func listTableViewAlert(_ sender: UIButton) {
             
             //콘텐츠 뷰 영역
-            let contentVc = ListTableTableViewController()
+            let contentVc = ListTableViewController()
             
             //델리게이트 설정
             contentVc.delegate = self

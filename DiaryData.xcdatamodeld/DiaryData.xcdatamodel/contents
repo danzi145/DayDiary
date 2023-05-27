@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="21754" systemVersion="22E261" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="DiaryCoreData" representedClassName="DiaryCoreData" syncable="YES" codeGenerationType="class">
+        <attribute name="dCapsule" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="dContent" optional="YES" attributeType="String"/>
+        <attribute name="dDate" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="dPhoto" optional="YES" attributeType="Binary"/>
+        <attribute name="dTitle" optional="YES" attributeType="String"/>
+    </entity>
+    <entity name="MemoCoreData" representedClassName="MemoCoreData" syncable="YES" codeGenerationType="class">
+        <attribute name="mContent" optional="YES" attributeType="String"/>
+        <attribute name="mDate" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="mTitle" optional="YES" attributeType="String"/>
+    </entity>
+</model>

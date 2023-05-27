@@ -2,6 +2,18 @@
 <Workspace
    version = "1.0">
    <FileRef
+      location = "group:MemoCoreData+CoreDataClass.swift">
+   </FileRef>
+   <FileRef
+      location = "group:MemoCoreData+CoreDataProperties.swift">
+   </FileRef>
+   <FileRef
+      location = "group:DiaryCoreData+CoreDataClass.swift">
+   </FileRef>
+   <FileRef
+      location = "group:DiaryCoreData+CoreDataProperties.swift">
+   </FileRef>
+   <FileRef
       location = "group:TeamProject.xcodeproj">
    </FileRef>
    <FileRef
