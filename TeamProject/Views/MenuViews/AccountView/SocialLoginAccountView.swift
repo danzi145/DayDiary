@@ -44,7 +44,7 @@ class SocialLoginAccountView: UIView {
     
     // MARK: - 비밀번호 설정, 로그아웃, 앱 탈퇴 버튼
 
-    private let passwordSettingsButton: UIButton = {
+    let passwordSettingsButton: UIButton = {
         var button = UIButton()
         button.setTitle("앱 비밀번호 설정하기", for: .normal)
         button.contentHorizontalAlignment = .left

@@ -34,6 +34,10 @@ class SocialLoginAccountViewController: UIViewController {
         headerView.backButton.addTarget(self,
                                         action: #selector(backButtonTapped),
                                         for: .touchUpInside)
+        
+        accountView.passwordSettingsButton.addTarget(self,
+                                                     action: #selector(appPasswordSettingsButtonTapped),
+                                                     for: .touchUpInside)
         accountView.logOutButton.addTarget(self,
                                            action: #selector(logOutButtonTapped),
                                            for: .touchUpInside)
@@ -43,6 +47,12 @@ class SocialLoginAccountViewController: UIViewController {
     
     @objc private func backButtonTapped() {
         navigationController?.popViewController(animated: true)
+    }
+    
+    @objc private func appPasswordSettingsButtonTapped() {
+        let appPasswordSettingVC = AppPasswordViewController()
+        appPasswordSettingVC.modalPresentationStyle = .fullScreen
+        present(appPasswordSettingVC, animated: true, completion: nil)
     }
     
     @objc private func logOutButtonTapped() {
