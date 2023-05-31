@@ -22,6 +22,7 @@
 		BF237BFB29FBFE38006DB129 /* AppPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF237BFA29FBFE38006DB129 /* AppPasswordViewController.swift */; };
 		C92797C77B52716E7BB699DD /* Pods_TeamProject.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3D89FE3648EDD3FB1AFC9369 /* Pods_TeamProject.framework */; };
 		CC760BA22A27D86300704546 /* ResetPasswordView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC760BA12A27D86300704546 /* ResetPasswordView.swift */; };
+		CC760BA42A27D8B900704546 /* ResetPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC760BA32A27D8B900704546 /* ResetPasswordViewController.swift */; };
 		CC7BBB942A13DB38006E86E4 /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = CC7BBB932A13DB38006E86E4 /* FirebaseAnalytics */; };
 		CC7BBB962A13DB38006E86E4 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = CC7BBB952A13DB38006E86E4 /* FirebaseAuth */; };
 		CC7BBB982A13DB38006E86E4 /* FirebaseCrashlytics in Frameworks */ = {isa = PBXBuildFile; productRef = CC7BBB972A13DB38006E86E4 /* FirebaseCrashlytics */; };
@@ -88,6 +89,7 @@
 		BF237BF829FBFE10006DB129 /* SetPasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetPasswordViewController.swift; sourceTree = "<group>"; };
 		BF237BFA29FBFE38006DB129 /* AppPasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppPasswordViewController.swift; sourceTree = "<group>"; };
 		CC760BA12A27D86300704546 /* ResetPasswordView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResetPasswordView.swift; sourceTree = "<group>"; };
+		CC760BA32A27D8B900704546 /* ResetPasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResetPasswordViewController.swift; sourceTree = "<group>"; };
 		CC7BBB912A13DA90006E86E4 /* TeamProject.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = TeamProject.entitlements; sourceTree = "<group>"; };
 		CC7BBBB12A13DCF0006E86E4 /* KakaoAuthModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KakaoAuthModel.swift; sourceTree = "<group>"; };
 		CC7BBBB42A13E037006E86E4 /* MultiAuthViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultiAuthViewController.swift; sourceTree = "<group>"; };
@@ -201,6 +203,7 @@
 				CC7BBBB42A13E037006E86E4 /* MultiAuthViewController.swift */,
 				CC7BBBC12A13E4D8006E86E4 /* EmailSignInViewController.swift */,
 				CC7BBBC32A13E4E4006E86E4 /* EmailSignUpViewController.swift */,
+				CC760BA32A27D8B900704546 /* ResetPasswordViewController.swift */,
 			);
 			path = AuthControllers;
 			sourceTree = "<group>";
@@ -498,6 +501,7 @@
 				BF237BF329FBFD7F006DB129 /* EmailLoginAccountViewController.swift in Sources */,
 				F1D0FD0729DBE9B000AB1295 /* CustomAlertView.swift in Sources */,
 				F13ACB912A1261430036214F /* MenuHeaderStackView.swift in Sources */,
+				CC760BA42A27D8B900704546 /* ResetPasswordViewController.swift in Sources */,
 				F13ACB972A1323F80036214F /* HamburgerViewController.swift in Sources */,
 				F1DECA6B29D3CC8B001C758F /* MonthlyViewController.swift in Sources */,
 				BF237BF729FBFDE9006DB129 /* OpenSourceViewController.swift in Sources */,
