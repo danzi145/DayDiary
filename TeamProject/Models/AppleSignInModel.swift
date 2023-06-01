@@ -113,7 +113,11 @@ extension AppleSignInModel: ASAuthorizationControllerDelegate {
         // Handle sign-in error
         print("Sign in with Apple errored: \(error)")
 
-        if let topViewController = UIApplication.shared.windows.first?.windowScene?.topPresentedViewController() {
+        if let topViewController = UIApplication.shared.connectedScenes
+            .compactMap({ $0 as? UIWindowScene })
+            .flatMap({ $0.windows })
+            .first(where: { $0.isKeyWindow })?
+            .rootViewController?.topPresentedViewController() {
             let alert = UIAlertController(title: "에러", message: "로그인을 할 수 없습니다", preferredStyle: .alert)
             alert.addAction(UIAlertAction(title: "확인", style: .default))
             topViewController.present(alert, animated: true)

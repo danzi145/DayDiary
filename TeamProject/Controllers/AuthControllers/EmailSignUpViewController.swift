@@ -210,11 +210,21 @@ class EmailSignUpViewController: UIViewController {
               let passwordConfirm = passwordConfirmTextField.text,
               !email.isEmpty,
               !password.isEmpty,
-              !passwordConfirm.isEmpty,
-              password.count >= 8 else {
-            alertUserRegisterError()
+              !passwordConfirm.isEmpty else {
+            alertUserRegisterError(message: "가입 완료를 위해 모든 정보를 기입해주세요.")
             return
         }
+        
+        if password.count < 8 {
+            alertUserRegisterError(message: "비밀번호는 최소 8자리 이상이어야 합니다.")
+            return
+        }
+        
+        if password != passwordConfirm {
+            alertUserRegisterError(message: "비밀번호가 일치하지 않습니다.")
+            return
+        }
+    
         
         //MARK: - Firebase Register
         AuthDBManager.shared.userExists(with: email) { [weak self] exists in
@@ -222,7 +232,6 @@ class EmailSignUpViewController: UIViewController {
             guard !exists else {
                 // User already exists
                 strongSelf.alertUserRegisterError(message: "이미 사용중인 이메일입니다.")
-
                 return
             }
             FirebaseAuth.Auth.auth().createUser(withEmail: email, password: password) { authResult, error in
@@ -240,9 +249,9 @@ class EmailSignUpViewController: UIViewController {
         
     }
     
-    func alertUserRegisterError(message: String = "회원가입을 위한 정보를 모두 입력해주세요.") {
+    func alertUserRegisterError(message: String) {
         let alert = UIAlertController(title: "", message: message, preferredStyle: .alert)
-        alert.addAction(UIAlertAction(title: "뒤로 가기", style: .cancel))
+        alert.addAction(UIAlertAction(title: "확인", style: .default))
         present(alert, animated: true)
     }
 
