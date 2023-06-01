@@ -100,11 +100,19 @@ class EmailSignInViewController: UIViewController {
         return button
     }()
     
-    private lazy var registerButton: UIButton = {
+    private lazy var registerViewButton: UIButton = {
         let button = UIButton(type: .system)
         button.setTitle("계정이 없으신가요? 회원 가입하기", for: .normal)
         button.titleLabel?.font = UIFont.customFont(ofSize: 15, weight: .regular, fontName: "GowunDodum-Regular")
-        button.addTarget(self, action: #selector(moveToRegister), for: .touchUpInside)
+        button.addTarget(self, action: #selector(moveToRegisterView), for: .touchUpInside)
+        return button
+    }()
+    
+    private lazy var resetPasswordViewButton: UIButton = {
+        let button = UIButton(type: .system)
+        button.setTitle("비밀번호를 잊어버리셨나요?", for: .normal)
+        button.titleLabel?.font = UIFont.customFont(ofSize: 15, weight: .regular, fontName: "GowunDodum-Regular")
+        button.addTarget(self, action: #selector(moveToResetPasswordView), for: .touchUpInside)
         return button
     }()
 
@@ -125,7 +133,9 @@ class EmailSignInViewController: UIViewController {
         scrollView.addSubview(passwordLabel)
         scrollView.addSubview(passwordTextField)
         scrollView.addSubview(loginButton)
-        scrollView.addSubview(registerButton)
+        scrollView.addSubview(registerViewButton)
+        scrollView.addSubview(resetPasswordViewButton)
+
     }
     
     override func viewDidLayoutSubviews() {
@@ -143,7 +153,9 @@ class EmailSignInViewController: UIViewController {
         passwordLabel.frame = CGRect(x: 16, y: emailTextField.bottom + 30, width: 60, height: 25)
         passwordTextField.frame = CGRect(x: 16, y: passwordLabel.bottom + 6, width: 361, height: 42)
         loginButton.frame = CGRect(x: 16, y: passwordTextField.bottom + 50, width: 361, height: 42)
-        registerButton.frame = CGRect(x: 16, y: loginButton.bottom + 30, width: 361, height: 42)
+        registerViewButton.frame = CGRect(x: 16, y: loginButton.bottom + 30, width: 361, height: 42)
+        resetPasswordViewButton.frame = CGRect(x: 16, y: registerViewButton.bottom, width: 361, height: 42)
+
         
         passwordTextField.rightView = passwordToggleButton
         passwordTextField.rightViewMode = .always
@@ -189,8 +201,14 @@ class EmailSignInViewController: UIViewController {
     }
     
     
-    @objc private func moveToRegister() {
+    @objc private func moveToRegisterView() {
         let vc = EmailSignUpViewController()
+        vc.title = ""
+        navigationController?.pushViewController(vc, animated: true)
+    }
+    
+    @objc private func moveToResetPasswordView() {
+        let vc = ResetPasswordViewController()
         vc.title = ""
         navigationController?.pushViewController(vc, animated: true)
     }
