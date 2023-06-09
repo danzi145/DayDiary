@@ -9,6 +9,7 @@ import UIKit
 import FSCalendar
 import FirebaseAuth
 import GoogleSignIn
+import CoreLocation
 
 // MARK: - Object
 protocol MonthlyViewControllerDelegate: AnyObject {
@@ -19,6 +20,8 @@ final class MonthlyViewController: UIViewController, UINavigationControllerDeleg
     
     let topStackView = MonthlyNavigationStackView()
     private let calendarView = CalendarView()
+    
+    private let locationManager = LocationManager.shared
 //    let memoManager = MemoManager.shared
     
     weak var delegate: MonthlyViewControllerDelegate?
@@ -32,6 +35,7 @@ final class MonthlyViewController: UIViewController, UINavigationControllerDeleg
         configureUI()
         setCalendar()
         setupAddTarget()
+        setLocationManager()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -100,7 +104,37 @@ final class MonthlyViewController: UIViewController, UINavigationControllerDeleg
         }
     }
     
+    // 위치 사용 권한 허용 체크 및 locationManager 세팅
+    private func setLocationManager() {
+        LocationManager.shared.delegate = self
+        LocationManager.shared.desiredAccuracy = kCLLocationAccuracyBest  // 배터리 최적화
+        if LocationManager.shared.authorizationStatus != .authorizedAlways || LocationManager.shared.authorizationStatus != .authorizedWhenInUse {
+            LocationManager.shared.requestWhenInUseAuthorization()
+        }
+        
+        DispatchQueue.global(qos: .background).async {
+            guard LocationManager.shared.location?.coordinate != nil
+                else {
+                print("location update 아직 안된 상태")
+                return
+            }
+        }
+    }
 
+    // 사용자의 환경설정 - 위치 허용으로 안내
+    private func showRequestLocationServiceAlert() {
+        let requestLocationServiceAlert = UIAlertController(title: "위치 정보 이용", message: "위치 서비스를 사용할 수 없습니다.\n디바이스의 '설정 > 개인정보 보호'에서 위치 서비스를 켜주세요.", preferredStyle: .alert)
+        let presentSettings = UIAlertAction(title: "설정으로 이동", style: .destructive) { _ in
+            if let appSetting = URL(string: UIApplication.openSettingsURLString) {
+                UIApplication.shared.open(appSetting)
+            }
+        }
+        let cancel = UIAlertAction(title: "취소", style: .cancel)
+        requestLocationServiceAlert.addAction(cancel)
+        requestLocationServiceAlert.addAction(presentSettings)
+        
+        present(requestLocationServiceAlert, animated: true)
+    }
     
     // MARK: - Actions
     @objc private func menuTapped() {
@@ -210,3 +244,34 @@ extension MonthlyViewController: FSCalendarDelegate, FSCalendarDataSource,  FSCa
 }
 
  
+// MARK: - CLLocationManagerDelegate
+
+extension MonthlyViewController: CLLocationManagerDelegate {
+    
+    // 권한설정 변경된 경우 실행
+    func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
+        switch status {
+        case .authorizedAlways, .authorizedWhenInUse:
+            print("GPS 권한설정 허용됨")
+            LocationManager.shared.startUpdatingLocation()
+            
+        case .restricted, .notDetermined:
+            print("GPS 권한설정 X")
+            LocationManager.shared.requestWhenInUseAuthorization()
+            
+        case .denied:
+            print("GPS 권한설정 거부됨")
+            showRequestLocationServiceAlert()
+        default:
+            print("요청")
+        }
+    }
+    
+    // 위치 업데이트 된 경우 실행
+    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        guard let currentLocation = locations.last else { return }
+        UserDefaultsManager.shared.setCurrentLocation(lon: currentLocation.coordinate.longitude,
+                                                      lat: currentLocation.coordinate.latitude)
+    }
+    
+}

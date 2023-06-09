@@ -63,6 +63,8 @@
 		F18838A02A1652CE00490CD5 /* WaitingPopupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F188389F2A1652CE00490CD5 /* WaitingPopupViewController.swift */; };
 		F1D0FD0529DBE6A500AB1295 /* CustomAlertViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1D0FD0429DBE6A500AB1295 /* CustomAlertViewController.swift */; };
 		F1D0FD0729DBE9B000AB1295 /* CustomAlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1D0FD0629DBE9B000AB1295 /* CustomAlertView.swift */; };
+		F1DB31442A33637500B6D513 /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1DB31432A33637500B6D513 /* LocationManager.swift */; };
+		F1DB31472A33643C00B6D513 /* UserDefaultsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1DB31462A33643C00B6D513 /* UserDefaultsManager.swift */; };
 		F1DECA6729D3CC8B001C758F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1DECA6629D3CC8B001C758F /* AppDelegate.swift */; };
 		F1DECA6929D3CC8B001C758F /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1DECA6829D3CC8B001C758F /* SceneDelegate.swift */; };
 		F1DECA6B29D3CC8B001C758F /* MonthlyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1DECA6A29D3CC8B001C758F /* MonthlyViewController.swift */; };
@@ -119,6 +121,8 @@
 		F188389F2A1652CE00490CD5 /* WaitingPopupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WaitingPopupViewController.swift; sourceTree = "<group>"; };
 		F1D0FD0429DBE6A500AB1295 /* CustomAlertViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomAlertViewController.swift; sourceTree = "<group>"; };
 		F1D0FD0629DBE9B000AB1295 /* CustomAlertView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomAlertView.swift; sourceTree = "<group>"; };
+		F1DB31432A33637500B6D513 /* LocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
+		F1DB31462A33643C00B6D513 /* UserDefaultsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsManager.swift; sourceTree = "<group>"; };
 		F1DECA6329D3CC8B001C758F /* TeamProject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TeamProject.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F1DECA6629D3CC8B001C758F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F1DECA6829D3CC8B001C758F /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -274,6 +278,17 @@
 			path = MenuViews;
 			sourceTree = "<group>";
 		};
+		F1DB31452A33640100B6D513 /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				F1DB31432A33637500B6D513 /* LocationManager.swift */,
+				CC7BBBBD2A13E409006E86E4 /* AuthManager.swift */,
+				CC7BBBBB2A13E3D2006E86E4 /* AuthDBManager.swift */,
+				F1DB31462A33643C00B6D513 /* UserDefaultsManager.swift */,
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
 		F1DECA5A29D3CC8B001C758F = {
 			isa = PBXGroup;
 			children = (
@@ -299,6 +314,7 @@
 				CC7BBB912A13DA90006E86E4 /* TeamProject.entitlements */,
 				F1DECA6629D3CC8B001C758F /* AppDelegate.swift */,
 				F1DECA6829D3CC8B001C758F /* SceneDelegate.swift */,
+				F1DB31452A33640100B6D513 /* Service */,
 				B0743FCA2A111D2000E3E8FF /* Models */,
 				F1DECA7C29D40B87001C758F /* Views */,
 				F1DECA7D29D40B94001C758F /* Controllers */,
@@ -348,8 +364,6 @@
 				F1F4F87829F4C7F80096F77F /* Extensions.swift */,
 				F1F4F87C29F4CF980096F77F /* AlertTitleButton.swift */,
 				CC7BBBB92A13E335006E86E4 /* AuthHelpers.swift */,
-				CC7BBBBB2A13E3D2006E86E4 /* AuthDBManager.swift */,
-				CC7BBBBD2A13E409006E86E4 /* AuthManager.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -503,6 +517,7 @@
 				BF237BF129FBFD50006DB129 /* AppPasswordView.swift in Sources */,
 				F13ACBA32A1324AF0036214F /* MemoCheckListTableViewCell.swift in Sources */,
 				BF237BF529FBFDC9006DB129 /* PersonalInfoViewController.swift in Sources */,
+				F1DB31472A33643C00B6D513 /* UserDefaultsManager.swift in Sources */,
 				3BB7254C2A13875A00F843EC /* ListTableViewController.swift in Sources */,
 				BF237BFB29FBFE38006DB129 /* AppPasswordViewController.swift in Sources */,
 				BF237BF329FBFD7F006DB129 /* EmailLoginAccountViewController.swift in Sources */,
@@ -521,6 +536,7 @@
 				CC7BBBD32A1563F7006E86E4 /* GoogleSignInModel.swift in Sources */,
 				F1D0FD0529DBE6A500AB1295 /* CustomAlertViewController.swift in Sources */,
 				CC7BBBBA2A13E335006E86E4 /* AuthHelpers.swift in Sources */,
+				F1DB31442A33637500B6D513 /* LocationManager.swift in Sources */,
 				F13ACBAF2A1327460036214F /* MemoViews.swift in Sources */,
 				BF237BE929FBFC9B006DB129 /* EmailLoginAccountView.swift in Sources */,
 				F1DECA7B29D3E259001C758F /* CalendarView.swift in Sources */,
@@ -676,6 +692,7 @@
 				CODE_SIGN_ENTITLEMENTS = TeamProject/TeamProject.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = JY9QH7G8BB;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = TeamProject/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -708,6 +725,7 @@
 				CODE_SIGN_ENTITLEMENTS = TeamProject/TeamProject.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = JY9QH7G8BB;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = TeamProject/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;

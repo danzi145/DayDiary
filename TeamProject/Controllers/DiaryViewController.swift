@@ -26,7 +26,7 @@ final class DiaryViewController: UIViewController {
     private let alertV = CustomAlertView(date: Date())
     
    // private let alertV = CustomAlertView(date: Date.now, title1)
-    
+
     override func loadView() {
         super.loadView()
         view = diaryV
@@ -74,8 +74,6 @@ final class DiaryViewController: UIViewController {
     func setupNaviBar() {
         title = date
         
-        
-        
         let appearance = UINavigationBarAppearance()
         appearance.backgroundColor = .white
         appearance.shadowColor = .clear
@@ -90,6 +88,7 @@ final class DiaryViewController: UIViewController {
 
         navigationController?.navigationBar.isHidden = false
         navigationItem.rightBarButtonItem = UIBarButtonItem(title: "저장", style: .plain, target: self, action: #selector(saveButtonTapped))
+                
         navigationItem.rightBarButtonItem?.tintColor = .systemGray2
     }
     
@@ -137,7 +136,9 @@ final class DiaryViewController: UIViewController {
         view.backgroundColor = .white
     }
     
-    
+    @objc func weatherButtonTapped() {
+        print("날씨 버튼 눌림")
+    }
     
   @objc func pickImage() {
         setupImagePicker()
