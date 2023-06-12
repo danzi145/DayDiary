@@ -8,23 +8,24 @@
 import SwiftUI
 
 struct LockScreenSetting: View {
+    @State private var showPinLockScreen = false
     @State private var isOn = false
+    
     
     var body: some View {
         NavigationView {
             VStack(alignment: .leading) {
                 
-                NavigationLink(destination: PinLockScreen(), isActive: $isOn) {
-                    Text("암호 잠금")
-                        .foregroundColor(.black)
-                        .font(.system(size: 14))
-
-                    Toggle("", isOn: $isOn)
-                        .toggleStyle(SwitchToggleStyle(tint: Color.black))
-                        .navigationBarHidden(true)
-                }
-                
-
+                Toggle("암호 잠금", isOn: $showPinLockScreen)
+                    .foregroundColor(.black)
+                    .font(.system(size: 14))
+                    .onChange(of: showPinLockScreen) { value in
+                        if value {
+                            presentPinLockScreen()
+                        } else {
+                            dismissPinLockScreen()
+                        }
+                    }
                 
                 Text("ⓘ 암호를 분실하면 찾을 수 없습니다.")
                     .foregroundColor(.red)
@@ -35,14 +36,22 @@ struct LockScreenSetting: View {
                     .font(.system(size: 14))
                 
                 Spacer()
-
+                
             }
-            .navigationBarTitleDisplayMode(.inline)
-            .navigationBarBackButtonHidden()
+            .fullScreenCover(isPresented: $showPinLockScreen) {
+                PinLockScreen()
+            }
             .padding([.leading, .trailing])
             .padding(.top, 20)
-            
         }
+    }
+    
+    private func presentPinLockScreen() {
+        showPinLockScreen = true
+    }
+    
+    private func dismissPinLockScreen() {
+        showPinLockScreen = false
     }
 }
 

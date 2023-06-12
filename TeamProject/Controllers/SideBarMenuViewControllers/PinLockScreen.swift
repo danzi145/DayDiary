@@ -10,22 +10,21 @@ import SwiftUI
 struct PinLockScreen: View {
     @State var unlocked = false
     var body: some View {
-        NavigationView {
-            ZStack {
-                if unlocked {
-                    Text("App unlocked")
-                        .foregroundColor(.white)
-                        .font(.title2)
-                        .fontWeight(.heavy)
-                } else {
-                    PinLockScreenView(unlocked: $unlocked)
-
-                }
+        //        NavigationView {
+        ZStack {
+            if unlocked {
+                Text("App unlocked")
+                    .foregroundColor(.white)
+                    .font(.title2)
+                    .fontWeight(.heavy)
+            } else {
+                PinLockScreenView(unlocked: $unlocked)
             }
-//            .preferredColorScheme(unlocked ? .light : .dark)
         }
-        .navigationTitle("")
-        .navigationBarBackButtonHidden()
+        .navigationBarHidden(true)
+        //            .preferredColorScheme(unlocked ? .light : .dark)
+        //        }
+        
     }
 }
 
@@ -45,53 +44,53 @@ struct PinLockScreenView: View {
     @Binding var unlocked: Bool
     @State var wrongPassword = false
     let height = UIScreen.main.bounds.width
-
+    
     var body: some View {
         VStack {
             HStack {
                 Spacer(minLength: 0)
-
+                
                 Menu {
-
+                    
                     Label {
                         Text("Help")
                     } icon: {
                         Image(systemName: "info.circle.fill")
                     }
                     .onTapGesture {
-
+                        
                     }
-
+                    
                     Label {
                         Text("Reset Password")
                     } icon: {
                         Image(systemName: "key.fill")
                     }
                     .onTapGesture {
-
+                        
                     }
-
-
+                    
+                    
                 } label: {
                     Image(systemName: "ellipsis")
                         .foregroundColor(.black)
                         .padding()
                 }
-
+                
             }
             .padding(.leading)
-
+            
             Text("암호 입력")
                 .foregroundColor(.black)
                 .font(.system(size: 20))
                 .fontWeight(.heavy)
                 .padding(.top, 70)
-
+            
             Text("데이 다이어리 암호를 입력해 주세요.")
                 .foregroundColor(.black)
                 .font(.system(size: 14))
                 .padding(.top, 20)
-
+            
             HStack(spacing: 20) {
                 // Password circle view
                 ForEach(0..<4, id: \.self) { index in
@@ -100,18 +99,18 @@ struct PinLockScreenView: View {
             }
             // for smaller size iphones
             .padding(.top, height < 750 ? 20 : 30)
-
+            
             // Keypad...
-
+            
             Spacer(minLength: 0)
-
+            
             Text(wrongPassword ? "암호가 일치하지 않습니다. \n      다시 시도해 주세요." : "")
                 .foregroundColor(.red)
                 .font(.system(size: 14))
                 .fontWeight(.medium)
-
+            
             Spacer(minLength: 0)
-
+            
             LazyVGrid(columns: Array(repeating: GridItem(.flexible()), count: 3), spacing: height < 750 ? 5 : 15) {
                 // password button...
                 ForEach(1...9, id: \.self) { value in
@@ -122,23 +121,21 @@ struct PinLockScreenView: View {
                 PasswordButton(value: "delete.fill", password: $password, key: $key, unlocked: $unlocked, wrongPassword: $wrongPassword)
             }
             .padding(.bottom)
-
+            
         }
-        .navigationTitle("")
-        .navigationBarHidden(true)
     }
 }
 
 struct PasswordView: View {
     var index: Int
     @Binding var password: String
-
+    
     var body: some View {
         ZStack {
             Circle()
                 .stroke(Color.black, lineWidth: 2)
                 .frame(width: 25, height: 25)
-
+            
             if password.count > index {
                 Circle()
                     .fill(Color.black)
@@ -155,9 +152,9 @@ struct PasswordButton: View {
     @Binding var unlocked: Bool
     @Binding var wrongPassword: Bool
     @Environment(\.dismiss) private var dismiss
-
     
-
+    
+    
     var body: some View {
         Button {
             if value == "취소" {
@@ -187,11 +184,11 @@ struct PasswordButton: View {
             .padding()
         }
     }
-
+    
     func faceIdTapped() {
-
+        
     }
-
+    
     func setPassword() {
         // check if backspace pressed...
         withAnimation {
@@ -202,7 +199,7 @@ struct PasswordButton: View {
             } else {
                 if password.count != 4 {
                     password.append(value)
-
+                    
                     // Delayed animation
                     DispatchQueue.main.asyncAfter(deadline: .now() + 0.3) {
                         withAnimation {
@@ -218,7 +215,7 @@ struct PasswordButton: View {
                     }
                 }
             }
-
+            
         }
     }
 }

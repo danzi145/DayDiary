@@ -14,7 +14,7 @@ extension UINavigationController {
         let appearance = UINavigationBarAppearance()
         appearance.configureWithOpaqueBackground()
         appearance.backgroundColor = .white
-        
+                
         navigationController?.navigationBar.tintColor = .black
         appearance.titleTextAttributes = [NSAttributedString.Key.foregroundColor : UIColor.black]
         

@@ -50,7 +50,7 @@ class SettingsListViewController: UIViewController, UITableViewDelegate, UITable
     
     func setupNavBar() {
         navigationController?.navigationBar.isHidden = false
-        navigationItem.leftBarButtonItem = UIBarButtonItem(image: UIImage(systemName: "chevron.left"), style: .plain, target: self, action: #selector(backButtonTapped))
+//        navigationItem.leftBarButtonItem = UIBarButtonItem(image: UIImage(systemName: "chevron.left"), style: .plain, target: self, action: #selector(backButtonTapped))
     }
 
     //MARK: - Model Configure
