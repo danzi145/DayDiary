@@ -215,8 +215,8 @@ class EmailSignUpViewController: UIViewController {
             return
         }
         
-        if password.count < 8 {
-            alertUserRegisterError(message: "비밀번호는 최소 8자리 이상이어야 합니다.")
+        if password.count < 6 {
+            alertUserRegisterError(message: "비밀번호는 최소 6자리 이상이어야 합니다.")
             return
         }
         
@@ -227,25 +227,46 @@ class EmailSignUpViewController: UIViewController {
     
         
         //MARK: - Firebase Register
-        AuthDBManager.shared.userExists(with: email) { [weak self] exists in
+        FirebaseAuth.Auth.auth().createUser(withEmail: email, password: password) { [weak self] authResult, error in
             guard let strongSelf = self else { return }
-            guard !exists else {
-                // User already exists
-                strongSelf.alertUserRegisterError(message: "이미 사용중인 이메일입니다.")
+            guard let result = authResult, error == nil else {
+                print("Error creating user")
                 return
             }
-            FirebaseAuth.Auth.auth().createUser(withEmail: email, password: password) { authResult, error in
-                guard authResult != nil, error == nil else {
-                    print("Error creating user")
-                    return
+            let user = result.user
+            print("Created user: \(user)")
+            
+            DispatchQueue.main.async {
+                let vc = MonthlyViewController()
+                let navVC = UINavigationController(rootViewController: vc)
+                navVC.modalPresentationStyle = .fullScreen
+                
+                if let appDelegate = UIApplication.shared.delegate as? AppDelegate {
+                    appDelegate.isAuthenticated = true
                 }
                 
-                AuthDBManager.shared.insertUser(with: DayDiaryAppUser(emailAddress: email))
-
-                strongSelf.navigationController?.dismiss(animated: true)
-
+                strongSelf.present(navVC, animated: true)
             }
         }
+//        AuthDBManager.shared.userExists(with: email) { [weak self] exists in
+//            guard let strongSelf = self else { return }
+//            guard !exists else {
+//                // User already exists
+//                strongSelf.alertUserRegisterError(message: "이미 사용중인 이메일입니다.")
+//                return
+//            }
+//            FirebaseAuth.Auth.auth().createUser(withEmail: email, password: password) { authResult, error in
+//                guard authResult != nil, error == nil else {
+//                    print("Error creating user")
+//                    return
+//                }
+//
+//                AuthDBManager.shared.insertUser(with: DayDiaryAppUser(emailAddress: email))
+//
+//                strongSelf.navigationController?.dismiss(animated: true)
+//
+//            }
+//        }
         
     }
     
@@ -270,5 +291,3 @@ extension EmailSignUpViewController: UITextFieldDelegate {
         return true
     }
 }
-
-

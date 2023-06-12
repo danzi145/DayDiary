@@ -174,7 +174,7 @@ class EmailSignInViewController: UIViewController {
         passwordTextField.resignFirstResponder()
         
         guard let email = emailTextField.text, let password = passwordTextField.text,
-              !email.isEmpty, !password.isEmpty, password.count >= 8 else {
+              !email.isEmpty, !password.isEmpty, password.count >= 6 else {
             alertUserLoginError()
             return
         }
@@ -188,7 +188,18 @@ class EmailSignInViewController: UIViewController {
             
             let user = result.user
             print("Logged In User: \(user)")
-            strongSelf.navigationController?.dismiss(animated: true)
+            
+            DispatchQueue.main.async {
+                let vc = MonthlyViewController()
+                let navVC = UINavigationController(rootViewController: vc)
+                navVC.modalPresentationStyle = .fullScreen
+                
+                if let appDelegate = UIApplication.shared.delegate as? AppDelegate {
+                    appDelegate.isAuthenticated = true
+                }
+                strongSelf.present(navVC, animated: true)
+            }
+            
         }
         
         
@@ -226,4 +237,3 @@ extension EmailSignInViewController: UITextFieldDelegate {
         return true
     }
 }
-

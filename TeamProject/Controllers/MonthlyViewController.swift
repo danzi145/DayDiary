@@ -138,9 +138,8 @@ final class MonthlyViewController: UIViewController, UINavigationControllerDeleg
     
     // MARK: - Actions
     @objc private func menuTapped() {
-        print("메뉴 버튼 눌림")
-        let hamburgerVC = HamburgerViewController()
-        navigationController?.pushViewController(hamburgerVC, animated: true)
+        let vc = SettingsListViewController()
+        navigationController?.pushViewController(vc, animated: true)
         
     }
     

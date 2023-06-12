@@ -16,15 +16,14 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
         
         guard let windowScene = (scene as? UIWindowScene) else { return }
-
         let window = UIWindow(windowScene: windowScene)
 
         // 👀 시작 ViewController
-        let rootViewController = MonthlyViewController()
-
-        let naviVC = UINavigationController(rootViewController: rootViewController)
-
-        window.rootViewController = naviVC
+        let rootVC = MonthlyViewController()
+        let navVC = UINavigationController(rootViewController: rootVC)
+        navVC.setupNavBar()
+    
+        window.rootViewController = navVC
         window.makeKeyAndVisible()
         self.window = window
     }
