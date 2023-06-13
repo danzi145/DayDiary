@@ -32,6 +32,8 @@
 		CC52D1CA2A37881300E1E8BB /* PrivacyPolicy.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC52D1C92A37881300E1E8BB /* PrivacyPolicy.swift */; };
 		CC52D1CC2A37882300E1E8BB /* OpenSourceLibrary.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC52D1CB2A37882300E1E8BB /* OpenSourceLibrary.swift */; };
 		CC52D1D02A37889100E1E8BB /* NavBarAppearance.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC52D1CF2A37889100E1E8BB /* NavBarAppearance.swift */; };
+		CC52D1D62A381F3A00E1E8BB /* EmailSignInView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC52D1D52A381F3A00E1E8BB /* EmailSignInView.swift */; };
+		CC52D1D82A38250D00E1E8BB /* EmailSignUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC52D1D72A38250D00E1E8BB /* EmailSignUpView.swift */; };
 		CC760BA22A27D86300704546 /* ResetPasswordView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC760BA12A27D86300704546 /* ResetPasswordView.swift */; };
 		CC760BA42A27D8B900704546 /* ResetPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC760BA32A27D8B900704546 /* ResetPasswordViewController.swift */; };
 		CC7BBB942A13DB38006E86E4 /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = CC7BBB932A13DB38006E86E4 /* FirebaseAnalytics */; };
@@ -114,6 +116,8 @@
 		CC52D1C92A37881300E1E8BB /* PrivacyPolicy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrivacyPolicy.swift; sourceTree = "<group>"; };
 		CC52D1CB2A37882300E1E8BB /* OpenSourceLibrary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenSourceLibrary.swift; sourceTree = "<group>"; };
 		CC52D1CF2A37889100E1E8BB /* NavBarAppearance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavBarAppearance.swift; sourceTree = "<group>"; };
+		CC52D1D52A381F3A00E1E8BB /* EmailSignInView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailSignInView.swift; sourceTree = "<group>"; };
+		CC52D1D72A38250D00E1E8BB /* EmailSignUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailSignUpView.swift; sourceTree = "<group>"; };
 		CC760BA12A27D86300704546 /* ResetPasswordView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResetPasswordView.swift; sourceTree = "<group>"; };
 		CC760BA32A27D8B900704546 /* ResetPasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResetPasswordViewController.swift; sourceTree = "<group>"; };
 		CC7BBB912A13DA90006E86E4 /* TeamProject.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = TeamProject.entitlements; sourceTree = "<group>"; };
@@ -299,6 +303,8 @@
 			isa = PBXGroup;
 			children = (
 				CC7BBBD02A154D24006E86E4 /* MultiAuthView.swift */,
+				CC52D1D52A381F3A00E1E8BB /* EmailSignInView.swift */,
+				CC52D1D72A38250D00E1E8BB /* EmailSignUpView.swift */,
 				CC760BA12A27D86300704546 /* ResetPasswordView.swift */,
 			);
 			path = AuthViews;
@@ -590,6 +596,8 @@
 				BF237BED29FBFD00006DB129 /* OpenSourceView.swift in Sources */,
 				F188389E2A1652AE00490CD5 /* WaitingPopupView.swift in Sources */,
 				CC52D1C82A3787FB00E1E8BB /* DarkModeSetting.swift in Sources */,
+				CC52D1D62A381F3A00E1E8BB /* EmailSignInView.swift in Sources */,
+				CC52D1D82A38250D00E1E8BB /* EmailSignUpView.swift in Sources */,
 				BF237BF129FBFD50006DB129 /* AppPasswordView.swift in Sources */,
 				F13ACBA32A1324AF0036214F /* MemoCheckListTableViewCell.swift in Sources */,
 				BF237BF529FBFDC9006DB129 /* PersonalInfoViewController.swift in Sources */,

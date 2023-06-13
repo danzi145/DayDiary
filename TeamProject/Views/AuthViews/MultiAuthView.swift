@@ -19,7 +19,7 @@ class MultiAuthView: UIView {
     }()
     
     //MARK: - 로그인 버튼 모음
-    /// 카카오 로그인 버튼
+    
     lazy var kakaoLoginButton: UIButton = {
         let button = UIButton(type: .custom)
         button.setImage(UIImage(named: "kakaoButton"), for: .normal)
@@ -27,7 +27,6 @@ class MultiAuthView: UIView {
         return button
     }()
     
-    /// 구글 로그인 버튼
     lazy var googleLoginButton: UIButton = {
         let button = UIButton(type: .custom)
         button.setImage(UIImage(named: "googleButton"), for: .normal)
@@ -42,7 +41,6 @@ class MultiAuthView: UIView {
         return button
     }()
     
-    /// 이메일 로그인 버튼
     lazy var emailLoginButton: UIButton = {
         let button = UIButton(type: .custom)
         button.setImage(UIImage(named: "emailButton"), for: .normal)

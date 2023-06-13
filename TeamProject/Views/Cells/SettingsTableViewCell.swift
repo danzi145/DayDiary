@@ -30,7 +30,6 @@ class SettingsTableViewCell: UITableViewCell {
         contentView.addSubview(label)
         contentView.addSubview(iconImageView)
         contentView.clipsToBounds = true
-//        accessoryType = .disclosureIndicator // chevron.right
     }
     
     required init?(coder: NSCoder) {

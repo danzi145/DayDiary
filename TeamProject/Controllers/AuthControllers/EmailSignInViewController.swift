@@ -10,170 +10,55 @@ import FirebaseAuth
 
 class EmailSignInViewController: UIViewController {
     
-    private let scrollView: UIScrollView = {
-        let scrollView = UIScrollView()
-        scrollView.clipsToBounds = true
-        return scrollView
-    }()
-    
-    private let mainLabel: UILabel = {
-        let label = UILabel()
-        label.text = "로그인"
-        label.font = UIFont.customFont(ofSize: 20, weight: .bold, fontName: "GowunDodum-Regular")
-        label.textAlignment = .center
-        return label
-    }()
-    
-    private let emailLabel: UILabel = {
-        let label = UILabel()
-        label.text = "이메일"
-        label.font = UIFont.customFont(ofSize: 16, weight: .regular, fontName: "GowunDodum-Regular")
-        label.textAlignment = .left
-        return label
-    }()
-    
-    private let emailTextField: UITextField = {
-        let field = UITextField()
-        let placeholderText = NSAttributedString(string: "이메일을 입력해주세요", attributes: [NSAttributedString.Key.font: UIFont.systemFont(ofSize: 10)])
-        field.autocapitalizationType = .none
-        field.autocorrectionType = .no
-        field.returnKeyType = .continue
-        field.keyboardType = .emailAddress
-        field.layer.cornerRadius = 8
-        field.layer.borderWidth = 0.5
-        field.layer.borderColor = UIColor.lightGray.cgColor
-        field.attributedPlaceholder = placeholderText
-        field.leftView = UIView(frame: CGRect(x: 0, y: 0, width: 5, height: 0))
-        field.leftViewMode = .always
-        field.backgroundColor = .white
-        return field
-    }()
-    
-    private let passwordLabel: UILabel = {
-        let label = UILabel()
-        label.text = "비밀번호"
-        label.font = UIFont.customFont(ofSize: 16, weight: .regular, fontName: "GowunDodum-Regular")
-        label.textAlignment = .left
-        return label
-    }()
-    
-    private let passwordTextField: UITextField = {
-        let field = UITextField()
-        let placeholderText = NSAttributedString(string: "비밀번호를 입력해주세요", attributes: [NSAttributedString.Key.font: UIFont.systemFont(ofSize: 10)])
-        field.autocapitalizationType = .none
-        field.autocorrectionType = .no
-        field.returnKeyType = .done
-        field.layer.cornerRadius = 8
-        field.layer.borderWidth = 0.5
-        field.layer.borderColor = UIColor.lightGray.cgColor
-        field.attributedPlaceholder = placeholderText
-        field.leftView = UIView(frame: CGRect(x: 0, y: 0, width: 5, height: 0))
-        field.leftViewMode = .always
-        field.isSecureTextEntry = true
-        field.backgroundColor = .white
-        return field
-    }()
-    
-    private lazy var passwordToggleButton: UIButton = {
-        let button = UIButton(type: .custom)
-        button.frame = CGRect(x: 0, y: 0, width: 10, height: 10)
-        button.setImage(UIImage(systemName: "eye.fill"), for: .normal)
-        button.tintColor = .lightGray
-        button.addTarget(self, action: #selector(togglePasswordVisibility), for: .touchUpInside)
-        var configuration = UIButton.Configuration.borderless()
-        configuration.imagePadding = 10
-
-        configuration.contentInsets = .init(top: 5, leading: 5, bottom: 5, trailing: 5)
-        configuration.buttonSize = .small
-        button.configuration = configuration
-        return button
-    }()
-    
-    private lazy var loginButton: UIButton = {
-        let button = UIButton()
-        button.backgroundColor = .gray
-        button.setTitle("로그인", for: .normal)
-        button.setTitleColor(.white, for: .normal)
-        button.titleLabel?.font = UIFont.customFont(ofSize: 12, weight: .regular, fontName: "GowunDodum-Regular")
-        button.layer.cornerRadius = 8
-        button.addTarget(self, action: #selector(loginButtonTapped), for: .touchUpInside)
-        return button
-    }()
-    
-    private lazy var registerViewButton: UIButton = {
-        let button = UIButton(type: .system)
-        button.setTitle("계정이 없으신가요? 회원 가입하기", for: .normal)
-        button.titleLabel?.font = UIFont.customFont(ofSize: 15, weight: .regular, fontName: "GowunDodum-Regular")
-        button.addTarget(self, action: #selector(moveToRegisterView), for: .touchUpInside)
-        return button
-    }()
-    
-    private lazy var resetPasswordViewButton: UIButton = {
-        let button = UIButton(type: .system)
-        button.setTitle("비밀번호를 잊어버리셨나요?", for: .normal)
-        button.titleLabel?.font = UIFont.customFont(ofSize: 15, weight: .regular, fontName: "GowunDodum-Regular")
-        button.addTarget(self, action: #selector(moveToResetPasswordView), for: .touchUpInside)
-        return button
-    }()
+    private var emailSignInView: EmailSignInView!
 
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .white
         navigationItem.backBarButtonItem = UIBarButtonItem(image: .none, style: .plain, target: nil, action: nil)
         
-        emailTextField.delegate = self
-        passwordTextField.delegate = self
+        configureUI()
+        setupButtonActions()
         
-        
-        // Add Subviews
-        view.addSubview(scrollView)
-        scrollView.addSubview(mainLabel)
-        scrollView.addSubview(emailLabel)
-        scrollView.addSubview(emailTextField)
-        scrollView.addSubview(passwordLabel)
-        scrollView.addSubview(passwordTextField)
-        scrollView.addSubview(loginButton)
-        scrollView.addSubview(registerViewButton)
-        scrollView.addSubview(resetPasswordViewButton)
-
+        emailSignInView.emailTextField.delegate = self
+        emailSignInView.passwordTextField.delegate = self
     }
     
-    override func viewDidLayoutSubviews() {
-        super.viewDidLayoutSubviews()
-        setAutoLayout()
+    
+    //MARK: - AutoLayout
+    func configureUI() {
+        emailSignInView = EmailSignInView()
+        emailSignInView.translatesAutoresizingMaskIntoConstraints = false
+        view.addSubview(emailSignInView)
+        
+        NSLayoutConstraint.activate([
+            emailSignInView.topAnchor.constraint(equalTo: view.topAnchor),
+            emailSignInView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+            emailSignInView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
+            emailSignInView.bottomAnchor.constraint(equalTo: view.bottomAnchor)
+        ])
     }
     
-    func setAutoLayout() {
-        scrollView.frame = view.bounds
-        
-        let size = scrollView.width / 3
-        mainLabel.frame = CGRect(x: (scrollView.width-size)/2, y: 20, width: size, height: size)
-        emailLabel.frame = CGRect(x: 16, y: mainLabel.bottom + 30, width: 60, height: 25)
-        emailTextField.frame = CGRect(x: 16, y: emailLabel.bottom + 6, width: 361, height: 42)
-        passwordLabel.frame = CGRect(x: 16, y: emailTextField.bottom + 30, width: 60, height: 25)
-        passwordTextField.frame = CGRect(x: 16, y: passwordLabel.bottom + 6, width: 361, height: 42)
-        loginButton.frame = CGRect(x: 16, y: passwordTextField.bottom + 50, width: 361, height: 42)
-        registerViewButton.frame = CGRect(x: 16, y: loginButton.bottom + 30, width: 361, height: 42)
-        resetPasswordViewButton.frame = CGRect(x: 16, y: registerViewButton.bottom, width: 361, height: 42)
-
-        
-        passwordTextField.rightView = passwordToggleButton
-        passwordTextField.rightViewMode = .always
+    func setupButtonActions() {
+        emailSignInView.passwordToggleButton.addTarget(self, action: #selector(togglePasswordVisibility), for: .touchUpInside)
+        emailSignInView.loginButton.addTarget(self, action: #selector(loginButtonTapped), for: .touchUpInside)
+        emailSignInView.registerViewButton.addTarget(self, action: #selector(moveToRegisterView), for: .touchUpInside)
+        emailSignInView.resetPasswordViewButton.addTarget(self, action: #selector(moveToResetPasswordView), for: .touchUpInside)
     }
     
     @objc private func togglePasswordVisibility() {
         print("tapped")
-        passwordTextField.isSecureTextEntry.toggle()
-        let image = passwordTextField.isSecureTextEntry ? UIImage(systemName: "eye.fill") : UIImage(systemName: "eye.slash.fill")
-        passwordToggleButton.setImage(image, for: .normal)
+        emailSignInView.passwordTextField.isSecureTextEntry.toggle()
+        let image = emailSignInView.passwordTextField.isSecureTextEntry ? UIImage(systemName: "eye.fill") : UIImage(systemName: "eye.slash.fill")
+        emailSignInView.passwordToggleButton.setImage(image, for: .normal)
         
         }
     
     @objc private func loginButtonTapped() {
-        emailTextField.resignFirstResponder()
-        passwordTextField.resignFirstResponder()
+        emailSignInView.emailTextField.resignFirstResponder()
+        emailSignInView.passwordTextField.resignFirstResponder()
         
-        guard let email = emailTextField.text, let password = passwordTextField.text,
+        guard let email = emailSignInView.emailTextField.text, let password = emailSignInView.passwordTextField.text,
               !email.isEmpty, !password.isEmpty, password.count >= 6 else {
             alertUserLoginError()
             return
@@ -199,10 +84,7 @@ class EmailSignInViewController: UIViewController {
                 }
                 strongSelf.present(navVC, animated: true)
             }
-            
         }
-        
-        
     }
     
     func alertUserLoginError() {
@@ -223,15 +105,13 @@ class EmailSignInViewController: UIViewController {
         vc.title = ""
         navigationController?.pushViewController(vc, animated: true)
     }
-
 }
-
 
 extension EmailSignInViewController: UITextFieldDelegate {
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        if textField == emailTextField {
-            passwordTextField.becomeFirstResponder()
-        } else if textField == passwordTextField {
+        if textField == emailSignInView.emailTextField {
+            emailSignInView.passwordTextField.becomeFirstResponder()
+        } else if textField == emailSignInView.passwordTextField {
             loginButtonTapped()
         }
         return true
