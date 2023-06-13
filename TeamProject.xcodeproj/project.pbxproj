@@ -21,6 +21,19 @@
 		BF237BF929FBFE10006DB129 /* SetPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF237BF829FBFE10006DB129 /* SetPasswordViewController.swift */; };
 		BF237BFB29FBFE38006DB129 /* AppPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF237BFA29FBFE38006DB129 /* AppPasswordViewController.swift */; };
 		C92797C77B52716E7BB699DD /* Pods_TeamProject.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3D89FE3648EDD3FB1AFC9369 /* Pods_TeamProject.framework */; };
+		CC52D1B62A37858A00E1E8BB /* SettingsListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC52D1B52A37858A00E1E8BB /* SettingsListView.swift */; };
+		CC52D1BB2A3786BA00E1E8BB /* SettingsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC52D1BA2A3786BA00E1E8BB /* SettingsTableViewCell.swift */; };
+		CC52D1BE2A37873F00E1E8BB /* SettingsListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC52D1BD2A37873F00E1E8BB /* SettingsListViewController.swift */; };
+		CC52D1C02A3787A200E1E8BB /* ManageAccountSetting.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC52D1BF2A3787A200E1E8BB /* ManageAccountSetting.swift */; };
+		CC52D1C22A3787BA00E1E8BB /* NotificationSetting.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC52D1C12A3787BA00E1E8BB /* NotificationSetting.swift */; };
+		CC52D1C42A3787CF00E1E8BB /* LockScreenSetting.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC52D1C32A3787CF00E1E8BB /* LockScreenSetting.swift */; };
+		CC52D1C62A3787ED00E1E8BB /* PinLockScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC52D1C52A3787ED00E1E8BB /* PinLockScreen.swift */; };
+		CC52D1C82A3787FB00E1E8BB /* DarkModeSetting.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC52D1C72A3787FB00E1E8BB /* DarkModeSetting.swift */; };
+		CC52D1CA2A37881300E1E8BB /* PrivacyPolicy.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC52D1C92A37881300E1E8BB /* PrivacyPolicy.swift */; };
+		CC52D1CC2A37882300E1E8BB /* OpenSourceLibrary.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC52D1CB2A37882300E1E8BB /* OpenSourceLibrary.swift */; };
+		CC52D1D02A37889100E1E8BB /* NavBarAppearance.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC52D1CF2A37889100E1E8BB /* NavBarAppearance.swift */; };
+		CC52D1D62A381F3A00E1E8BB /* EmailSignInView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC52D1D52A381F3A00E1E8BB /* EmailSignInView.swift */; };
+		CC52D1D82A38250D00E1E8BB /* EmailSignUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC52D1D72A38250D00E1E8BB /* EmailSignUpView.swift */; };
 		CC760BA22A27D86300704546 /* ResetPasswordView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC760BA12A27D86300704546 /* ResetPasswordView.swift */; };
 		CC760BA42A27D8B900704546 /* ResetPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC760BA32A27D8B900704546 /* ResetPasswordViewController.swift */; };
 		CC7BBB942A13DB38006E86E4 /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = CC7BBB932A13DB38006E86E4 /* FirebaseAnalytics */; };
@@ -92,6 +105,19 @@
 		BF237BF629FBFDE9006DB129 /* OpenSourceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenSourceViewController.swift; sourceTree = "<group>"; };
 		BF237BF829FBFE10006DB129 /* SetPasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetPasswordViewController.swift; sourceTree = "<group>"; };
 		BF237BFA29FBFE38006DB129 /* AppPasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppPasswordViewController.swift; sourceTree = "<group>"; };
+		CC52D1B52A37858A00E1E8BB /* SettingsListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsListView.swift; sourceTree = "<group>"; };
+		CC52D1BA2A3786BA00E1E8BB /* SettingsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsTableViewCell.swift; sourceTree = "<group>"; };
+		CC52D1BD2A37873F00E1E8BB /* SettingsListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsListViewController.swift; sourceTree = "<group>"; };
+		CC52D1BF2A3787A200E1E8BB /* ManageAccountSetting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManageAccountSetting.swift; sourceTree = "<group>"; };
+		CC52D1C12A3787BA00E1E8BB /* NotificationSetting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationSetting.swift; sourceTree = "<group>"; };
+		CC52D1C32A3787CF00E1E8BB /* LockScreenSetting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LockScreenSetting.swift; sourceTree = "<group>"; };
+		CC52D1C52A3787ED00E1E8BB /* PinLockScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PinLockScreen.swift; sourceTree = "<group>"; };
+		CC52D1C72A3787FB00E1E8BB /* DarkModeSetting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DarkModeSetting.swift; sourceTree = "<group>"; };
+		CC52D1C92A37881300E1E8BB /* PrivacyPolicy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrivacyPolicy.swift; sourceTree = "<group>"; };
+		CC52D1CB2A37882300E1E8BB /* OpenSourceLibrary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenSourceLibrary.swift; sourceTree = "<group>"; };
+		CC52D1CF2A37889100E1E8BB /* NavBarAppearance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavBarAppearance.swift; sourceTree = "<group>"; };
+		CC52D1D52A381F3A00E1E8BB /* EmailSignInView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailSignInView.swift; sourceTree = "<group>"; };
+		CC52D1D72A38250D00E1E8BB /* EmailSignUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailSignUpView.swift; sourceTree = "<group>"; };
 		CC760BA12A27D86300704546 /* ResetPasswordView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResetPasswordView.swift; sourceTree = "<group>"; };
 		CC760BA32A27D8B900704546 /* ResetPasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResetPasswordViewController.swift; sourceTree = "<group>"; };
 		CC7BBB912A13DA90006E86E4 /* TeamProject.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = TeamProject.entitlements; sourceTree = "<group>"; };
@@ -200,9 +226,58 @@
 			isa = PBXGroup;
 			children = (
 				F13ACBA22A1324AF0036214F /* MemoCheckListTableViewCell.swift */,
-				F13ACBA82A1325710036214F /* HamburgerSettingsTableCell.swift */,
+				CC52D1BA2A3786BA00E1E8BB /* SettingsTableViewCell.swift */,
 			);
 			path = Cells;
+			sourceTree = "<group>";
+		};
+		CC52D1B42A37851B00E1E8BB /* SideBarMenuViews */ = {
+			isa = PBXGroup;
+			children = (
+				CC52D1B52A37858A00E1E8BB /* SettingsListView.swift */,
+			);
+			path = SideBarMenuViews;
+			sourceTree = "<group>";
+		};
+		CC52D1B72A3785CB00E1E8BB /* Unused */ = {
+			isa = PBXGroup;
+			children = (
+				CC52D1B92A3785E000E1E8BB /* ViewControllers */,
+				CC52D1B82A3785DC00E1E8BB /* Views */,
+			);
+			path = Unused;
+			sourceTree = "<group>";
+		};
+		CC52D1B82A3785DC00E1E8BB /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				F13ACBA82A1325710036214F /* HamburgerSettingsTableCell.swift */,
+				F13ACBAB2A13269D0036214F /* MenuViews */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		CC52D1B92A3785E000E1E8BB /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				F13ACBAA2A1326690036214F /* MenuControllers */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		CC52D1BC2A3786FF00E1E8BB /* SideBarMenuViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				CC52D1BD2A37873F00E1E8BB /* SettingsListViewController.swift */,
+				CC52D1BF2A3787A200E1E8BB /* ManageAccountSetting.swift */,
+				CC52D1C12A3787BA00E1E8BB /* NotificationSetting.swift */,
+				CC52D1C32A3787CF00E1E8BB /* LockScreenSetting.swift */,
+				CC52D1C52A3787ED00E1E8BB /* PinLockScreen.swift */,
+				CC52D1C72A3787FB00E1E8BB /* DarkModeSetting.swift */,
+				CC52D1C92A37881300E1E8BB /* PrivacyPolicy.swift */,
+				CC52D1CB2A37882300E1E8BB /* OpenSourceLibrary.swift */,
+			);
+			path = SideBarMenuViewControllers;
 			sourceTree = "<group>";
 		};
 		CC7BBBB32A13DE58006E86E4 /* AuthControllers */ = {
@@ -228,6 +303,8 @@
 			isa = PBXGroup;
 			children = (
 				CC7BBBD02A154D24006E86E4 /* MultiAuthView.swift */,
+				CC52D1D52A381F3A00E1E8BB /* EmailSignInView.swift */,
+				CC52D1D72A38250D00E1E8BB /* EmailSignUpView.swift */,
 				CC760BA12A27D86300704546 /* ResetPasswordView.swift */,
 			);
 			path = AuthViews;
@@ -319,6 +396,7 @@
 				F1DECA7C29D40B87001C758F /* Views */,
 				F1DECA7D29D40B94001C758F /* Controllers */,
 				F1F4F87729F4C7D80096F77F /* Utilities */,
+				CC52D1B72A3785CB00E1E8BB /* Unused */,
 				F1DECA6F29D3CC8C001C758F /* Assets.xcassets */,
 				F1DECA7129D3CC8C001C758F /* LaunchScreen.storyboard */,
 				F1DECA7429D3CC8C001C758F /* Info.plist */,
@@ -337,7 +415,7 @@
 				3BB725462A13862700F843EC /* DiaryView.swift */,
 				F13ACBAE2A1327460036214F /* MemoViews.swift */,
 				F188389D2A1652AE00490CD5 /* WaitingPopupView.swift */,
-				F13ACBAB2A13269D0036214F /* MenuViews */,
+				CC52D1B42A37851B00E1E8BB /* SideBarMenuViews */,
 				B0743FDC2A111E1800E3E8FF /* Cells */,
 			);
 			path = Views;
@@ -346,14 +424,14 @@
 		F1DECA7D29D40B94001C758F /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				CC7BBBB32A13DE58006E86E4 /* AuthControllers */,
 				F1DECA6A29D3CC8B001C758F /* MonthlyViewController.swift */,
 				F1D0FD0429DBE6A500AB1295 /* CustomAlertViewController.swift */,
 				F188389F2A1652CE00490CD5 /* WaitingPopupViewController.swift */,
 				3BB725482A13865100F843EC /* DiaryViewController.swift */,
 				F13ACBAC2A1327320036214F /* MemoViewController.swift */,
-				CC7BBBB32A13DE58006E86E4 /* AuthControllers */,
+				CC52D1BC2A3786FF00E1E8BB /* SideBarMenuViewControllers */,
 				3BB7254A2A1386EC00F843EC /* DiaryCapsuleListComtrollers */,
-				F13ACBAA2A1326690036214F /* MenuControllers */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -364,6 +442,7 @@
 				F1F4F87829F4C7F80096F77F /* Extensions.swift */,
 				F1F4F87C29F4CF980096F77F /* AlertTitleButton.swift */,
 				CC7BBBB92A13E335006E86E4 /* AuthHelpers.swift */,
+				CC52D1CF2A37889100E1E8BB /* NavBarAppearance.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -509,17 +588,26 @@
 				CC7BBBBE2A13E409006E86E4 /* AuthManager.swift in Sources */,
 				F13ACBA92A1325710036214F /* HamburgerSettingsTableCell.swift in Sources */,
 				CC760BA22A27D86300704546 /* ResetPasswordView.swift in Sources */,
+				CC52D1BB2A3786BA00E1E8BB /* SettingsTableViewCell.swift in Sources */,
+				CC52D1C02A3787A200E1E8BB /* ManageAccountSetting.swift in Sources */,
 				F12B6C5B2A1361F300F9446C /* SocialLoginAccountViewController.swift in Sources */,
 				CC7BBBB22A13DCF0006E86E4 /* KakaoAuthModel.swift in Sources */,
 				BF237BEB29FBFCE1006DB129 /* PersonalInfoView.swift in Sources */,
 				BF237BED29FBFD00006DB129 /* OpenSourceView.swift in Sources */,
 				F188389E2A1652AE00490CD5 /* WaitingPopupView.swift in Sources */,
+				CC52D1C82A3787FB00E1E8BB /* DarkModeSetting.swift in Sources */,
+				CC52D1D62A381F3A00E1E8BB /* EmailSignInView.swift in Sources */,
+				CC52D1D82A38250D00E1E8BB /* EmailSignUpView.swift in Sources */,
 				BF237BF129FBFD50006DB129 /* AppPasswordView.swift in Sources */,
 				F13ACBA32A1324AF0036214F /* MemoCheckListTableViewCell.swift in Sources */,
 				BF237BF529FBFDC9006DB129 /* PersonalInfoViewController.swift in Sources */,
+				CC52D1D02A37889100E1E8BB /* NavBarAppearance.swift in Sources */,
+				CC52D1CC2A37882300E1E8BB /* OpenSourceLibrary.swift in Sources */,
 				F1DB31472A33643C00B6D513 /* UserDefaultsManager.swift in Sources */,
 				3BB7254C2A13875A00F843EC /* ListTableViewController.swift in Sources */,
 				BF237BFB29FBFE38006DB129 /* AppPasswordViewController.swift in Sources */,
+				CC52D1C22A3787BA00E1E8BB /* NotificationSetting.swift in Sources */,
+				CC52D1BE2A37873F00E1E8BB /* SettingsListViewController.swift in Sources */,
 				BF237BF329FBFD7F006DB129 /* EmailLoginAccountViewController.swift in Sources */,
 				F1D0FD0729DBE9B000AB1295 /* CustomAlertView.swift in Sources */,
 				F13ACB912A1261430036214F /* MenuHeaderStackView.swift in Sources */,
@@ -530,6 +618,8 @@
 				F13ACB932A1323CC0036214F /* HamburgerView.swift in Sources */,
 				F117F5D829E2777300A44FCC /* MonthlyNavigationStackView.swift in Sources */,
 				BF237BF929FBFE10006DB129 /* SetPasswordViewController.swift in Sources */,
+				CC52D1B62A37858A00E1E8BB /* SettingsListView.swift in Sources */,
+				CC52D1C62A3787ED00E1E8BB /* PinLockScreen.swift in Sources */,
 				CC7BBBBC2A13E3D2006E86E4 /* AuthDBManager.swift in Sources */,
 				F1DECA6729D3CC8B001C758F /* AppDelegate.swift in Sources */,
 				F1F4F87D29F4CF980096F77F /* AlertTitleButton.swift in Sources */,
@@ -542,6 +632,8 @@
 				F1DECA7B29D3E259001C758F /* CalendarView.swift in Sources */,
 				F1F4F87929F4C7F80096F77F /* Extensions.swift in Sources */,
 				3BB725492A13865100F843EC /* DiaryViewController.swift in Sources */,
+				CC52D1CA2A37881300E1E8BB /* PrivacyPolicy.swift in Sources */,
+				CC52D1C42A3787CF00E1E8BB /* LockScreenSetting.swift in Sources */,
 				CC7BBBD12A154D24006E86E4 /* MultiAuthView.swift in Sources */,
 				CC7BBBC42A13E4E4006E86E4 /* EmailSignUpViewController.swift in Sources */,
 				F12B6C592A1361D800F9446C /* SocialLoginAccountView.swift in Sources */,
