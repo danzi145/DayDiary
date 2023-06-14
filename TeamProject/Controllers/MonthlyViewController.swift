@@ -36,6 +36,9 @@ final class MonthlyViewController: UIViewController, UINavigationControllerDeleg
         setCalendar()
         setupAddTarget()
         setLocationManager()
+        
+        // 날씨 네트워킹 체크를 위한 제스처 추가
+        topStackView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(getWeatherData)))
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -48,6 +51,18 @@ final class MonthlyViewController: UIViewController, UINavigationControllerDeleg
         handleNotAuthenticated()
     }
     
+    // 날씨 네트워킹 테스트에 사용되는 action
+    @objc private func getWeatherData() {
+        print("네트워킹을 통해 날씨 데이터 받기")
+        // 현재 위치 좌표 확인
+        print(UserDefaultsManager.shared.currentCoordinate)
+        
+        // 현재 위치 기준 날씨 데이터 받기
+        let coordinate = UserDefaultsManager.shared.currentCoordinate
+        WeatherNetworkingManager.shared.getWeatherData(coordinate: coordinate) { weather in
+            print(weather)
+        }
+    }
     
     
     // MARK: - Helper
@@ -69,7 +84,7 @@ final class MonthlyViewController: UIViewController, UINavigationControllerDeleg
         mainStack.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([mainStack.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor), mainStack.bottomAnchor.constraint(equalTo: view.bottomAnchor), mainStack.leadingAnchor.constraint(equalTo: view.leadingAnchor), mainStack.trailingAnchor.constraint(equalTo: view.trailingAnchor)])
         mainStack.isLayoutMarginsRelativeArrangement = true
-        mainStack.layoutMargins = .init(top: 0, left: 0, bottom: 0, right: 0)
+        mainStack.layoutMargins = .init(top: -30, left: 0, bottom: 0, right: 0)
         mainStack.bringSubviewToFront(topStackView)
     }
     
@@ -136,14 +151,6 @@ final class MonthlyViewController: UIViewController, UINavigationControllerDeleg
         present(requestLocationServiceAlert, animated: true)
     }
     
-    // MARK: - Actions
-    @objc private func menuTapped() {
-        print("메뉴 버튼 눌림")
-        let hamburgerVC = HamburgerViewController()
-        navigationController?.pushViewController(hamburgerVC, animated: true)
-        
-    }
-    
     private func setAlert() {
         let alert = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
         
@@ -197,7 +204,16 @@ final class MonthlyViewController: UIViewController, UINavigationControllerDeleg
             self.present(customAlert, animated: true, completion: nil)
         }
     
+    // MARK: - Actions
+    @objc private func menuTapped() {
+        let vc = SettingsListViewController()
+        navigationController?.pushViewController(vc, animated: true)
+        
+    }
+    
 }
+
+// MARK: - FSCalendarDelegate
 
 extension MonthlyViewController: FSCalendarDelegate, FSCalendarDataSource,  FSCalendarDelegateAppearance {
     

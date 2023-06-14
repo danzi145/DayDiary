@@ -54,7 +54,6 @@ class MultiAuthViewController: UIViewController{
             multiAuthView.widthAnchor.constraint(equalTo: view.widthAnchor),
             multiAuthView.heightAnchor.constraint(equalTo: view.heightAnchor)
         ])
-        
     }
     
     func setupButtonActions() {

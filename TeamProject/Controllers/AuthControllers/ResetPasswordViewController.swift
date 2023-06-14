@@ -17,7 +17,6 @@ class ResetPasswordViewController: UIViewController {
         super.viewDidLoad()
         configureUI()
         setupButtonActions()
-        
     }
     
     
