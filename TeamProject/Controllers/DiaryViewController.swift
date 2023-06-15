@@ -16,9 +16,7 @@ final class DiaryViewController: UIViewController {
     var diaryData: DiaryCoreData?
     
     
-    var fetch = NSFetchRequestResultType()
-    
-    
+    //var fetch = NSFetchRequestResultType()
     var date: String?
     var imageView = UIImageView()
     
@@ -36,18 +34,18 @@ final class DiaryViewController: UIViewController {
     }
 
     
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        print("여기에서 코어데이터에서 다시 제목 가져와서 표시")
-        // 코어데이터에서 제목 데이터 가져오기
-        let diaryData = DiaryCoreDataManager.shared
-
-        // 다시 표시 (예를 들어)
-        let customView = view as? DiaryView
-        customView?.titleTextField.text = diaryData.getDiaryListFromCoreData().first?.value(forKey: "dTitle") as? String
-        customView?.memoTextView.text = diaryData.getDiaryListFromCoreData().first?.value(forKey: "dContent") as? String
-        customView?.mainImageView.image = diaryData.getDiaryListFromCoreData().first?.value(forKey: "dPhoto") as? UIImage
-    }
+//    override func viewWillAppear(_ animated: Bool) {
+//        super.viewWillAppear(animated)
+//        print("여기에서 코어데이터에서 다시 제목 가져와서 표시")
+//        // 코어데이터에서 제목 데이터 가져오기
+//        let diaryData = DiaryCoreDataManager.shared
+//
+//        // 다시 표시 (예를 들어)
+//        let customView = view as? DiaryView
+//        customView?.titleTextField.text = diaryData.getDiaryListFromCoreData().first?.value(forKey: "dTitle") as? String
+//        customView?.memoTextView.text = diaryData.getDiaryListFromCoreData().first?.value(forKey: "dContent") as? String
+//        customView?.mainImageView.image = diaryData.getDiaryListFromCoreData().first?.value(forKey: "dPhoto") as? UIImage
+//    }
 
     // MARK: - Lifecycle
     override func viewDidLoad() {
