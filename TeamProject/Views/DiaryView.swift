@@ -12,19 +12,19 @@ import UIKit
 class DiaryView: UIView {
     
    
-//    var diaryData: DiaryCoreData? {
-//        didSet {
-//            //configDataUI()
-//            guard diaryData != nil else {
-//                self.titleTextField.text = diaryData?.dTitle
-//                self.memoTextView.text = diaryData?.dContent
-//           return }
-//
-//            titleTextField.text = diaryData?.dTitle
-//            memoTextView.text = diaryData?.dContent
-//
-//        }
-//    }
+    var diaryData: DiaryCoreData? {
+        didSet {
+            //configDataUI()
+            guard diaryData != nil else {
+                self.titleTextField.text = diaryData?.dTitle
+                self.memoTextView.text = diaryData?.dContent
+           return }
+
+            titleTextField.text = diaryData?.dTitle
+            memoTextView.text = diaryData?.dContent
+
+        }
+    }
 
      //MARK: - 텍스트 바뀌면 저장
 

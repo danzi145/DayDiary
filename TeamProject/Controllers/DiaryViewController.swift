@@ -7,7 +7,7 @@
 
 import UIKit
 import PhotosUI
-
+import CoreData
 
 final class DiaryViewController: UIViewController {
     
@@ -15,6 +15,8 @@ final class DiaryViewController: UIViewController {
 
     var diaryData: DiaryCoreData?
     
+    
+    var fetch = NSFetchRequestResultType()
     
     
     var date: String?
@@ -74,9 +76,6 @@ final class DiaryViewController: UIViewController {
     
     func setupNaviBar() {
         title = date
-        
-        
-        
         let appearance = UINavigationBarAppearance()
         appearance.backgroundColor = .white
         appearance.shadowColor = .clear
@@ -92,6 +91,17 @@ final class DiaryViewController: UIViewController {
         navigationController?.navigationBar.isHidden = false
         navigationItem.rightBarButtonItem = UIBarButtonItem(title: "저장", style: .plain, target: self, action: #selector(saveButtonTapped))
         navigationItem.rightBarButtonItem?.tintColor = .systemGray2
+    }
+    
+    
+    func configureDate(date: Date) -> String {
+        let dateFormatter = DateFormatter()
+        
+        dateFormatter.dateFormat = "YYYY.MM.dd"
+        dateFormatter.locale = Locale(identifier: "ko-KR") // 한국 시간 지정
+        dateFormatter.timeZone = TimeZone(abbreviation: "KST") // 한국 시간대 지정
+        
+        return dateFormatter.string(from: date)
     }
     
     // image picker
@@ -162,8 +172,8 @@ final class DiaryViewController: UIViewController {
     @objc func resetButtonTapped() {
         
         let alert = UIAlertController(title: "삭제하시겠습니까?", message: "삭제한 일기는 복구되지 않습니다.", preferredStyle: .alert)
-        let success1 = UIAlertAction(title: "삭제", style: .default) { action in
-            self.mainButtonTapped()
+        let success1 = UIAlertAction(title: "삭제", style: .default) { [weak self] action in
+            self?.mainButtonTapped()
         }
         
         let cancel = UIAlertAction(title: "취소", style: .cancel) { action in
@@ -198,88 +208,18 @@ final class DiaryViewController: UIViewController {
             diaryManager.saveDiaryData(dtitle: title, dcontent: content, dphoto: photo) {
                 print("save 완료")
                 let alert = UIAlertController(title: "", message: "저장되었습니다", preferredStyle: .alert)
-                let success1 = UIAlertAction(title: "확인", style: .default) {  action in self.mainButtonTapped()
+                let success1 = UIAlertAction(title: "확인", style: .default) { [weak self] action in self?.mainButtonTapped()
                     
                 }
-                
-                //        self.navigationController?.popViewController(animated: true)
-                //            let alert = UIAlertController(title: "", message: "저장되었습니다", preferredStyle: .alert)
-                //            let success1 = UIAlertAction(title: "확인", style: .default) { action in
-                //            self.mainButtonTapped()
-                //            }
-                
-                //                        let cancel = UIAlertAction(title: "취소", style: .cancel) { action in
-                //                            print("취소버튼이 눌렸습니다.")
-                //                        }
                 alert.addAction(success1)
-                //alert.addAction(cancel)
                 self.present(alert, animated: true, completion: nil)
                 
             }
         }
     }
-//        if let diarydata = self.diaryData {
-//
-//            diarydata.dTitle = diaryV.titleTextField.text ?? "제목"
-//            diarydata.dContent = diaryV.memoTextView.text ?? "내용"
-//
-//            diaryManager.updateDiary(newDiaryCoreData: diarydata) {
-//                print("update 완료")
-//                self.navigationController?.popViewController(animated: false)
-//            }
-//
-//        } else {
-//            let title = diaryV.titleTextField.text
-//            let content = diaryV.memoTextView.text
-//                        diaryManager.saveDiaryData(dtitle: title, dcontent: content) {
-//                            print("save 완료, \(self.diaryData?.dTitle)")
-//
-//                let alert = UIAlertController(title: "", message: "저장되었습니다", preferredStyle: .alert)
-//                let success1 = UIAlertAction(title: "확인", style: .default) {  action in self.mainButtonTapped()
-//                }
-//                alert.addAction(success1)
-//                //alert.addAction(cancel)
-//                self.present(alert, animated: true, completion: nil)
-//
-//            }
-//        }
-        
-       // self.navigationController?.popViewController(animated: false)
-        
-//        guard let memo = diaryV.titleTextField.text, memo.count > 0 else {
-//            alertSave(message:"제목을 입력하세요")
-//            return
-//        }
-//
-//
-//            let alert = UIAlertController(title: "", message: "저장되었습니다", preferredStyle: .alert)
-//            let success1 = UIAlertAction(title: "확인", style: .default) { action in
-//            self.mainButtonTapped()
-//            }
-//            alert.addAction(success1)
-//
-//        self.present(alert, animated: true, completion: nil)
-        
-    
 
-//    @objc func saveButton2() {
-//        if let text =  diaryV.titleTextField.text {
-//            delegate?.sendData(response: text)
-//        }
-//        self.navigationController?.popViewController(animated: false)
-//
-//    }
-        
         
         @objc func mainButtonTapped() {
-            // 다음화면으로 이동
-            
-            //        let alert = UIAlertController(title: "삭제되었습니다.", message: "", preferredStyle: .alert)
-            //        let cancel = UIAlertAction(title: "확인", style: .default)    { action in
-            //        }
-            //
-            //            alert.addAction(cancel)
-            //        self.present(alert, animated: true, completion: nil)
             let vc = MonthlyViewController()
             vc.modalPresentationStyle = .fullScreen
             
@@ -383,9 +323,7 @@ final class DiaryViewController: UIViewController {
     //
     //
     //}
-    
-    
-    
+
     //extension ViewController {
     //
     //    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {

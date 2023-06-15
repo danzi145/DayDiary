@@ -38,6 +38,7 @@ class CalendarView: UIView {
         return cal
     }()
     
+   
     // MARK: - Initializer
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -53,20 +54,27 @@ class CalendarView: UIView {
         self.backgroundColor = .white
         self.addSubview(calendarView)
         setAutolayout()
+       
+         
+    
     }
     
     
     // MARK: - set Autolayout()
     private func setAutolayout() {
         calendarView.translatesAutoresizingMaskIntoConstraints = false
+        
         NSLayoutConstraint.activate([
             calendarView.topAnchor.constraint(equalTo: self.safeAreaLayoutGuide.topAnchor, constant: -15),
             calendarView.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 31),
             calendarView.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -31),
-            calendarView.bottomAnchor.constraint(equalTo: self.bottomAnchor, constant: -175)
+            calendarView.bottomAnchor.constraint(equalTo: self.bottomAnchor, constant: -175),
+            
+          
         ])
-    }
     
+    }
+
     
 }
 

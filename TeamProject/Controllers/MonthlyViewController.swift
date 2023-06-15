@@ -9,6 +9,8 @@ import UIKit
 import FSCalendar
 import FirebaseAuth
 import GoogleSignIn
+import CoreData
+
 
 // MARK: - Object
 protocol MonthlyViewControllerDelegate: AnyObject {
@@ -23,7 +25,10 @@ final class MonthlyViewController: UIViewController, UINavigationControllerDeleg
     
     weak var delegate: MonthlyViewControllerDelegate?
     
-    
+    var diaryData = DiaryCoreData()
+    var diaryManager = DiaryCoreDataManager.shared
+    var selectedDate: Date = Date()
+    var strSelectedDate: String = ""
     
     // MARK: - Lifecycle
     
@@ -32,6 +37,10 @@ final class MonthlyViewController: UIViewController, UINavigationControllerDeleg
         configureUI()
         setCalendar()
         setupAddTarget()
+        
+        selectedDate = Date()
+        strSelectedDate = configureDate(date: selectedDate)
+        
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -44,7 +53,15 @@ final class MonthlyViewController: UIViewController, UINavigationControllerDeleg
         handleNotAuthenticated()
     }
     
-    
+    func configureDate(date: Date) -> String {
+        let dateFormatter = DateFormatter()
+        
+        dateFormatter.dateFormat = "YYYY.MM.dd"
+        dateFormatter.locale = Locale(identifier: "ko-KR") // 한국 시간 지정
+        dateFormatter.timeZone = TimeZone(abbreviation: "KST") // 한국 시간대 지정
+        
+        return dateFormatter.string(from: date)
+    }
     
     // MARK: - Helper
     private func configureUI() {
@@ -178,6 +195,11 @@ extension MonthlyViewController: FSCalendarDelegate, FSCalendarDataSource,  FSCa
         } else {
             setAlert()
         }
+        
+       // selectedDate = (diaryManager.getDiaryListFromCoreData().first?.dDate)!
+        
+        
+        
     }
     
     // 오늘 날짜에만 '오늘' 표시
