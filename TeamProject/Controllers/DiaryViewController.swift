@@ -54,19 +54,13 @@ final class DiaryViewController: UIViewController {
         
         super.viewDidLoad()
         setupNaviBar()
-        setupButtonTapped()
-        setupButtonTapped2()
-        setupButtonTapped3()
-//        setupButtonTapped4()
-//        setupButtonTapped5()
+        addTargetTapped()
         configUI()
-       // configDataUI()
-       
         setupDelegate()
-       // configDataUI()
-       
-        
     }
+    
+    
+    
     func setupDelegate() {
         
         diaryV.titleTextField.delegate = self
@@ -80,10 +74,6 @@ final class DiaryViewController: UIViewController {
         appearance.backgroundColor = .white
         appearance.shadowColor = .clear
         appearance.titleTextAttributes = [.foregroundColor: #colorLiteral(red: 0.6571641564, green: 0.6571640372, blue: 0.6571640372, alpha: 1)]
-
-//        navigationController?.navigationBar.titleTextAttributes = [.foregroundColor: UIColor.gray]
-//        navigationController?.navigationBar.tintColor = .black
-        
 
         navigationController?.navigationBar.standardAppearance = appearance
         navigationController?.navigationBar.scrollEdgeAppearance = appearance
@@ -105,43 +95,16 @@ final class DiaryViewController: UIViewController {
     }
     
     // image picker
-    func setupButtonTapped() {
+    
+    //버튼 타겟
+    func addTargetTapped() {
         diaryV.button1.addTarget(self, action: #selector(self.pickImage), for: .touchUpInside)
-    }
     //envelop
-    func setupButtonTapped2() {
         diaryV.button0.addTarget(self, action: #selector(listTableViewAlert(_:)), for: .touchUpInside)
-    }
     //trash
-    func setupButtonTapped3() {
         diaryV.button2.addTarget(self, action: #selector(resetButtonTapped), for: .touchUpInside)
     }
-    // 저장
-//    func setupButtonTapped4() {
-//        diaryV.saveButton.addTarget(self, action: #selector(saveButtonTapped), for: .touchUpInside)
-//
-//    }
-//    //뒤로가기
-//    func setupButtonTapped5(){
-//        diaryV.backButton.addTarget(self, action: #selector(mainButtonTapped), for: .touchUpInside)
-//    }
-    
-    // MARK: - Custom Method
-    //코어데이터 함수
-//    func configDataUI() {
-//        if let diaryData = self.diaryData {
-//
-//            guard let title = diaryData.dTitle else { return }
-//            guard let content = diaryData.dContent else { return }
-//            self.diaryV.titleTextField.text = title
-//            self.diaryV.memoTextView.text = content
-//            //self.diaryV.titleTextField.becomeFirstResponder()
-//
-//        } else {
-//
-//
-//        }
-//    }
+
     
     func configUI() {
         
@@ -184,6 +147,7 @@ final class DiaryViewController: UIViewController {
         alert.addAction(cancel)
         
         self.present(alert, animated: true, completion: nil)
+        
     }
     
     
@@ -223,7 +187,7 @@ final class DiaryViewController: UIViewController {
             let vc = MonthlyViewController()
             vc.modalPresentationStyle = .fullScreen
             
-            self.present(vc, animated: false, completion: nil)
+            navigationController?.pushViewController(vc, animated: true)
         }
         
         
