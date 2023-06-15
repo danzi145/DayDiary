@@ -15,7 +15,7 @@ class MemoCheckListTableViewCell: UITableViewCell {
     lazy var checkButton: UIButton = {
         let button = UIButton()
         button.tintColor = .black
-        button.setImage(UIImage(systemName: "checkmark.square", withConfiguration: UIImage.SymbolConfiguration(pointSize: 20)), for: .normal)
+        button.setImage(UIImage(systemName: "checkmark.circle", withConfiguration: UIImage.SymbolConfiguration(pointSize: 20)), for: .normal)
         button.addTarget(self, action: #selector(checkButtonTapped), for: .touchUpInside)
         return button
     }()
@@ -66,9 +66,9 @@ class MemoCheckListTableViewCell: UITableViewCell {
     
     // 체크버튼 클릭시 체크버튼 이미지 변경
     @objc func checkButtonTapped() {
-        if checkButton.currentImage == UIImage(systemName: "checkmark.square", withConfiguration: UIImage.SymbolConfiguration(pointSize: 20)) {
-            checkButton.setImage(UIImage(systemName: "checkmark.square.fill", withConfiguration: UIImage.SymbolConfiguration(pointSize: 20)), for: .normal)
-        } else { checkButton.setImage(UIImage(systemName: "checkmark.square", withConfiguration: UIImage.SymbolConfiguration(pointSize: 20)), for: .normal)
+        if checkButton.currentImage == UIImage(systemName: "checkmark.circle", withConfiguration: UIImage.SymbolConfiguration(pointSize: 20)) {
+            checkButton.setImage(UIImage(systemName: "checkmark.circle.fill", withConfiguration: UIImage.SymbolConfiguration(pointSize: 20)), for: .normal)
+        } else { checkButton.setImage(UIImage(systemName: "checkmark.circle", withConfiguration: UIImage.SymbolConfiguration(pointSize: 20)), for: .normal)
         }
     }
 

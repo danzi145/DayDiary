@@ -52,6 +52,10 @@ final class MemoViewController: UIViewController {
         appearance.backgroundColor = .white
         appearance.shadowColor = .clear
         appearance.titleTextAttributes = [.foregroundColor: #colorLiteral(red: 0.6571641564, green: 0.6571640372, blue: 0.6571640372, alpha: 1)]
+        // 네비게이션 백 버튼
+        let backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: self, action: nil)
+        backBarButtonItem.tintColor = .black
+        self.navigationItem.backBarButtonItem = backBarButtonItem
         
         navigationController?.navigationBar.standardAppearance = appearance
         navigationController?.navigationBar.scrollEdgeAppearance = appearance
@@ -61,15 +65,11 @@ final class MemoViewController: UIViewController {
         
         let saveButton = UIBarButtonItem(
             image: UIImage(systemName: "folder"), style: .plain, target: self, action: #selector(self.saveButtonTapped))
-//
-//
+
         let checkChangeButton = UIBarButtonItem(image: UIImage(systemName: "checklist"),style: .plain, target: self,action: #selector(self.checkChagneButtonTapped))
-//
-//
-        
-        
-        
-        
+   
+         
+        // 바버튼 커스텀 위치조정
 //        let checkChangeButton = UIButton(frame: CGRect(x: 0, y: 0, width: 30, height: 30))
 //        checkChangeButton.setImage(systemName: "checklist")
 //        checkChangeButton.addTarget(self, action: #selector(checkChagneButtonTapped), for: .touchUpInside)
@@ -89,13 +89,12 @@ final class MemoViewController: UIViewController {
                               
     @objc func checkChagneButtonTapped() {
         print("checkListChangeButton이 눌렸습니다.")
+        let vc = CheckListViewController()
+        navigationController?.pushViewController(vc, animated: true)
         
     }
 
-                                        
-
-    
-    
+                                    
 
     @objc func saveButtonTapped() {
         

@@ -27,6 +27,8 @@ final class CheckListViewController: UIViewController {
     var date: String?
 //    var memoManager = MemoManager.shared
     
+    
+    
     // MARK: - ViewController LifeCycle
     
     override func loadView() {
@@ -38,7 +40,7 @@ final class CheckListViewController: UIViewController {
         super.viewDidLoad()
         setupDelegate()
         setupNaviBar()
-//        setupAddTarget()
+        setupAddTarget()
     }
     
     
@@ -46,8 +48,8 @@ final class CheckListViewController: UIViewController {
     // MARK: - Initial Method
     
     func setupDelegate() {
-//        memoView.getMemoTableView().dataSource = self
-//        memoView.getTitleTextField().delegate = self
+        checkListView.getCheckTableView().dataSource = self
+        checkListView.getTitleTextField().delegate = self
 //        memoView.getMemoTextView().delegate = self
     }
     
@@ -59,17 +61,31 @@ final class CheckListViewController: UIViewController {
         appearance.shadowColor = .clear
         appearance.titleTextAttributes = [.foregroundColor: #colorLiteral(red: 0.6571641564, green: 0.6571640372, blue: 0.6571640372, alpha: 1)]
         
+        
         navigationController?.navigationBar.standardAppearance = appearance
         navigationController?.navigationBar.scrollEdgeAppearance = appearance
 
-        navigationController?.navigationBar.isHidden = false
-        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "저장", style: .plain, target: self, action: #selector(saveButtonTapped))
+        let saveButton = UIBarButtonItem(
+            image: UIImage(systemName: "folder"), style: .plain, target: self, action: #selector(self.saveButtonTapped))
+
+        let memoChangeButton = UIBarButtonItem(image: UIImage(systemName: "pencil.line"),style: .plain, target: self,action: #selector(self.memoChagneButtonTapped))
+        
+        self.navigationItem.rightBarButtonItems = [saveButton, memoChangeButton]
+   
         navigationItem.rightBarButtonItem?.tintColor = .systemGray2
     }
     
     
     
     // MARK: - Custom Method
+    
+    @objc func memoChagneButtonTapped() {
+        print("MemoChangeButton이 눌렸습니다.")
+        navigationController?.popViewController(animated: true)
+        // 토글로 구현하기
+        
+    }
+    
     
     func setupAddTarget() {
         checkListView.getPlusCheckButton().addTarget(self, action: #selector(plusCheckButtonTapped), for: .touchUpInside)
@@ -108,9 +124,6 @@ final class CheckListViewController: UIViewController {
             present(alert, animated: false)
         } else { print("제목을 입력했습니다.") }
         
-//        resizingTextView()
-//        saveenum = .after
-//        print(saveenum)
     }
     
   
@@ -118,23 +131,23 @@ final class CheckListViewController: UIViewController {
     @objc func deleteButtonTapped(_ sender: UIButton ) {
         print("삭제 클릭")
         //메세지창 컨트롤러 인스턴스 생성
-        let alert = UIAlertController(title: "삭제", message: "메모를 삭제 하시겠습니까?", preferredStyle: .alert)
+//        let alert = UIAlertController(title: "삭제", message: "메모를 삭제 하시겠습니까?", preferredStyle: .alert)
 
         //메세지창 컨트롤러 버튼액션 인스턴스 생성
-        let delete = UIAlertAction(title: "삭제", style: .default) { _ in
+//        let delete = UIAlertAction(title: "삭제", style: .default) { _ in
             let point = sender.convert(CGPoint.zero, to: self.checkListView.getCheckTableView()) // 버튼의 테이블뷰 위치 확인
             guard let indexPath = self.checkListView.getCheckTableView().indexPathForRow(at: point) else { return }
             self.checkListArray.remove(at: indexPath.row)
             self.checkListView.getCheckTableView().deleteRows(at: [indexPath], with: .automatic)
-        }
-        let cancle = UIAlertAction(title: "취소", style: .default)
+//        }
+//        let cancle = UIAlertAction(title: "취소", style: .default)
 
         //메세지창 컨트롤러 버튼액션 추가
-        alert.addAction(delete)
-        alert.addAction(cancle)
+//        alert.addAction(delete)
+//        alert.addAction(cancle)
 
         //메세지창 컨트롤러에 표시
-        present(alert, animated: false)
+//        present(alert, animated: false)
     }
 
     

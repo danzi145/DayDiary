@@ -65,6 +65,7 @@ class CheckListView : UIView {
     // Memo contents - CheckList
     private let checkView: UIView = {
         let view = UIView()
+        view.backgroundColor = .white
         return view
     }()
     
@@ -96,7 +97,7 @@ class CheckListView : UIView {
     private lazy var plusCheckButton: UIButton = {
         let button = UIButton()
         button.tintColor = .black
-        button.setImage(UIImage(systemName: "checkmark.square", withConfiguration: UIImage.SymbolConfiguration(pointSize: 20)), for: .normal)
+        button.setImage(UIImage(systemName: "checkmark.circle", withConfiguration: UIImage.SymbolConfiguration(pointSize: 20)), for: .normal)
         return button
     }()
     
@@ -209,10 +210,10 @@ class CheckListView : UIView {
 //
             
             
-//            checkView.topAnchor.constraint(equalTo: textView.bottomAnchor, constant: 10),
-//            checkView.leadingAnchor.constraint(equalTo: textView.leadingAnchor),
-//            checkView.trailingAnchor.constraint(equalTo: textView.trailingAnchor),
-//            checkView.bottomAnchor.constraint(equalTo: bottomButtonView.topAnchor),
+            checkView.topAnchor.constraint(equalTo: titleStackView.bottomAnchor, constant: 10),
+            checkView.leadingAnchor.constraint(equalTo: titleStackView.leadingAnchor),
+            checkView.trailingAnchor.constraint(equalTo: titleStackView.trailingAnchor),
+            checkView.bottomAnchor.constraint(equalTo: bottomButtonView.topAnchor),
             
             checkContentsView.topAnchor.constraint(equalTo: checkView.topAnchor),
             checkContentsView.leadingAnchor.constraint(equalTo: checkView.leadingAnchor),

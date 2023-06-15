@@ -165,6 +165,7 @@ final class MonthlyViewController: UIViewController, UINavigationControllerDeleg
             print("확인버튼 눌림.")
             
             let memoVC = MemoViewController()
+
             
             guard let selectDate = self?.calendarView.calendarView.selectedDate else { return }
             
@@ -173,6 +174,7 @@ final class MonthlyViewController: UIViewController, UINavigationControllerDeleg
             
             let date = dateFormatter.string(from: selectDate)
             memoVC.date = date
+            
 //            let memo = Memo(saveButton: false, date: date, title: nil, contents: nil, checkList: [Memo.Check(isCheck: false, textField: "")])
 //            self.memoManager.memoArray.append(memo)
             self?.navigationController?.pushViewController(memoVC, animated: true)
