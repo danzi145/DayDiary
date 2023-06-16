@@ -10,18 +10,19 @@ import UIKit
 final class CustomAlertViewController: UIViewController {
     
     // MARK: - Properties
-    private lazy var customAlertView = CustomAlertView(date: baseDate)
+    private lazy var customAlertView = CustomAlertView(date: baseDate,  title: titleString)
     
     // 얼럿뷰의 상단에 띄울 날짜 기준 잡기
     private var baseDate: Date
-    
+    private var titleString: String
     // MARK: - Lifecycle
     override func loadView() {
         self.view = customAlertView
     }
     
-    init(baseDate: Date) {
+    init(baseDate: Date, title: String?) {
         self.baseDate = baseDate
+        self.titleString = DiaryCoreDataManager.shared.getDiaryListFromCoreData().first?.value(forKey: "dTitle") as? String ?? "제목"
         super.init(nibName: nil, bundle: nil)
     }
     

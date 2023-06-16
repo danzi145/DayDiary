@@ -6,7 +6,7 @@
 //
 import UIKit
 
-class ListTableTableViewController: UITableViewController {
+class ListTableViewController: UITableViewController {
 
     /*
      델리게이트 객체로 사용할 변수를 정의
