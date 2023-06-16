@@ -14,6 +14,8 @@ final class CustomAlertView: UIView {
     // 기준 날짜를 잡기 위한 속성
     private var date: Date
     
+    var titleString: String?
+    
     private var alertView: UIView = {
         let view = UIView()
         view.backgroundColor = .white
@@ -46,7 +48,8 @@ final class CustomAlertView: UIView {
     
      lazy var diaryTitleButton: UIButton = {
         let button = AlertTitleButton(type: .system)
-        button.setTitle("약과가 먹고싶은 날", for: .normal)
+        //button.setTitle("약과가 먹고싶은 날", for: .normal)
+         button.setTitle(titleString ?? "", for: .normal)
 //        button.addTarget(self, action: #selector(diaryTitleButtonTapped), for: .touchUpInside)
         return button
     }()
@@ -154,8 +157,9 @@ final class CustomAlertView: UIView {
     
     // MARK: - Initializer
     
-    init(date: Date) {
+    init(date: Date,  title: String? = nil) {
         self.date = date
+        self.titleString = title ?? "제목"
         super.init(frame: .zero)
         self.backgroundColor = UIColor(red: 33/255, green: 33/255, blue: 33/255, alpha: 0.3)
         addSubview(alertView)

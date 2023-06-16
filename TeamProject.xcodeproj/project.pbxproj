@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3B3D3BE92A3C274C002F0940 /* DiaryData.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 3B3D3BE72A3C274C002F0940 /* DiaryData.xcdatamodeld */; };
+		3B3D3BEB2A3C2808002F0940 /* DiaryCoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B3D3BEA2A3C2808002F0940 /* DiaryCoreDataManager.swift */; };
 		3BB725472A13862700F843EC /* DiaryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BB725462A13862700F843EC /* DiaryView.swift */; };
 		3BB725492A13865100F843EC /* DiaryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BB725482A13865100F843EC /* DiaryViewController.swift */; };
 		3BB7254C2A13875A00F843EC /* ListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BB7254B2A13875A00F843EC /* ListTableViewController.swift */; };
@@ -91,6 +93,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		3B3D3BE82A3C274C002F0940 /* DiaryData.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = DiaryData.xcdatamodel; sourceTree = "<group>"; };
+		3B3D3BEA2A3C2808002F0940 /* DiaryCoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiaryCoreDataManager.swift; sourceTree = "<group>"; };
 		3BB725462A13862700F843EC /* DiaryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiaryView.swift; sourceTree = "<group>"; };
 		3BB725482A13865100F843EC /* DiaryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiaryViewController.swift; sourceTree = "<group>"; };
 		3BB7254B2A13875A00F843EC /* ListTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListTableViewController.swift; sourceTree = "<group>"; };
@@ -373,6 +377,8 @@
 		F1DECA5A29D3CC8B001C758F = {
 			isa = PBXGroup;
 			children = (
+				3B3D3BEA2A3C2808002F0940 /* DiaryCoreDataManager.swift */,
+				3B3D3BE72A3C274C002F0940 /* DiaryData.xcdatamodeld */,
 				F1DECA6529D3CC8B001C758F /* TeamProject */,
 				F1DECA6429D3CC8B001C758F /* Products */,
 				CC7BBBB82A13E1BD006E86E4 /* Fonts */,
@@ -601,6 +607,7 @@
 				BF237BEB29FBFCE1006DB129 /* PersonalInfoView.swift in Sources */,
 				BF237BED29FBFD00006DB129 /* OpenSourceView.swift in Sources */,
 				F188389E2A1652AE00490CD5 /* WaitingPopupView.swift in Sources */,
+				3B3D3BE92A3C274C002F0940 /* DiaryData.xcdatamodeld in Sources */,
 				CC52D1C82A3787FB00E1E8BB /* DarkModeSetting.swift in Sources */,
 				CC52D1D62A381F3A00E1E8BB /* EmailSignInView.swift in Sources */,
 				CC52D1D82A38250D00E1E8BB /* EmailSignUpView.swift in Sources */,
@@ -645,6 +652,7 @@
 				CC7BBBD12A154D24006E86E4 /* MultiAuthView.swift in Sources */,
 				CC7BBBC42A13E4E4006E86E4 /* EmailSignUpViewController.swift in Sources */,
 				F12B6C592A1361D800F9446C /* SocialLoginAccountView.swift in Sources */,
+				3B3D3BEB2A3C2808002F0940 /* DiaryCoreDataManager.swift in Sources */,
 				F18838A02A1652CE00490CD5 /* WaitingPopupViewController.swift in Sources */,
 				F1DECA6929D3CC8B001C758F /* SceneDelegate.swift in Sources */,
 				CC7BBBD52A156813006E86E4 /* AppleSignInModel.swift in Sources */,
@@ -971,6 +979,19 @@
 			productName = KakaoSDKUser;
 		};
 /* End XCSwiftPackageProductDependency section */
+
+/* Begin XCVersionGroup section */
+		3B3D3BE72A3C274C002F0940 /* DiaryData.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				3B3D3BE82A3C274C002F0940 /* DiaryData.xcdatamodel */,
+			);
+			currentVersion = 3B3D3BE82A3C274C002F0940 /* DiaryData.xcdatamodel */;
+			path = DiaryData.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = F1DECA5B29D3CC8B001C758F /* Project object */;
 }
