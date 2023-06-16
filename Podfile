@@ -7,7 +7,8 @@ target 'TeamProject' do
 
   # Pods for TeamProject
 	
-	pod 'FSCalendar' 
+pod 'FSCalendar' 
+pod 'Alamofire'
 
 
 end

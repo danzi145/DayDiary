@@ -78,6 +78,8 @@
 		F13ACBAF2A1327460036214F /* MemoViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = F13ACBAE2A1327460036214F /* MemoViews.swift */; };
 		F188389E2A1652AE00490CD5 /* WaitingPopupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F188389D2A1652AE00490CD5 /* WaitingPopupView.swift */; };
 		F18838A02A1652CE00490CD5 /* WaitingPopupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F188389F2A1652CE00490CD5 /* WaitingPopupViewController.swift */; };
+		F19900652A39A5060002AD2A /* WeatherNetworkingManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F19900642A39A5060002AD2A /* WeatherNetworkingManager.swift */; };
+		F19900672A39A8FC0002AD2A /* WeatherModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F19900662A39A8FC0002AD2A /* WeatherModel.swift */; };
 		F1D0FD0529DBE6A500AB1295 /* CustomAlertViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1D0FD0429DBE6A500AB1295 /* CustomAlertViewController.swift */; };
 		F1D0FD0729DBE9B000AB1295 /* CustomAlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1D0FD0629DBE9B000AB1295 /* CustomAlertView.swift */; };
 		F1DB31442A33637500B6D513 /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1DB31432A33637500B6D513 /* LocationManager.swift */; };
@@ -153,6 +155,8 @@
 		F13ACBAE2A1327460036214F /* MemoViews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoViews.swift; sourceTree = "<group>"; };
 		F188389D2A1652AE00490CD5 /* WaitingPopupView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WaitingPopupView.swift; sourceTree = "<group>"; };
 		F188389F2A1652CE00490CD5 /* WaitingPopupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WaitingPopupViewController.swift; sourceTree = "<group>"; };
+		F19900642A39A5060002AD2A /* WeatherNetworkingManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherNetworkingManager.swift; sourceTree = "<group>"; };
+		F19900662A39A8FC0002AD2A /* WeatherModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherModel.swift; sourceTree = "<group>"; };
 		F1D0FD0429DBE6A500AB1295 /* CustomAlertViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomAlertViewController.swift; sourceTree = "<group>"; };
 		F1D0FD0629DBE9B000AB1295 /* CustomAlertView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomAlertView.swift; sourceTree = "<group>"; };
 		F1DB31432A33637500B6D513 /* LocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
@@ -226,6 +230,7 @@
 				CC7BBBB12A13DCF0006E86E4 /* KakaoAuthModel.swift */,
 				CC7BBBD22A1563F7006E86E4 /* GoogleSignInModel.swift */,
 				CC7BBBD42A156813006E86E4 /* AppleSignInModel.swift */,
+				F19900662A39A8FC0002AD2A /* WeatherModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -370,6 +375,7 @@
 				CC7BBBBD2A13E409006E86E4 /* AuthManager.swift */,
 				CC7BBBBB2A13E3D2006E86E4 /* AuthDBManager.swift */,
 				F1DB31462A33643C00B6D513 /* UserDefaultsManager.swift */,
+				F19900642A39A5060002AD2A /* WeatherNetworkingManager.swift */,
 			);
 			path = Service;
 			sourceTree = "<group>";
@@ -596,6 +602,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F19900652A39A5060002AD2A /* WeatherNetworkingManager.swift in Sources */,
 				BF237BEF29FBFD2C006DB129 /* SetPasswordView.swift in Sources */,
 				CC7BBBBE2A13E409006E86E4 /* AuthManager.swift in Sources */,
 				F13ACBA92A1325710036214F /* HamburgerSettingsTableCell.swift in Sources */,
@@ -642,6 +649,7 @@
 				F1D0FD0529DBE6A500AB1295 /* CustomAlertViewController.swift in Sources */,
 				CC7BBBBA2A13E335006E86E4 /* AuthHelpers.swift in Sources */,
 				F1DB31442A33637500B6D513 /* LocationManager.swift in Sources */,
+				F19900672A39A8FC0002AD2A /* WeatherModel.swift in Sources */,
 				F13ACBAF2A1327460036214F /* MemoViews.swift in Sources */,
 				BF237BE929FBFC9B006DB129 /* EmailLoginAccountView.swift in Sources */,
 				F1DECA7B29D3E259001C758F /* CalendarView.swift in Sources */,
