@@ -10,6 +10,8 @@
 		3BB725472A13862700F843EC /* DiaryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BB725462A13862700F843EC /* DiaryView.swift */; };
 		3BB725492A13865100F843EC /* DiaryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BB725482A13865100F843EC /* DiaryViewController.swift */; };
 		3BB7254C2A13875A00F843EC /* ListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BB7254B2A13875A00F843EC /* ListTableViewController.swift */; };
+		B07FED8E2A3B22F3003D4413 /* CheckListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B07FED8D2A3B22F3003D4413 /* CheckListView.swift */; };
+		B07FED902A3B245A003D4413 /* CheckListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B07FED8F2A3B245A003D4413 /* CheckListViewController.swift */; };
 		BF237BE929FBFC9B006DB129 /* EmailLoginAccountView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF237BE829FBFC9B006DB129 /* EmailLoginAccountView.swift */; };
 		BF237BEB29FBFCE1006DB129 /* PersonalInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF237BEA29FBFCE1006DB129 /* PersonalInfoView.swift */; };
 		BF237BED29FBFD00006DB129 /* OpenSourceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF237BEC29FBFD00006DB129 /* OpenSourceView.swift */; };
@@ -95,6 +97,8 @@
 		3D89FE3648EDD3FB1AFC9369 /* Pods_TeamProject.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TeamProject.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		50FEC4B61C2395ABF26807A6 /* Pods-TeamProject.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TeamProject.release.xcconfig"; path = "Target Support Files/Pods-TeamProject/Pods-TeamProject.release.xcconfig"; sourceTree = "<group>"; };
 		6B2D016BBEDCFC94DBC0DD40 /* Pods-TeamProject.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TeamProject.debug.xcconfig"; path = "Target Support Files/Pods-TeamProject/Pods-TeamProject.debug.xcconfig"; sourceTree = "<group>"; };
+		B07FED8D2A3B22F3003D4413 /* CheckListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckListView.swift; sourceTree = "<group>"; };
+		B07FED8F2A3B245A003D4413 /* CheckListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckListViewController.swift; sourceTree = "<group>"; };
 		BF237BE829FBFC9B006DB129 /* EmailLoginAccountView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailLoginAccountView.swift; sourceTree = "<group>"; };
 		BF237BEA29FBFCE1006DB129 /* PersonalInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonalInfoView.swift; sourceTree = "<group>"; };
 		BF237BEC29FBFD00006DB129 /* OpenSourceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenSourceView.swift; sourceTree = "<group>"; };
@@ -414,6 +418,7 @@
 				F1D0FD0629DBE9B000AB1295 /* CustomAlertView.swift */,
 				3BB725462A13862700F843EC /* DiaryView.swift */,
 				F13ACBAE2A1327460036214F /* MemoViews.swift */,
+				B07FED8D2A3B22F3003D4413 /* CheckListView.swift */,
 				F188389D2A1652AE00490CD5 /* WaitingPopupView.swift */,
 				CC52D1B42A37851B00E1E8BB /* SideBarMenuViews */,
 				B0743FDC2A111E1800E3E8FF /* Cells */,
@@ -430,6 +435,7 @@
 				F188389F2A1652CE00490CD5 /* WaitingPopupViewController.swift */,
 				3BB725482A13865100F843EC /* DiaryViewController.swift */,
 				F13ACBAC2A1327320036214F /* MemoViewController.swift */,
+				B07FED8F2A3B245A003D4413 /* CheckListViewController.swift */,
 				CC52D1BC2A3786FF00E1E8BB /* SideBarMenuViewControllers */,
 				3BB7254A2A1386EC00F843EC /* DiaryCapsuleListComtrollers */,
 			);
@@ -599,7 +605,9 @@
 				CC52D1D62A381F3A00E1E8BB /* EmailSignInView.swift in Sources */,
 				CC52D1D82A38250D00E1E8BB /* EmailSignUpView.swift in Sources */,
 				BF237BF129FBFD50006DB129 /* AppPasswordView.swift in Sources */,
+				B07FED902A3B245A003D4413 /* CheckListViewController.swift in Sources */,
 				F13ACBA32A1324AF0036214F /* MemoCheckListTableViewCell.swift in Sources */,
+				B07FED8E2A3B22F3003D4413 /* CheckListView.swift in Sources */,
 				BF237BF529FBFDC9006DB129 /* PersonalInfoViewController.swift in Sources */,
 				CC52D1D02A37889100E1E8BB /* NavBarAppearance.swift in Sources */,
 				CC52D1CC2A37882300E1E8BB /* OpenSourceLibrary.swift in Sources */,

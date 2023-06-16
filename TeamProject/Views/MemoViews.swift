@@ -62,28 +62,6 @@ class MemoView : UIView {
     
     
 
-    // Memo contents - CheckList
-    private let checkView: UIView = {
-        let view = UIView()
-        return view
-    }()
-    
-    private let checkContentsView: UIView = {
-        let view = UIView()
-        view.backgroundColor = UIColor(named: "mainColor")
-        return view
-    }()
-    
-    private let memoTableView: UITableView = {
-        let tableview = UITableView()
-        tableview.backgroundColor = .white
-        tableview.separatorColor = .clear
-        tableview.register(MemoCheckListTableViewCell.self, forCellReuseIdentifier: MemoCheckListTableViewCell.id)
-        tableview.rowHeight = 41
-        return tableview
-    }()
-    
-    
 
     // MARK: - Initializer
     
@@ -103,11 +81,7 @@ class MemoView : UIView {
     func getTitleTextField() -> UITextField {
         return titleTextField
     }
-    
-    /// 메모 내용 (CheckList) - 테이블뷰 반환
-    func getMemoTableView() -> UITableView {
-        return memoTableView
-    }
+
     
     /// 메모 내용 (Text) - 텍스트뷰 반환
     func getMemoTextView() -> UITextView {
@@ -122,11 +96,6 @@ class MemoView : UIView {
         self.addSubview(textView)
         textView.addSubview(contentsView)
         textView.addSubview(memoTextView)
-        
-        self.addSubview(checkView)
-        checkView.addSubview(checkContentsView)
-        checkView.addSubview(memoTableView)
-    
 
         
         titleView.translatesAutoresizingMaskIntoConstraints = false
@@ -137,11 +106,7 @@ class MemoView : UIView {
         contentsView.translatesAutoresizingMaskIntoConstraints = false
         memoTextView.translatesAutoresizingMaskIntoConstraints = false
         
-        checkView.translatesAutoresizingMaskIntoConstraints = false
-        checkContentsView.translatesAutoresizingMaskIntoConstraints = false
-        memoTableView.translatesAutoresizingMaskIntoConstraints = false
-        
-        
+
 
         NSLayoutConstraint.activate([
             titleView.widthAnchor.constraint(equalToConstant: 7),
@@ -169,21 +134,12 @@ class MemoView : UIView {
             memoTextView.heightAnchor.constraint(equalToConstant: 300),
             
             
+         
             
-            checkView.topAnchor.constraint(equalTo: textView.bottomAnchor, constant: 10),
-            checkView.leadingAnchor.constraint(equalTo: textView.leadingAnchor),
-            checkView.trailingAnchor.constraint(equalTo: textView.trailingAnchor),
-            checkView.bottomAnchor.constraint(equalTo: safeAreaLayoutGuide.bottomAnchor),
-            
-            checkContentsView.topAnchor.constraint(equalTo: checkView.topAnchor),
-            checkContentsView.leadingAnchor.constraint(equalTo: checkView.leadingAnchor),
-            checkContentsView.widthAnchor.constraint(equalToConstant: 7),
-            checkContentsView.heightAnchor.constraint(equalToConstant: 41),
-            
-            memoTableView.topAnchor.constraint(equalTo: checkView.topAnchor),
-            memoTableView.leadingAnchor.constraint(equalTo: checkContentsView.trailingAnchor, constant: 5),
-            memoTableView.trailingAnchor.constraint(equalTo: checkView.trailingAnchor),
-            memoTableView.bottomAnchor.constraint(equalTo: checkView.bottomAnchor),
+           
         ])
     }
 }
+
+    
+
