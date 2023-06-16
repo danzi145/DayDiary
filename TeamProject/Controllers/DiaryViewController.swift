@@ -19,14 +19,11 @@ final class DiaryViewController: UIViewController {
     
     var date: String?
     var imageView = UIImageView()
-    
     let picker = UIImagePickerController()
-    
     private let diaryV = DiaryView()
     private let alertV = CustomAlertView(date: Date())
-    
-   // private let alertV = CustomAlertView(date: Date.now, title1)
 
+   // private let alertV = CustomAlertView(date: Date.now, title1)
     override func loadView() {
         super.loadView()
         view = diaryV
@@ -51,21 +48,16 @@ final class DiaryViewController: UIViewController {
         
         super.viewDidLoad()
         setupNaviBar()
-        setupButtonTapped()
-        setupButtonTapped2()
-        setupButtonTapped3()
-//        setupButtonTapped4()
-//        setupButtonTapped5()
+        setupTargetTapped()
+        
+
         configUI()
-       // configDataUI()
-       
         setupDelegate()
-       // configDataUI()
-       
+        
+        
         
     }
     func setupDelegate() {
-        
         diaryV.titleTextField.delegate = self
         
     }
@@ -78,11 +70,6 @@ final class DiaryViewController: UIViewController {
         appearance.backgroundColor = .white
         appearance.shadowColor = .clear
         appearance.titleTextAttributes = [.foregroundColor: #colorLiteral(red: 0.6571641564, green: 0.6571640372, blue: 0.6571640372, alpha: 1)]
-
-//        navigationController?.navigationBar.titleTextAttributes = [.foregroundColor: UIColor.gray]
-//        navigationController?.navigationBar.tintColor = .black
-        
-
         navigationController?.navigationBar.standardAppearance = appearance
         navigationController?.navigationBar.scrollEdgeAppearance = appearance
 
@@ -92,58 +79,29 @@ final class DiaryViewController: UIViewController {
         navigationItem.rightBarButtonItem?.tintColor = .systemGray2
     }
     
+    
+    
+    func setupTargetTapped() {
     // image picker
-    func setupButtonTapped() {
         diaryV.button1.addTarget(self, action: #selector(self.pickImage), for: .touchUpInside)
-    }
     //envelop
-    func setupButtonTapped2() {
         diaryV.button0.addTarget(self, action: #selector(listTableViewAlert(_:)), for: .touchUpInside)
-    }
     //trash
-    func setupButtonTapped3() {
         diaryV.button2.addTarget(self, action: #selector(resetButtonTapped), for: .touchUpInside)
     }
-    // 저장
-//    func setupButtonTapped4() {
-//        diaryV.saveButton.addTarget(self, action: #selector(saveButtonTapped), for: .touchUpInside)
-//
-//    }
-//    //뒤로가기
-//    func setupButtonTapped5(){
-//        diaryV.backButton.addTarget(self, action: #selector(mainButtonTapped), for: .touchUpInside)
-//    }
+
     
     // MARK: - Custom Method
-    //코어데이터 함수
-//    func configDataUI() {
-//        if let diaryData = self.diaryData {
-//
-//            guard let title = diaryData.dTitle else { return }
-//            guard let content = diaryData.dContent else { return }
-//            self.diaryV.titleTextField.text = title
-//            self.diaryV.memoTextView.text = content
-//            //self.diaryV.titleTextField.becomeFirstResponder()
-//
-//        } else {
-//
-//
-//        }
-//    }
+
     
     func configUI() {
         
         view.backgroundColor = .white
     }
     
-    @objc func weatherButtonTapped() {
-        print("날씨 버튼 눌림")
-    }
     
-  @objc func pickImage() {
-        setupImagePicker()
-        self.present(self.picker, animated: true) // Controller이기 때문에 present 메서드를 이용해서 컨트롤러 뷰를 띄워줌
-    }
+    
+    
     func setupImagePicker() {
         // 기본설정 셋팅
         var configuration = PHPickerConfiguration()
@@ -159,11 +117,22 @@ final class DiaryViewController: UIViewController {
     }
     
     // MARK: -  button(UIImage: Trash)
+    
+    
+    @objc func weatherButtonTapped() {
+        print("날씨 버튼 눌림")
+    }
+    
+  @objc func pickImage() {
+        setupImagePicker()
+        self.present(self.picker, animated: true) // Controller이기 때문에 present 메서드를 이용해서 컨트롤러 뷰를 띄워줌
+    }
+    
     @objc func resetButtonTapped() {
         
         let alert = UIAlertController(title: "삭제하시겠습니까?", message: "삭제한 일기는 복구되지 않습니다.", preferredStyle: .alert)
-        let success1 = UIAlertAction(title: "삭제", style: .default) { action in
-            self.mainButtonTapped()
+        let success1 = UIAlertAction(title: "삭제", style: .default) { [weak self] action in
+            self?.mainButtonTapped()
         }
         
         let cancel = UIAlertAction(title: "취소", style: .cancel) { action in
@@ -183,86 +152,22 @@ final class DiaryViewController: UIViewController {
             return }
         self.navigationController?.popViewController(animated: true)
             let alert = UIAlertController(title: "", message: "저장되었습니다", preferredStyle: .alert)
-            let success1 = UIAlertAction(title: "확인", style: .default) { action in
-            self.mainButtonTapped()
+            let success1 = UIAlertAction(title: "확인", style: .default) { [weak self] action in
+            self?.mainButtonTapped()
             }
-            
-//                        let cancel = UIAlertAction(title: "취소", style: .cancel) { action in
-//                            print("취소버튼이 눌렸습니다.")
-//                        }
             alert.addAction(success1)
-            //alert.addAction(cancel)
             self.present(alert, animated: true, completion: nil)
 
-    
-        
-        
-//        if let diarydata = self.diaryData {
-//
-//            diarydata.dTitle = diaryV.titleTextField.text ?? "제목"
-//            diarydata.dContent = diaryV.memoTextView.text ?? "내용"
-//
-//            diaryManager.updateDiary(newDiaryCoreData: diarydata) {
-//                print("update 완료")
-//                self.navigationController?.popViewController(animated: false)
-//            }
-//
-//        } else {
-//            let title = diaryV.titleTextField.text
-//            let content = diaryV.memoTextView.text
-//                        diaryManager.saveDiaryData(dtitle: title, dcontent: content) {
-//                            print("save 완료, \(self.diaryData?.dTitle)")
-//
-//                let alert = UIAlertController(title: "", message: "저장되었습니다", preferredStyle: .alert)
-//                let success1 = UIAlertAction(title: "확인", style: .default) {  action in self.mainButtonTapped()
-//                }
-//                alert.addAction(success1)
-//                //alert.addAction(cancel)
-//                self.present(alert, animated: true, completion: nil)
-//
-//            }
-//        }
-        
-       // self.navigationController?.popViewController(animated: false)
-        
-//        guard let memo = diaryV.titleTextField.text, memo.count > 0 else {
-//            alertSave(message:"제목을 입력하세요")
-//            return
-//        }
-//
-//
-//            let alert = UIAlertController(title: "", message: "저장되었습니다", preferredStyle: .alert)
-//            let success1 = UIAlertAction(title: "확인", style: .default) { action in
-//            self.mainButtonTapped()
-//            }
-//            alert.addAction(success1)
-//
-//        self.present(alert, animated: true, completion: nil)
         
     }
 
-//    @objc func saveButton2() {
-//        if let text =  diaryV.titleTextField.text {
-//            delegate?.sendData(response: text)
-//        }
-//        self.navigationController?.popViewController(animated: false)
-//
-//    }
         
         
         @objc func mainButtonTapped() {
-            // 다음화면으로 이동
             
-            //        let alert = UIAlertController(title: "삭제되었습니다.", message: "", preferredStyle: .alert)
-            //        let cancel = UIAlertAction(title: "확인", style: .default)    { action in
-            //        }
-            //
-            //            alert.addAction(cancel)
-            //        self.present(alert, animated: true, completion: nil)
             let vc = MonthlyViewController()
             vc.modalPresentationStyle = .fullScreen
-            
-            self.present(vc, animated: false, completion: nil)
+            navigationController?.pushViewController(vc, animated: true)
         }
         
         
@@ -306,85 +211,6 @@ final class DiaryViewController: UIViewController {
     
     
     
-
-    //    // MARK: 키보드 나올 때, main screen up
-    //    override func viewWillAppear(_ animated: Bool) {
-    //        // 옵져버를 등록
-    //        // 옵저버 대상 self
-    //        // 옵져버 감지시 실행 함수
-    //        // 옵져버가 감지할 것
-    //        NotificationCenter.default.addObserver(self, selector: #selector(keyboardUp), name: UIResponder.keyboardWillShowNotification, object: nil)
-    //        NotificationCenter.default.addObserver(self, selector: #selector(keyboardDown), name: UIResponder.keyboardWillHideNotification, object: nil)
-    //    }
-    //
-    //    override func viewWillDisappear(_ animated: Bool) {
-    //        NotificationCenter.default.removeObserver(self, name: UIResponder.keyboardWillShowNotification, object: nil)
-    //        NotificationCenter.default.removeObserver(self, name: UIResponder.keyboardWillHideNotification, object: nil)
-    //    }
-    //
-    //    @objc func keyboardUp(notification:NSNotification) {
-    //        if let keyboardFrame:NSValue = notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue {
-    //           let keyboardRectangle = keyboardFrame.cgRectValue
-    //
-    //            UIView.animate(
-    //                withDuration: 0.3
-    //                , animations: {
-    //                    self.view.transform = CGAffineTransform(translationX: 0, y: -keyboardRectangle.height)
-    //                }
-    //            )
-    //        }
-    //    }
-    //    @objc func keyboardDown() {
-    //        self.view.transform = .identity
-    //   }
-    
-    
-    //extension UITextField {
-    //
-    //
-    //    func setDatePicker(target: Any, selector: Selector) {
-    //        let SCwidth = self.bounds.width
-    //        let datePicker = UIDatePicker(frame: CGRect(x: 0, y: 0, width: SCwidth, height: 216))
-    //        datePicker.datePickerMode = .date
-    //        self.inputView = datePicker
-    //
-    //        let toolBar = UIToolbar(frame: CGRect(x: 0.0, y: 0.0, width: SCwidth, height: 44.0))
-    //        let flexible = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: nil, action: nil)
-    //        let cancel = UIBarButtonItem(title: "Cancel", style: .plain, target: nil, action: #selector(tapCancel))
-    //        let barButton = UIBarButtonItem(title: "Done", style: .plain, target: target, action: selector)
-    //        toolBar.setItems([cancel, flexible, barButton], animated: false)
-    //        self.inputAccessoryView = toolBar
-    //
-    //    }
-    //    @objc func tapCancel() {
-    //        self.resignFirstResponder()
-    //    }
-    //
-    //
-    //}
-    
-    
-    
-    //extension ViewController {
-    //
-    //    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
-    //        var newImage: UIImage? = nil
-    //
-    //        if let possibleImage = info["UIImagePickerControllerEditedImage"] as? UIImage { // 수정된 이미지가 있을 경우
-    //            newImage = possibleImage
-    //        } else if let possibleImage = info["UIImagePickerControllerOriginalImage"] as? UIImage { // 오리지널 이미지가 있을 경우
-    //            newImage = possibleImage
-    //        }
-    //
-    //        imageView.image = newImage // 받아온 이미지를 이미지 뷰에 넣어준다.
-    //
-    //        picker.dismiss(animated: true) // 그리고 picker를 닫아준다.
-    //        picker.delegate = self
-    //
-    //
-    //    }
-    //
-    //}
     extension DiaryViewController: PHPickerViewControllerDelegate {
         
         // 사진이 선택이 된 후에 호출되는 메서드

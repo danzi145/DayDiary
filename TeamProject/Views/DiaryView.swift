@@ -55,15 +55,12 @@ class DiaryView: UIView {
    
     var titleTextField: UITextField = {
         let tf = UITextField()
-        //tf.frame.size.height = 25
-        //tf.font = UIFont.init(name: "gg", size: 50)
+        
         tf.borderStyle = .none
         
         tf.backgroundColor = .white
         tf.font = UIFont.systemFont(ofSize: 20)
-//        tf.autocapitalizationType = .none
-//        tf.autocorrectionType = .no
-//        tf.spellCheckingType = .no
+
         tf.clearsOnBeginEditing = false
         tf.placeholder = "제목"
         
@@ -71,14 +68,7 @@ class DiaryView: UIView {
         tf.translatesAutoresizingMaskIntoConstraints = false
         return tf
     }()
-//    private let titleInfoLabel: UILabel = {
-//        let label = UILabel()
-//        label.text = "제목을 입력하세요"
-//        label.font = UIFont.systemFont(ofSize: 18)
-//        label.textColor = #colorLiteral(red: 0.8374180198, green: 0.8374378085, blue: 0.8374271393, alpha: 1)
-//        return label
-//    }()
-    
+
     
     private lazy var memoView: UIView = {
         let view = UIView()
@@ -197,56 +187,7 @@ class DiaryView: UIView {
     
     
     
-//    let backButton: UIButton = {
-//        let bt = UIButton(type: .custom)
-//        bt.backgroundColor = .white
-//        bt.setImage(systemName: "chevron.backward")
-//        bt.setTitleColor(.white, for: .normal)
-//
-//        bt.frame.size.height = 40
-//        bt.frame.size.width = 40
-//        bt.tintColor = .black
-//        bt.translatesAutoresizingMaskIntoConstraints = false
-//        return bt
-//    }()
-//
-//
-//    let saveButton: UIButton = {
-//        let bt = UIButton(type: .custom)
-//        bt.backgroundColor = .white
-//        bt.setTitle("저장", for: .normal)
-//        bt.setTitleColor(.black, for: .normal)
-//        bt.titleLabel?.font = UIFont.boldSystemFont(ofSize: 20)
-//        bt.frame.size.height = 40
-//        bt.frame.size.width = 40
-//        bt.tintColor = .black
-//
-//        bt.translatesAutoresizingMaskIntoConstraints = false
-//        return bt
-//    }()
-//
-//    lazy var buttonView2: UIView = {
-//        let view = UIView()
-//        view.backgroundColor = .black
-//
-//
-//
-//        view.addSubview(buttonBack)
-//
-//        return view
-//
-//    }()
-//    lazy var buttonView3: UIView = {
-//        let view = UIView()
-//        view.backgroundColor = .black
-//
-//
-//        view.addSubview(buttonSave)
-//
-//        return view
-//
-//    }()
-//
+
 
     override init(frame:CGRect) {
         super.init(frame: frame)
@@ -272,46 +213,11 @@ class DiaryView: UIView {
         self.addSubview(memoView)
         self.addSubview(buttonView)
         self.addSubview(textStackView)
-//        self.addSubview(dateformatter)
-//        self.addSubview(backButton)
-//        self.addSubview(saveButton)
+
         self.addSubview(mainImageView2)
-        //self.addSubview(buttonView2)
+ 
         
-//        memoView.translatesAutoresizingMaskIntoConstraints = false
-//        memoTextView.translatesAutoresizingMaskIntoConstraints = false
-//        titleView.translatesAutoresizingMaskIntoConstraints = false
-//        textStackView.translatesAutoresizingMaskIntoConstraints = false
-//        mainImageView.translatesAutoresizingMaskIntoConstraints = false
-//        mainImageView2.translatesAutoresizingMaskIntoConstraints = false
-//       // titleInfoLabel.translatesAutoresizingMaskIntoConstraints = false
-//        titleTextField.translatesAutoresizingMaskIntoConstraints = false
-//        buttonView.translatesAutoresizingMaskIntoConstraints = false
-//        dateformatter.translatesAutoresizingMaskIntoConstraints = false
-//       // buttonView2.translatesAutoresizingMaskIntoConstraints = false
-//        saveButton.translatesAutoresizingMaskIntoConstraints = false
-//        backButton.translatesAutoresizingMaskIntoConstraints = false
-        
-//        NSLayoutConstraint.activate([
-//
-//            saveButton.topAnchor.constraint(equalTo: self.topAnchor, constant: 55),
-//            saveButton.trailingAnchor.constraint(equalTo:self.trailingAnchor, constant: -20),
-//            saveButton.widthAnchor.constraint(equalToConstant: 35),
-//            saveButton.heightAnchor.constraint(equalToConstant: 35)
-//        ])
-//        NSLayoutConstraint.activate([
-//
-//            backButton.topAnchor.constraint(equalTo: self.topAnchor, constant: 60),
-//            backButton.leadingAnchor.constraint(equalTo:self.leadingAnchor, constant: 5),
-//            backButton.widthAnchor.constraint(equalToConstant: 35)
-//        ])
-        
-        
-//        NSLayoutConstraint.activate([
-//
-//            dateformatter.bottomAnchor.constraint(equalTo: titleView.topAnchor, constant: -30),
-//            dateformatter.centerXAnchor.constraint(equalTo: self.centerXAnchor)
-//        ])
+
         NSLayoutConstraint.activate([
             
             
@@ -320,59 +226,52 @@ class DiaryView: UIView {
             mainImageView.centerXAnchor.constraint(equalTo: memoView.centerXAnchor),
       
             mainImageView.heightAnchor.constraint(equalToConstant: 300),
-            mainImageView.widthAnchor.constraint(equalToConstant: 300)
-        ])
-        NSLayoutConstraint.activate([
-            
+            mainImageView.widthAnchor.constraint(equalToConstant: 300),
+       
             
             mainImageView2.bottomAnchor.constraint(equalTo: button1.bottomAnchor),
 //            mainImageView.centerYAnchor.constraint(equalTo: memoView.centerYAnchor),
             mainImageView2.centerXAnchor.constraint(equalTo: button1.centerXAnchor),
       
             mainImageView2.heightAnchor.constraint(equalTo: button1.heightAnchor),
-            mainImageView2.widthAnchor.constraint(equalTo: button1.widthAnchor)
-        ])
-//        NSLayoutConstraint.activate([
-//            titleInfoLabel.topAnchor.constraint(equalTo:titleTextField.topAnchor),
-//            titleInfoLabel.leadingAnchor.constraint(equalTo: titleTextField.leadingAnchor)
-//        ])
-        NSLayoutConstraint.activate([
+            mainImageView2.widthAnchor.constraint(equalTo: button1.widthAnchor),
+        
+//
+        
             titleView.bottomAnchor.constraint(equalTo: memoView.topAnchor, constant: -10),
-            titleView.heightAnchor.constraint(equalToConstant: 40)
-        ])
-        NSLayoutConstraint.activate([
+            titleView.heightAnchor.constraint(equalToConstant: 40),
+        
+        
             titleTextField.topAnchor.constraint(equalTo: titleView.topAnchor),
             titleTextField.bottomAnchor.constraint(equalTo: titleView.bottomAnchor),
             titleTextField.leadingAnchor.constraint(equalTo: titleView.leadingAnchor),
-            titleTextField.trailingAnchor.constraint(equalTo: titleView.trailingAnchor)
+            titleTextField.trailingAnchor.constraint(equalTo: titleView.trailingAnchor),
         
-        ])
         
-        NSLayoutConstraint.activate([
+
+        
             textStackView.centerXAnchor.constraint(equalTo: self.centerXAnchor),
             textStackView.centerYAnchor.constraint(equalTo: self.centerYAnchor),
             textStackView.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 20),
             textStackView.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -20),
-            textStackView.heightAnchor.constraint(equalToConstant: 630)
+            textStackView.heightAnchor.constraint(equalToConstant: 630),
         
             
-            ])
+            
         
-        NSLayoutConstraint.activate([
+        
             buttonView.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 15),
             buttonView.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -15),
             buttonView.topAnchor.constraint(equalTo: textStackView.bottomAnchor, constant: 40),
-            buttonView.heightAnchor.constraint(equalToConstant: 50)
-        ])
-        
-        NSLayoutConstraint.activate([
+            buttonView.heightAnchor.constraint(equalToConstant: 50),
+       
             memoTextView.leadingAnchor.constraint(equalTo: memoView.leadingAnchor),
             memoTextView.trailingAnchor.constraint(equalTo: memoView.trailingAnchor),
             memoTextView.topAnchor.constraint(equalTo: memoView.topAnchor),
-            memoTextView.bottomAnchor.constraint(equalTo: memoView.bottomAnchor)
-            ])
+            memoTextView.bottomAnchor.constraint(equalTo: memoView.bottomAnchor),
+            
         
-        NSLayoutConstraint.activate([
+       
             button0.leadingAnchor.constraint(equalTo: buttonView.leadingAnchor, constant: 10),
             button0.topAnchor.constraint(equalTo: buttonView.topAnchor, constant: 10),
             button0.bottomAnchor.constraint(equalTo: buttonView.bottomAnchor, constant: -10),
@@ -393,13 +292,7 @@ class DiaryView: UIView {
             ])
         
         
-//        NSLayoutConstraint.activate([
-//            buttonView2.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 10),
-//
-//            buttonView2.bottomAnchor.constraint(equalTo: titleView.topAnchor, constant: -40),
-//            buttonView2.heightAnchor.constraint(equalToConstant: 30),
-//            buttonView2.widthAnchor.constraint(equalToConstant: 30)
-//        ])
+
     }
     
 }
